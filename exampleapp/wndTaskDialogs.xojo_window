@@ -9,7 +9,7 @@ Begin Window wndTaskDialogs
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   520
+   Height          =   620
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
@@ -18,7 +18,7 @@ Begin Window wndTaskDialogs
    MaxWidth        =   32000
    MenuBar         =   1958432767
    MenuBarVisible  =   True
-   MinHeight       =   520
+   MinHeight       =   620
    MinimizeButton  =   False
    MinWidth        =   600
    Placement       =   0
@@ -44,9 +44,9 @@ Begin Window wndTaskDialogs
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   0
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Title:"
@@ -55,7 +55,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   20
+      Top             =   120
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -88,8 +88,8 @@ Begin Window wndTaskDialogs
       Mask            =   ""
       Password        =   False
       ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   1
+      Scope           =   2
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Task Title"
@@ -97,7 +97,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   20
+      Top             =   120
       Transparent     =   True
       Underline       =   False
       UseFocusRing    =   True
@@ -122,9 +122,9 @@ Begin Window wndTaskDialogs
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   2
+      TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Text:"
@@ -133,7 +133,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   45
+      Top             =   145
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -166,8 +166,8 @@ Begin Window wndTaskDialogs
       Mask            =   ""
       Password        =   False
       ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   3
+      Scope           =   2
+      TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "This is the Main Instruction of the Task."
@@ -175,7 +175,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   45
+      Top             =   145
       Transparent     =   True
       Underline       =   False
       UseFocusRing    =   True
@@ -200,9 +200,9 @@ Begin Window wndTaskDialogs
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   4
+      TabIndex        =   11
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Explanation:"
@@ -211,7 +211,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   70
+      Top             =   170
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -246,11 +246,11 @@ Begin Window wndTaskDialogs
       Mask            =   ""
       Multiline       =   True
       ReadOnly        =   False
-      Scope           =   0
+      Scope           =   2
       ScrollbarHorizontal=   False
       ScrollbarVertical=   True
       Styled          =   True
-      TabIndex        =   5
+      TabIndex        =   12
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Some additional information about the Task to be performed.\nAnd another Line of additional information."
@@ -258,7 +258,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   70
+      Top             =   170
       Transparent     =   True
       Underline       =   False
       UseFocusRing    =   True
@@ -278,11 +278,11 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   6
+      Scope           =   2
+      TabIndex        =   13
       TabPanelIndex   =   0
       TabStop         =   True
-      Top             =   140
+      Top             =   240
       Transparent     =   True
       Visible         =   True
       Width           =   680
@@ -305,9 +305,9 @@ Begin Window wndTaskDialogs
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   7
+      TabIndex        =   14
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Task 1:"
@@ -316,7 +316,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   155
+      Top             =   255
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -340,9 +340,9 @@ Begin Window wndTaskDialogs
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   11
+      TabIndex        =   18
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Task 2:"
@@ -351,7 +351,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   180
+      Top             =   280
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -384,8 +384,8 @@ Begin Window wndTaskDialogs
       Mask            =   ""
       Password        =   False
       ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   8
+      Scope           =   2
+      TabIndex        =   15
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Task 1"
@@ -393,7 +393,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   155
+      Top             =   255
       Transparent     =   True
       Underline       =   False
       UseFocusRing    =   True
@@ -427,8 +427,8 @@ Begin Window wndTaskDialogs
       Mask            =   ""
       Password        =   False
       ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   12
+      Scope           =   2
+      TabIndex        =   19
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Task 2"
@@ -436,7 +436,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   180
+      Top             =   280
       Transparent     =   True
       Underline       =   False
       UseFocusRing    =   True
@@ -461,9 +461,9 @@ Begin Window wndTaskDialogs
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   13
+      TabIndex        =   20
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Cancel:"
@@ -472,7 +472,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   205
+      Top             =   305
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -496,15 +496,15 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
+      Scope           =   2
       State           =   1
-      TabIndex        =   14
+      TabIndex        =   21
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   205
+      Top             =   305
       Transparent     =   True
       Underline       =   False
       Value           =   True
@@ -524,11 +524,11 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   15
+      Scope           =   2
+      TabIndex        =   22
       TabPanelIndex   =   0
       TabStop         =   True
-      Top             =   237
+      Top             =   337
       Transparent     =   True
       Visible         =   True
       Width           =   680
@@ -552,14 +552,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   17
+      Scope           =   2
+      TabIndex        =   24
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   250
+      Top             =   350
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -584,14 +584,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   19
+      Scope           =   2
+      TabIndex        =   26
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   280
+      Top             =   380
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -615,9 +615,9 @@ Begin Window wndTaskDialogs
       LockRight       =   True
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   18
+      TabIndex        =   25
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Result: ___"
@@ -626,7 +626,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   250
+      Top             =   350
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -650,9 +650,9 @@ Begin Window wndTaskDialogs
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   9
+      TabIndex        =   16
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Icon:"
@@ -661,7 +661,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   155
+      Top             =   255
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -686,14 +686,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   10
+      Scope           =   2
+      TabIndex        =   17
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   154
+      Top             =   254
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -717,9 +717,9 @@ Begin Window wndTaskDialogs
       LockRight       =   False
       LockTop         =   True
       Multiline       =   True
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   16
+      TabIndex        =   23
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Task Dialog\nIndirect"
@@ -728,7 +728,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   250
+      Top             =   350
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -753,14 +753,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   21
+      Scope           =   2
+      TabIndex        =   28
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   310
+      Top             =   410
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -779,11 +779,11 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   22
+      Scope           =   2
+      TabIndex        =   29
       TabPanelIndex   =   0
       TabStop         =   True
-      Top             =   350
+      Top             =   450
       Transparent     =   True
       Visible         =   True
       Width           =   680
@@ -806,9 +806,9 @@ Begin Window wndTaskDialogs
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   23
+      TabIndex        =   30
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Task Dialog"
@@ -817,7 +817,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   360
+      Top             =   460
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -842,14 +842,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   24
+      Scope           =   2
+      TabIndex        =   31
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   360
+      Top             =   460
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -874,14 +874,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   31
+      Scope           =   2
+      TabIndex        =   38
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   420
+      Top             =   520
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -906,14 +906,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   28
+      Scope           =   2
+      TabIndex        =   35
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   390
+      Top             =   490
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -938,14 +938,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   25
+      Scope           =   2
+      TabIndex        =   32
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   359
+      Top             =   459
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -970,14 +970,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   29
+      Scope           =   2
+      TabIndex        =   36
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   389
+      Top             =   489
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -1002,14 +1002,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   32
+      Scope           =   2
+      TabIndex        =   39
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   419
+      Top             =   519
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -1034,14 +1034,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   26
+      Scope           =   2
+      TabIndex        =   33
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   360
+      Top             =   460
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -1066,14 +1066,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   30
+      Scope           =   2
+      TabIndex        =   37
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   390
+      Top             =   490
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -1098,14 +1098,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   33
+      Scope           =   2
+      TabIndex        =   40
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   420
+      Top             =   520
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -1130,14 +1130,14 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   35
+      Scope           =   2
+      TabIndex        =   42
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   450
+      Top             =   550
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -1161,9 +1161,9 @@ Begin Window wndTaskDialogs
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   34
+      TabIndex        =   41
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Result: ___"
@@ -1172,7 +1172,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   451
+      Top             =   551
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -1196,9 +1196,9 @@ Begin Window wndTaskDialogs
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   27
+      TabIndex        =   34
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Message Boxes"
@@ -1207,7 +1207,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   391
+      Top             =   491
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -1231,9 +1231,9 @@ Begin Window wndTaskDialogs
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
-      TabIndex        =   20
+      TabIndex        =   27
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Task Boxes"
@@ -1242,7 +1242,7 @@ Begin Window wndTaskDialogs
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   310
+      Top             =   410
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -1267,18 +1267,236 @@ Begin Window wndTaskDialogs
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   36
+      Scope           =   2
+      TabIndex        =   43
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   480
+      Top             =   580
       Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   510
+   End
+   Begin Canvas cnvAppIcon
+      AcceptFocus     =   False
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   0
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      Height          =   64
+      HelpTag         =   "#constWebsiteUrl"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   True
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   0
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   20
+      Transparent     =   True
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   64
+   End
+   Begin Label labAppName
+      AutoDeactivate  =   True
+      Bold            =   True
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   30
+      HelpTag         =   "#constWebsiteUrl"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   150
+      LockBottom      =   False
+      LockedInPosition=   True
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   2
+      Selectable      =   False
+      TabIndex        =   1
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "AppName"
+      TextAlign       =   0
+      TextColor       =   &c0072D800
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   20
+      Transparent     =   True
+      Underline       =   True
+      Visible         =   True
+      Width           =   200
+   End
+   Begin Label labThanks
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   30
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   451
+      LockBottom      =   False
+      LockedInPosition=   True
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   2
+      Selectable      =   False
+      TabIndex        =   2
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Would you like to say 'Thank you'?"
+      TextAlign       =   2
+      TextColor       =   &c66666600
+      TextFont        =   "SmallSystem"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   20
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   209
+   End
+   Begin Label labAppVersion
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   30
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   150
+      LockBottom      =   False
+      LockedInPosition=   True
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   2
+      Selectable      =   False
+      TabIndex        =   3
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "AppVersion"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   54
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   200
+   End
+   Begin Label labContact
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   30
+      HelpTag         =   "xojo@jo-tools.ch"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   474
+      LockBottom      =   False
+      LockedInPosition=   True
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   2
+      Selectable      =   False
+      TabIndex        =   4
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Contact"
+      TextAlign       =   1
+      TextColor       =   &c0072CE00
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   54
+      Transparent     =   True
+      Underline       =   True
+      Visible         =   True
+      Width           =   70
+   End
+   Begin Canvas cnvPayPal
+      AcceptFocus     =   False
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   0
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      Height          =   30
+      HelpTag         =   "https://paypal.me/jotools"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   554
+      LockBottom      =   False
+      LockedInPosition=   True
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   5
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   54
+      Transparent     =   True
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   106
+   End
+   Begin Separator sepTop
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   3
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   0
+      LockBottom      =   False
+      LockedInPosition=   True
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   6
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   100
+      Transparent     =   True
+      Visible         =   True
+      Width           =   680
    End
 End
 #tag EndWindow
@@ -1289,6 +1507,13 @@ End
 		  self.Title = self.Title + " v" + Str(App.MajorVersion) + "." + Str(App.MinorVersion) + "." + Str(App.BugVersion)
 		End Sub
 	#tag EndEvent
+
+
+	#tag Constant, Name = constAppName, Type = String, Dynamic = False, Default = \"Task Dialogs", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = constWebsiteUrl, Type = String, Dynamic = False, Default = \"https://www.jo-tools.ch/xojo/taskdialogs/", Scope = Private
+	#tag EndConstant
 
 
 #tag EndWindowCode
@@ -1475,6 +1700,158 @@ End
 		Sub Action()
 		  wndAdvTaskDialog.Show
 		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cnvAppIcon
+	#tag Event
+		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		  #Pragma unused areas
+		  
+		  g.DrawPicture(AppIcon_64, 0, 0)
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseUp(X As Integer, Y As Integer)
+		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
+		    ShowURL(constWebsiteUrl)
+		  End If
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  #Pragma unused X
+		  #Pragma unused Y
+		  
+		  Return True
+		End Function
+	#tag EndEvent
+	#tag Event
+		Sub MouseExit()
+		  Me.MouseCursor = Nil
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseEnter()
+		  Me.MouseCursor = System.Cursors.FingerPointer
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events labAppName
+	#tag Event
+		Sub Open()
+		  Me.Text = constAppName
+		  Me.TextSize = 18
+		  Me.Bold = True
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseUp(X As Integer, Y As Integer)
+		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
+		    ShowURL(constWebsiteUrl)
+		  End If
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  #Pragma unused X
+		  #Pragma unused Y
+		  
+		  Return True
+		End Function
+	#tag EndEvent
+	#tag Event
+		Sub MouseExit()
+		  Me.MouseCursor = Nil
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseEnter()
+		  Me.MouseCursor = System.Cursors.FingerPointer
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events labAppVersion
+	#tag Event
+		Sub Open()
+		  If (App.ShortVersion <> "") Then
+		    Me.Text = App.ShortVersion
+		    Return
+		  End If
+		  
+		  Me.Text = Str(App.MajorVersion) + "." + Str(App.MinorVersion) + "." + Str(App.BugVersion)
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events labContact
+	#tag Event
+		Sub MouseExit()
+		  Me.MouseCursor = Nil
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseEnter()
+		  Me.MouseCursor = System.Cursors.FingerPointer
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  #Pragma unused X
+		  #Pragma unused Y
+		  
+		  Return True
+		End Function
+	#tag EndEvent
+	#tag Event
+		Sub MouseUp(X As Integer, Y As Integer)
+		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
+		    ShowURL("mailto:xojo@jo-tools.ch")
+		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cnvPayPal
+	#tag Event
+		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		  #Pragma unused areas
+		  
+		  g.ForeColor = &cFFFFFF
+		  #If (XojoVersion >= 2018.03) Then
+		    If IsDarkMode Then g.ForeColor = &cD0D0D0
+		  #EndIf
+		  g.FillRect(0, 0, g.Width, g.Height)
+		  g.ForeColor = &c909090
+		  g.DrawRect(0, 0, g.Width, g.Height)
+		  g.DrawPicture(PayPal, 3, 2, 100, 26, 0, 0, PayPal.Width, PayPal.Height)
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseExit()
+		  Me.MouseCursor = Nil
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseEnter()
+		  Me.MouseCursor = System.Cursors.FingerPointer
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseUp(X As Integer, Y As Integer)
+		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
+		    ShowURL("https://paypal.me/jotools")
+		  End If
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  #Pragma unused X
+		  #Pragma unused Y
+		  
+		  Return True
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior

@@ -44,7 +44,7 @@ Begin Window wndAdvTaskDialog
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
       TabIndex        =   0
       TabPanelIndex   =   0
@@ -88,7 +88,7 @@ Begin Window wndAdvTaskDialog
       Mask            =   ""
       Password        =   False
       ReadOnly        =   False
-      Scope           =   0
+      Scope           =   2
       TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   True
@@ -122,7 +122,7 @@ Begin Window wndAdvTaskDialog
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
       TabIndex        =   2
       TabPanelIndex   =   0
@@ -166,7 +166,7 @@ Begin Window wndAdvTaskDialog
       Mask            =   ""
       Password        =   False
       ReadOnly        =   False
-      Scope           =   0
+      Scope           =   2
       TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
@@ -200,7 +200,7 @@ Begin Window wndAdvTaskDialog
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
       TabIndex        =   4
       TabPanelIndex   =   0
@@ -246,7 +246,7 @@ Begin Window wndAdvTaskDialog
       Mask            =   ""
       Multiline       =   True
       ReadOnly        =   False
-      Scope           =   0
+      Scope           =   2
       ScrollbarHorizontal=   False
       ScrollbarVertical=   True
       Styled          =   True
@@ -283,7 +283,7 @@ Begin Window wndAdvTaskDialog
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
       TabIndex        =   6
       TabPanelIndex   =   0
@@ -319,7 +319,7 @@ Begin Window wndAdvTaskDialog
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
+      Scope           =   2
       TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
@@ -350,7 +350,7 @@ Begin Window wndAdvTaskDialog
       LockRight       =   True
       LockTop         =   True
       Multiline       =   True
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
       TabIndex        =   8
       TabPanelIndex   =   0
@@ -385,7 +385,7 @@ Begin Window wndAdvTaskDialog
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
       TabIndex        =   9
       TabPanelIndex   =   0
@@ -421,7 +421,7 @@ Begin Window wndAdvTaskDialog
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
+      Scope           =   2
       TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
@@ -453,7 +453,7 @@ Begin Window wndAdvTaskDialog
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
+      Scope           =   2
       TabIndex        =   11
       TabPanelIndex   =   0
       TabStop         =   True
@@ -484,7 +484,7 @@ Begin Window wndAdvTaskDialog
       LockRight       =   False
       LockTop         =   True
       Multiline       =   False
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
       TabIndex        =   12
       TabPanelIndex   =   0
@@ -519,7 +519,7 @@ Begin Window wndAdvTaskDialog
       LockRight       =   False
       LockTop         =   True
       Multiline       =   True
-      Scope           =   0
+      Scope           =   2
       Selectable      =   False
       TabIndex        =   13
       TabPanelIndex   =   0
