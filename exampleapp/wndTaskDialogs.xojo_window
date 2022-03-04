@@ -1504,7 +1504,7 @@ End
 #tag WindowCode
 	#tag Event
 		Sub Open()
-		  self.Title = self.Title + " v" + Str(App.MajorVersion) + "." + Str(App.MinorVersion) + "." + Str(App.BugVersion)
+		  self.Title = constAppName
 		End Sub
 	#tag EndEvent
 
