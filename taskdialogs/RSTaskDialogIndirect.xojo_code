@@ -277,10 +277,10 @@ Protected Class RSTaskDialogIndirect
 		  'finally... -> show the TaskDialogIndirect
 		  '-----------------------------------------
 		  #if TargetWindows then
+		    // https://docs.microsoft.com/en-us/windows/win32/api/commctrl/nf-commctrl-taskdialogindirect
 		    
 		    Dim iVerificationFlagChecked As Int32
 		    
-		    //32Bit und 64Bit
 		    Soft Declare Function TaskDialogIndirect Lib "ComCtl32" ( ByRef pTaskDialogConfig As TaskDialogConfig, ByRef retButton As TaskDialogButtonID, ByRef retRadioButton As TaskDialogButtonID, ByRef retVerificationFlagChecked As Int32 ) As Integer
 		    
 		    if System.IsFunctionAvailable("TaskDialogIndirect", "ComCtl32") then

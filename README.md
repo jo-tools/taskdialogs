@@ -4,13 +4,21 @@ Xojo example project
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ## Description
-...
+This Xojo example project shows to use the [Task Dialog Indirect API](https://docs.microsoft.com/en-us/windows/win32/api/commctrl/nf-commctrl-taskdialogindirect) for Windows Desktop Applications.  
+It provides a couple of convenience Methods for the most often used Task Dialogs *(1 or 2 options to choose, (dis)allow cancel)*. The Advanced Dialog lets you explore all the settings.  
+It falls back to Xojo's ```MessageBox``` or ```MessageDialog``` for other Build Targets *(macOS, Linux)*.
+
+Also provided are convenience methods for often used ```MessageBoxes```, which use the [Task Dialog API](https://docs.microsoft.com/en-us/windows/win32/api/commctrl/nf-commctrl-taskdialog) if available, and otherwise fallback to Xojo's standard ```MessageBox```.
 
 ### ScreenShots
 Example 1:  
-<!--
-![ScreenShot: Example 1](screenshots/monitors-windows.png?raw=true)
--->
+![ScreenShot: Example 1](screenshots/TaskDialogIndirect_1.png?raw=true)
+
+Example 2:  
+![ScreenShot: Example 2](screenshots/TaskDialogIndirect_2.png?raw=true)
+
+Example 3:  
+![ScreenShot: Example 3](screenshots/TaskDialogIndirect_3.png?raw=true)
 
 ## Xojo
 ### Requirements

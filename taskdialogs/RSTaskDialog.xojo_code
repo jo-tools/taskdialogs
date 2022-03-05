@@ -192,7 +192,8 @@ Protected Class RSTaskDialog
 	#tag Method, Flags = &h21
 		Private Function Show_TaskDialog() As TaskDialogCommonButtonFlags
 		  #if TargetWindows then
-		    //32Bit und 64Bit
+		    // https://docs.microsoft.com/en-us/windows/win32/api/commctrl/nf-commctrl-taskdialog
+		    
 		    Soft Declare Function TaskDialog Lib "ComCtl32" ( parent As Integer, hInstance As Integer, title As WString, mainInstruction As WString, content As WString, buttons As Integer, icon As TaskDialogIcon, ByRef retButton As TaskDialogButtonID ) As Integer
 		    
 		    if not System.IsFunctionAvailable("TaskDialog", "ComCtl32") then return TaskDialogCommonButtonFlags.Error

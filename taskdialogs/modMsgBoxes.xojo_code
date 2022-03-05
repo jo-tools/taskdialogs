@@ -179,9 +179,7 @@ Module modMsgBoxes
 
 	#tag Method, Flags = &h21
 		Private Function TaskDialog_BtnCaption(psCaption As String, ByRef paAltChars() As String) As String
-		  #if TargetMacOS or TargetLinux then
-		    return ReplaceAll(psCaption, "&", "")
-		  #else
+		  #if TargetWindows then
 		    if (InStr(psCaption, "&") > 0) and (paAltChars.IndexOf(Mid(psCaption, InStr(psCaption, "&") + 1, 1)) < 0) then
 		      paAltChars.Append(Mid(psCaption, InStr(psCaption, "&") + 1, 1))
 		      return psCaption
@@ -194,8 +192,14 @@ Module modMsgBoxes
 		        return psCaption
 		      end if
 		    next
+		    return psCaption
+		    
+		  #else
+		    #pragma unused paAltChars
+		    return ReplaceAll(psCaption, "&", "")
+		    
 		  #endif
-		  return psCaption
+		  
 		End Function
 	#tag EndMethod
 
