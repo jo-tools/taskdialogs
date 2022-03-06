@@ -10,6 +10,10 @@ It falls back to Xojo's ```MessageBox``` or ```MessageDialog``` for other Build 
 
 Also provided are convenience methods for often used ```MessageBoxes```, which use the [Task Dialog API](https://docs.microsoft.com/en-us/windows/win32/api/commctrl/nf-commctrl-taskdialog) if available, and otherwise fallback to Xojo's standard ```MessageBox```.
 
+### Note
+Xojo 2021r3 (and newer) supports DarkMode for TargetWindows.
+However, Microsoft doesn't support DarkMode in the Task Dialog API's. So don't be surprised if they always show in a light appearance.
+
 ### ScreenShots
 Example 1:  
 ![ScreenShot: Example 1](screenshots/TaskDialogIndirect_1.png?raw=true)
@@ -29,9 +33,19 @@ The Desktop application Xojo example project ```TaskDialogs.xojo_project``` is u
 - API 1
 
 ### How to use in your own Xojo project?
-1. ...
-2. ...
-
+1. Copy and paste the folder ```taskdialogs``` *(containing 3 Classes and 2 Modules)* to your project.
+2. Have a look at how the example projects is using the provided Methods. One example:  
+    ```
+    Dim bAllowCancel As Boolean = true
+    select case TaskDialog_TwoOptions("Title", MsgBoxIcon.Question, "Text", "Explanation", "Action 1", "Action 2", true, self.TrueWindow)
+        case 1 'Action 1
+        break
+    case 2 'Action 2
+        break
+    else 'Cancel
+        break
+    end select
+    ```
 
 ## About
 Juerg Otter is a long term user of Xojo and working for [CM Informatik AG](https://cmiag.ch/). Their Application [CMI LehrerOffice](https://cmi-bildung.ch/) is a Xojo Design Award Winner 2018. In his leisure time Juerg provides some [bits and pieces for Xojo Developers](https://www.jo-tools.ch/).
