@@ -204,7 +204,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function TaskDialog_OneOption(psTitle As String, piIcon As MsgBoxIcon, psText As String, psExplanation As String, psAction As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
+		Function TaskDialog_OneOption(psTitle As String, piIcon As MessageDialog.IconTypes, psText As String, psExplanation As String, psAction As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
 		  '============================================================
 		  '
 		  ' Dialog mit 1 Optionen und Abbrechen
@@ -229,7 +229,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function TaskDialog_TwoOptions(psTitle As String, piIcon As MsgBoxIcon, psText As String, psExplanation As String, psDefaultAction As String, psSecondAction As String, pbCancel As Boolean, poShowWithinWindow As DesktopWindow = nil) As Integer
+		Function TaskDialog_TwoOptions(psTitle As String, piIcon As MessageDialog.IconTypes, psText As String, psExplanation As String, psDefaultAction As String, psSecondAction As String, pbCancel As Boolean, poShowWithinWindow As DesktopWindow = nil) As Integer
 		  '============================================================
 		  '
 		  ' Dialog mit 2 Optionen, mit/ohne Abbrechen
@@ -262,13 +262,13 @@ Module modMsgBoxes
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
 		  Select Case piIcon
-		  Case MsgBoxIcon.Note
+		  Case MessageDialog.IconTypes.Note
 		    oTaskDialog.MainIcon = TaskDialogIcon.TD_INFORMATION_ICON
-		  Case MsgBoxIcon.Caution
+		  Case MessageDialog.IconTypes.Caution
 		    oTaskDialog.MainIcon = TaskDialogIcon.TD_WARNING_ICON
-		  Case MsgBoxIcon.Stop
+		  Case MessageDialog.IconTypes.Stop
 		    oTaskDialog.MainIcon = TaskDialogIcon.TD_ERROR_ICON
-		  Case MsgBoxIcon.Question
+		  Case MessageDialog.IconTypes.Question
 		    oTaskDialog.MainIcon = TaskDialogIcon.Question
 		  Else
 		    oTaskDialog.MainIcon = TaskDialogIcon.None
@@ -314,41 +314,6 @@ Module modMsgBoxes
 		  
 		End Function
 	#tag EndMethod
-
-
-	#tag Enum, Name = MsgBoxButtonDefault, Flags = &h0
-		First=0
-		  Second=256
-		  Third=512
-		NoDefault=768
-	#tag EndEnum
-
-	#tag Enum, Name = MsgBoxButtons, Flags = &h0
-		OK=0
-		  OKCancel=1
-		  AbortRetryIgnore=2
-		  YesNoCancel=3
-		  YesNo=4
-		RetryCancel=5
-	#tag EndEnum
-
-	#tag Enum, Name = MsgBoxIcon, Flags = &h0
-		None=0
-		  Stop=16
-		  Question=32
-		  Caution=48
-		Note=64
-	#tag EndEnum
-
-	#tag Enum, Name = MsgBoxResult, Flags = &h0
-		OK=1
-		  Cancel=2
-		  Abort=3
-		  Retry=4
-		  Ignore=5
-		  Yes=6
-		No=7
-	#tag EndEnum
 
 
 	#tag ViewBehavior

@@ -96,96 +96,182 @@ Protected Class RSTaskDialog
 
 	#tag Method, Flags = &h21
 		Private Function Show_MsgBox() As TaskDialogCommonButtonFlags
-		  Var iMsgBoxResult As Integer = -1
-		  Var iMsgBoxButtons As Integer
-		  Var iMsgBoxIcon As Integer
+		  Var oMsgDlg As New MessageDialog
+		  oMsgDlg.Title = WindowTitle.ReplaceLineEndings(" ").Trim
+		  oMsgDlg.Message = MainInstruction.ReplaceLineEndings(" ").Trim
+		  oMsgDlg.Explanation = Content.ReplaceLineEndings(" ").Trim
+		  
+		  oMsgDlg.ActionButton.Visible = False
+		  oMsgDlg.AlternateActionButton.Visible = False
+		  oMsgDlg.CancelButton.Cancel = False
+		  oMsgDlg.CancelButton.Visible = False
+		  
 		  
 		  Select Case Buttons_Icon_Set
 		  Case constTaskDialog_CommonButtonFlag_Set_YesNo
-		    iMsgBoxButtons = Integer(MsgBoxButtons.YesNo)
-		    iMsgBoxIcon = Integer(MsgBoxIcon.Question)
-		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Question
+		    
+		    oMsgDlg.ActionButton.Visible = True
+		    oMsgDlg.ActionButton.Caption = "Yes"
+		    oMsgDlg.ActionButton.Default = True
+		    
+		    oMsgDlg.AlternateActionButton.Visible = True
+		    oMsgDlg.AlternateActionButton.Caption = "No"
+		    oMsgDlg.AlternateActionButton.Default = False
+		    
+		    Select Case oMsgDlg.ShowModal()
+		    Case oMsgDlg.ActionButton
+		      Return TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
+		    Case oMsgDlg.AlternateActionButton
+		      Return TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON
+		    Else
+		      Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
+		    End Select
+		    
 		    
 		  Case constTaskDialog_CommonButtonFlag_Set_YesNoCancel
-		    iMsgBoxButtons = Integer(MsgBoxButtons.YesNoCancel)
-		    iMsgBoxIcon = Integer(MsgBoxIcon.Question)
-		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Question
+		    
+		    oMsgDlg.ActionButton.Visible = True
+		    oMsgDlg.ActionButton.Caption = "Yes"
+		    oMsgDlg.ActionButton.Default = True
+		    
+		    oMsgDlg.AlternateActionButton.Visible = True
+		    oMsgDlg.AlternateActionButton.Caption = "No"
+		    oMsgDlg.AlternateActionButton.Default = False
+		    
+		    oMsgDlg.CancelButton.Cancel = True
+		    oMsgDlg.CancelButton.Visible = True
+		    
+		    Select Case oMsgDlg.ShowModal()
+		    Case oMsgDlg.ActionButton
+		      Return TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
+		    Case oMsgDlg.AlternateActionButton
+		      Return TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON
+		    Else
+		      Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
+		    End Select
 		    
 		  Case constTaskDialog_CommonButtonFlag_Set_RetryCancel_Warning
-		    iMsgBoxButtons = Integer(MsgBoxButtons.RetryCancel)
-		    iMsgBoxIcon = Integer(MsgBoxIcon.Caution)
-		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Caution
+		    
+		    oMsgDlg.ActionButton.Visible = True
+		    oMsgDlg.ActionButton.Caption = "Retry"
+		    oMsgDlg.ActionButton.Default = True
+		    
+		    oMsgDlg.CancelButton.Cancel = True
+		    oMsgDlg.CancelButton.Visible = True
+		    
+		    Select Case oMsgDlg.ShowModal()
+		    Case oMsgDlg.ActionButton
+		      Return TaskDialogCommonButtonFlags.TDCBF_RETRY_BUTTON
+		    Else
+		      Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
+		    End Select
+		    
 		    
 		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsInfo
-		    iMsgBoxButtons = Integer(MsgBoxButtons.OKCancel)
-		    iMsgBoxIcon = Integer(MsgBoxIcon.Note)
-		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Note
+		    
+		    oMsgDlg.ActionButton.Visible = True
+		    oMsgDlg.ActionButton.Caption = "Ok"
+		    oMsgDlg.ActionButton.Default = True
+		    
+		    oMsgDlg.CancelButton.Cancel = True
+		    oMsgDlg.CancelButton.Visible = True
+		    
+		    Select Case oMsgDlg.ShowModal()
+		    Case oMsgDlg.ActionButton
+		      Return TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
+		    Else
+		      Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
+		    End Select
 		    
 		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsQuestion
-		    iMsgBoxButtons = Integer(MsgBoxButtons.OKCancel)
-		    iMsgBoxIcon = Integer(MsgBoxIcon.Question)
-		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Question
+		    
+		    oMsgDlg.ActionButton.Visible = True
+		    oMsgDlg.ActionButton.Caption = "Ok"
+		    oMsgDlg.ActionButton.Default = True
+		    
+		    oMsgDlg.CancelButton.Cancel = True
+		    oMsgDlg.CancelButton.Visible = True
+		    
+		    Select Case oMsgDlg.ShowModal()
+		    Case oMsgDlg.ActionButton
+		      Return TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
+		    Else
+		      Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
+		    End Select
 		    
 		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsWarning
-		    iMsgBoxButtons = Integer(MsgBoxButtons.OKCancel)
-		    iMsgBoxIcon = Integer(MsgBoxIcon.Caution)
-		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Caution
+		    
+		    oMsgDlg.ActionButton.Visible = True
+		    oMsgDlg.ActionButton.Caption = "Ok"
+		    oMsgDlg.ActionButton.Default = True
+		    
+		    oMsgDlg.CancelButton.Cancel = True
+		    oMsgDlg.CancelButton.Visible = True
+		    
+		    Select Case oMsgDlg.ShowModal()
+		    Case oMsgDlg.ActionButton
+		      Return TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
+		    Else
+		      Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
+		    End Select
 		    
 		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsError
-		    iMsgBoxButtons = Integer(MsgBoxButtons.OKCancel)
-		    iMsgBoxIcon = Integer(MsgBoxIcon.Stop)
-		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Stop
+		    
+		    oMsgDlg.ActionButton.Visible = True
+		    oMsgDlg.ActionButton.Caption = "Ok"
+		    oMsgDlg.ActionButton.Default = True
+		    
+		    oMsgDlg.CancelButton.Cancel = True
+		    oMsgDlg.CancelButton.Visible = True
+		    
+		    Select Case oMsgDlg.ShowModal()
+		    Case oMsgDlg.ActionButton
+		      Return TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
+		    Else
+		      Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
+		    End Select
 		    
 		  Case constTaskDialog_CommonButtonFlag_Set_OK_IsInfo
-		    iMsgBoxButtons = Integer(MsgBoxButtons.OK)
-		    iMsgBoxIcon = Integer(MsgBoxIcon.Note)
-		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Note
+		    
+		    oMsgDlg.ActionButton.Visible = True
+		    oMsgDlg.ActionButton.Caption = "Ok"
+		    oMsgDlg.ActionButton.Default = True
+		    
+		    Call oMsgDlg.ShowModal()
+		    Return TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
 		    
 		  Case constTaskDialog_CommonButtonFlag_Set_OK_IsError
-		    iMsgBoxButtons = Integer(MsgBoxButtons.OK)
-		    iMsgBoxIcon = Integer(MsgBoxIcon.Stop)
-		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Stop
+		    
+		    oMsgDlg.ActionButton.Visible = True
+		    oMsgDlg.ActionButton.Caption = "Ok"
+		    oMsgDlg.ActionButton.Default = True
+		    
+		    Call oMsgDlg.ShowModal()
+		    Return TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
 		    
 		  Case constTaskDialog_CommonButtonFlag_Set_OK_IsWarning
-		    iMsgBoxButtons = Integer(MsgBoxButtons.OK)
-		    iMsgBoxIcon = Integer(MsgBoxIcon.Caution)
-		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Caution
 		    
-		  Else
-		    'error
-		  End Select
-		  
-		  Select Case MsgBoxResult(iMsgBoxResult)
-		  Case MsgBoxResult.Abort
-		    Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
-		  Case MsgBoxResult.Cancel
-		    Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
-		  Case MsgBoxResult.Ignore
-		    Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
-		  Case MsgBoxResult.No
-		    Return TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON
-		  Case MsgBoxResult.OK
+		    oMsgDlg.ActionButton.Visible = True
+		    oMsgDlg.ActionButton.Caption = "Ok"
+		    oMsgDlg.ActionButton.Default = True
+		    
+		    Call oMsgDlg.ShowModal()
 		    Return TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
-		  Case MsgBoxResult.Retry
-		    Return TaskDialogCommonButtonFlags.TDCBF_RETRY_BUTTON
-		  Case MsgBoxResult.Yes
-		    Return TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
-		  Else
-		    Return TaskDialogCommonButtonFlags.Error
+		    
 		  End Select
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h21
-		Private Function Show_MsgBox_Standard(piMsgBoxButtons As Integer, piMsgBoxIcon As Integer) As Integer
-		  Var sMsgBoxText As String
-		  If (Content = "") Then
-		    sMsgBoxText = MainInstruction.Trim
-		  Else
-		    sMsgBoxText = MainInstruction.ReplaceLineEndings(" ").Trim + EndOfLine + EndOfLine + Content.ReplaceLineEndings(" ").Trim
-		  End If
 		  
-		  Return MsgBox(sMsgBoxText, (piMsgBoxButtons + piMsgBoxIcon + Integer(MsgBoxButtonDefault.First)), WindowTitle.ReplaceLineEndings(" ").Trim)
+		  Return TaskDialogCommonButtonFlags.Error
+		  
 		End Function
 	#tag EndMethod
 
