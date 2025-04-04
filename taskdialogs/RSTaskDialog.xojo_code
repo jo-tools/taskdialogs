@@ -96,9 +96,9 @@ Protected Class RSTaskDialog
 
 	#tag Method, Flags = &h21
 		Private Function Show_MsgBox() As TaskDialogCommonButtonFlags
-		  Dim iMsgBoxResult As Integer = -1
-		  Dim iMsgBoxButtons As Integer
-		  Dim iMsgBoxIcon As Integer
+		  Var iMsgBoxResult As Integer = -1
+		  Var iMsgBoxButtons As Integer
+		  Var iMsgBoxIcon As Integer
 		  
 		  select case Buttons_Icon_Set
 		  case constTaskDialog_CommonButtonFlag_Set_YesNo
@@ -178,7 +178,7 @@ Protected Class RSTaskDialog
 
 	#tag Method, Flags = &h21
 		Private Function Show_MsgBox_Standard(piMsgBoxButtons As Integer, piMsgBoxIcon As Integer) As Integer
-		  Dim sMsgBoxText As String
+		  Var sMsgBoxText As String
 		  if (Content = "") then
 		    sMsgBoxText = MainInstruction.Trim
 		  else
@@ -198,18 +198,18 @@ Protected Class RSTaskDialog
 		    
 		    if not System.IsFunctionAvailable("TaskDialog", "ComCtl32") then return TaskDialogCommonButtonFlags.Error
 		    
-		    Dim iRet As TaskDialogButtonID
-		    Dim ptrHandle As Ptr
+		    Var iRet As TaskDialogButtonID
+		    Var ptrHandle As Ptr
 		    If (ShowInWindow <> Nil) Then ptrHandle = ShowInWindow.Handle
 		    
-		    Dim iCommonButtonFlags As Integer
+		    Var iCommonButtonFlags As Integer
 		    if (CommonButtonFlags = CType(TaskDialogCommonButtonFlags.None, Integer)) then
 		      iCommonButtonFlags = me.Get_CommonButtonFlags_Set(Buttons_Icon_Set)
 		    else
 		      iCommonButtonFlags = CType(CommonButtonFlags, Integer)
 		    end if
 		    
-		    Dim iIcon As TaskDialogIcon
+		    Var iIcon As TaskDialogIcon
 		    if (Icon = TaskDialogIcon.None) then
 		      iIcon = me.Get_Icon_Set(Buttons_Icon_Set)
 		    else
@@ -248,7 +248,7 @@ Protected Class RSTaskDialog
 		Private Function UTF16String2MemoryBlock(psText As String) As MemoryBlock
 		  psText = ConvertEncoding(psText, Encodings.UTF16).Trim
 		  
-		  Dim mb As MemoryBlock
+		  Var mb As MemoryBlock
 		  mb = New MemoryBlock( (Len( psText ) + 1)  * 2 )
 		  mb.WString( 0 ) = psText
 		  

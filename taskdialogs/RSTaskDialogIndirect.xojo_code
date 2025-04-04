@@ -6,8 +6,8 @@ Protected Class RSTaskDialogIndirect
 		  defaultButton = TaskDialogButtonID.None
 		  
 		  for i As Integer = 0 to UBound(ButtonArray)
-		    Dim mb As MemoryBlock
-		    Dim sCaption As String
+		    Var mb As MemoryBlock
+		    Var sCaption As String
 		    sCaption = ReplaceLineEndings(ButtonArray(i).Caption, " ")
 		    if (Flags = TaskDialogFlags.TDF_USE_COMMAND_LINKS) then
 		      sCaption = sCaption + EndOfLine + ButtonArray(i).CaptionExplanation
@@ -15,7 +15,7 @@ Protected Class RSTaskDialogIndirect
 		    mb = me.UTF16String2MemoryBlock(sCaption)
 		    mbButtons.Append(mb)
 		    
-		    Dim oTDB As TaskDialogButton
+		    Var oTDB As TaskDialogButton
 		    oTDB.nButtonID = ButtonArray(i).ID
 		    oTDB.pszButtonText = mb
 		    TaskDialogButtonArray.Append(oTDB)
@@ -25,24 +25,24 @@ Protected Class RSTaskDialogIndirect
 		  next
 		  
 		  'Build a MemoryBlock (stores an Array of Buttons - that's what the TaskDialogConfig needs)
-		  Dim mbButtonsArray As MemoryBlock
+		  Var mbButtonsArray As MemoryBlock
 		  
 		  #if Target32Bit then
 		    const ByteSizePerButton = 8
 		  #elseif Target64Bit then
 		    const ByteSizePerButton = 12
 		  #else
-		    Dim r As New RuntimeException
+		    Var r As New RuntimeException
 		    r.ErrorNumber = -1
 		    r.Message = "Target not implemented"
 		    Raise r
 		  #endif
 		  
 		  mbButtonsArray = New MemoryBlock( ByteSizePerButton * (UBound(TaskDialogButtonArray) + 1) )
-		  Dim iPos As Integer
+		  Var iPos As Integer
 		  for i As Integer = 0 to UBound(TaskDialogButtonArray)
 		    mbButtonsArray.Int32Value(iPos) = Int32(TaskDialogButtonArray(i).nButtonID)
-		    Dim iPtr As ptr = (TaskDialogButtonArray(i).pszButtonText)
+		    Var iPtr As ptr = (TaskDialogButtonArray(i).pszButtonText)
 		    mbButtonsArray.Ptr(iPos + 4) = iPtr
 		    iPos = iPos + ByteSizePerButton
 		  next
@@ -102,7 +102,7 @@ Protected Class RSTaskDialogIndirect
 
 	#tag Method, Flags = &h21
 		Private Function ShowModal_MessageDialog(pbShowModalWithin As Boolean) As TaskDialogButtonID
-		  Dim oMsgDlg As New MessageDialog
+		  Var oMsgDlg As New MessageDialog
 		  oMsgDlg.Title = ReplaceLineEndings(WindowTitle, " ").Trim
 		  oMsgDlg.Message = ReplaceLineEndings(MainInstruction, " ").Trim
 		  oMsgDlg.Explanation = ReplaceLineEndings(Content, " ").Trim
@@ -130,8 +130,8 @@ Protected Class RSTaskDialogIndirect
 		  
 		  if (UBound(Buttons) >= 0) then
 		    'search for Cancel Button
-		    Dim iButtonsUsed() As Integer
-		    Dim iCancel As Integer
+		    Var iButtonsUsed() As Integer
+		    Var iCancel As Integer
 		    for i As Integer = 0 to UBound(Buttons)
 		      if (Buttons(i).ID = TaskDialogButtonID.IDCANCEL) then iCancel = i
 		      iButtonsUsed.Append(i)
@@ -178,13 +178,13 @@ Protected Class RSTaskDialogIndirect
 		  end if
 		  
 		  'show
-		  Dim oReturnBtn As MessageDialogButton
+		  Var oReturnBtn As MessageDialogButton
 		  if pbShowModalWithin and (ShowInWindow <> nil) and ShowInWindow.Visible then
 		    oReturnBtn = oMsgDlg.ShowModal(ShowInWindow)
 		  else
 		    oReturnBtn = oMsgDlg.ShowModal()
 		  end if
-		  Dim sRes As String
+		  Var sRes As String
 		  if (oReturnBtn <> nil) then
 		    sRes = oReturnBtn.Caption
 		    if (oReturnBtn = oMsgDlg.CancelButton) then return TaskDialogButtonID.IDCANCEL
@@ -210,7 +210,7 @@ Protected Class RSTaskDialogIndirect
 		  '--------------------------------------
 		  ' - Replace LineBreaks where appropriate
 		  ' - we need to have them in memory while displaying the Dialog (which has Ptr to them)
-		  Dim mbWindowTitle, mbMainInstruction, mbContent, mbVerify, mbExpanded, mbExpandedControlText, mbCollapsedControlText, mbFooter As MemoryBlock
+		  Var mbWindowTitle, mbMainInstruction, mbContent, mbVerify, mbExpanded, mbExpandedControlText, mbCollapsedControlText, mbFooter As MemoryBlock
 		  mbWindowTitle = me.UTF16String2MemoryBlock(ReplaceLineEndings(WindowTitle, " "))
 		  mbMainInstruction = me.UTF16String2MemoryBlock(ReplaceLineEndings(MainInstruction, " "))
 		  mbContent = me.UTF16String2MemoryBlock(Content)
@@ -223,23 +223,23 @@ Protected Class RSTaskDialogIndirect
 		  
 		  'Build the Buttons
 		  '-----------------
-		  Dim TaskDialogButtonArray() As TaskDialogButton
-		  Dim mbButtons() As MemoryBlock
-		  Dim defaultButton As TaskDialogButtonID
-		  Dim mbButtonsArray As MemoryBlock
+		  Var TaskDialogButtonArray() As TaskDialogButton
+		  Var mbButtons() As MemoryBlock
+		  Var defaultButton As TaskDialogButtonID
+		  Var mbButtonsArray As MemoryBlock
 		  mbButtonsArray = me.Buttons_Create(TaskDialogButtonArray, mbButtons, Buttons, defaultButton)
 		  
 		  'Build the RadioButtons
 		  '----------------------
-		  Dim TaskDialogRadioButtonArray() As TaskDialogButton
-		  Dim mbRadioButtons() As MemoryBlock
-		  Dim defaultRadioButton As TaskDialogButtonID
-		  Dim mbRadioButtonsArray As MemoryBlock
+		  Var TaskDialogRadioButtonArray() As TaskDialogButton
+		  Var mbRadioButtons() As MemoryBlock
+		  Var defaultRadioButton As TaskDialogButtonID
+		  Var mbRadioButtonsArray As MemoryBlock
 		  mbRadioButtonsArray = me.Buttons_Create(TaskDialogRadioButtonArray, mbRadioButtons, RadioButtons, defaultRadioButton)
 		  
 		  'Build the final TaskDialogConfig
 		  '--------------------------------
-		  Dim oTaskDialogConfig As TaskDialogConfig
+		  Var oTaskDialogConfig As TaskDialogConfig
 		  if (ShowInWindow <> nil) then
 		    oTaskDialogConfig.hwndParent = ShowInWindow.Handle
 		  else
@@ -279,7 +279,7 @@ Protected Class RSTaskDialogIndirect
 		  #if TargetWindows then
 		    // https://docs.microsoft.com/en-us/windows/win32/api/commctrl/nf-commctrl-taskdialogindirect
 		    
-		    Dim iVerificationFlagChecked As Int32
+		    Var iVerificationFlagChecked As Int32
 		    
 		    Soft Declare Function TaskDialogIndirect Lib "ComCtl32" ( ByRef pTaskDialogConfig As TaskDialogConfig, ByRef retButton As TaskDialogButtonID, ByRef retRadioButton As TaskDialogButtonID, ByRef retVerificationFlagChecked As Int32 ) As Integer
 		    
@@ -311,7 +311,7 @@ Protected Class RSTaskDialogIndirect
 		Private Function UTF16String2MemoryBlock(psText As String) As MemoryBlock
 		  psText = ConvertEncoding(psText, Encodings.UTF16).Trim
 		  
-		  Dim mb as New MemoryBlock( (Len( psText ) + 2)  * 2 )
+		  Var mb as New MemoryBlock( (Len( psText ) + 2)  * 2 )
 		  mb.WString( 0 ) = psText
 		  
 		  return mb

@@ -531,7 +531,7 @@ End
 		  '---------------------------------------------------------------------------------------------
 		  
 		  'create TaskDialog
-		  Dim oTaskDialog As New RSTaskDialog()
+		  Var oTaskDialog As New RSTaskDialog()
 		  
 		  'set properties
 		  oTaskDialog.WindowTitle =  edtTaskDialogTitle.Text
@@ -553,7 +553,7 @@ End
 		  '---------------------------------------------------
 		  'show dialog
 		  '---------------------------------------------------
-		  Dim ret As TaskDialogCommonButtonFlags
+		  Var ret As TaskDialogCommonButtonFlags
 		  ret = oTaskDialog.Show()
 		  
 		  'display the result

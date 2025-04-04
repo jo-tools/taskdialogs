@@ -2,7 +2,7 @@
 Module modMsgBoxes
 	#tag Method, Flags = &h0
 		Function MsgBox_OKCancel_Error(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
-		  Dim oTaskDialog As New RSTaskDialog
+		  Var oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
@@ -21,7 +21,7 @@ Module modMsgBoxes
 
 	#tag Method, Flags = &h0
 		Function MsgBox_OKCancel_Info(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
-		  Dim oTaskDialog As New RSTaskDialog
+		  Var oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
@@ -40,7 +40,7 @@ Module modMsgBoxes
 
 	#tag Method, Flags = &h0
 		Function MsgBox_OKCancel_Question(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
-		  Dim oTaskDialog As New RSTaskDialog
+		  Var oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
@@ -59,7 +59,7 @@ Module modMsgBoxes
 
 	#tag Method, Flags = &h0
 		Function MsgBox_OKCancel_Warning(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
-		  Dim oTaskDialog As New RSTaskDialog
+		  Var oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
@@ -78,7 +78,7 @@ Module modMsgBoxes
 
 	#tag Method, Flags = &h0
 		Sub MsgBox_OK_Error(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil)
-		  Dim oTaskDialog As New RSTaskDialog
+		  Var oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
@@ -92,7 +92,7 @@ Module modMsgBoxes
 
 	#tag Method, Flags = &h0
 		Sub MsgBox_OK_Info(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil)
-		  Dim oTaskDialog As New RSTaskDialog
+		  Var oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
@@ -106,7 +106,7 @@ Module modMsgBoxes
 
 	#tag Method, Flags = &h0
 		Sub MsgBox_OK_Warning(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil)
-		  Dim oTaskDialog As New RSTaskDialog
+		  Var oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
@@ -120,7 +120,7 @@ Module modMsgBoxes
 
 	#tag Method, Flags = &h0
 		Function MsgBox_RetryCancel_Warning(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
-		  Dim oTaskDialog As New RSTaskDialog
+		  Var oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
@@ -139,7 +139,7 @@ Module modMsgBoxes
 
 	#tag Method, Flags = &h0
 		Function MsgBox_YesNo(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
-		  Dim oTaskDialog As New RSTaskDialog
+		  Var oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
@@ -158,7 +158,7 @@ Module modMsgBoxes
 
 	#tag Method, Flags = &h0
 		Function MsgBox_YesNoCancel(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Integer
-		  Dim oTaskDialog As New RSTaskDialog
+		  Var oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
@@ -245,7 +245,7 @@ Module modMsgBoxes
 		  '============================================================
 		  
 		  'NOT ThreadSafe
-		  Dim bAlternated As Boolean
+		  Var bAlternated As Boolean
 		  psDefaultAction = psDefaultAction.Trim
 		  psSecondAction = psSecondAction.Trim
 		  if (psDefaultAction = "") then
@@ -254,10 +254,10 @@ Module modMsgBoxes
 		    psSecondAction = ""
 		  end if
 		  
-		  Dim sAltChars() As String
+		  Var sAltChars() As String
 		  if pbCancel then sAltChars.Append("c")
 		  
-		  Dim oTaskDialog As New RSTaskDialogIndirect
+		  Var oTaskDialog As New RSTaskDialogIndirect
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
@@ -275,8 +275,8 @@ Module modMsgBoxes
 		  end select
 		  
 		  oTaskDialog.ShowInWindow = poShowWithinWindow
-		  Dim oButtons() As RSTaskDialogIndirectButton
-		  Dim oButton As RSTaskDialogIndirectButton
+		  Var oButtons() As RSTaskDialogIndirectButton
+		  Var oButton As RSTaskDialogIndirectButton
 		  if (psDefaultAction <> "") then
 		    oButton = New RSTaskDialogIndirectButton
 		    oButton.Caption = TaskDialog_BtnCaption(psDefaultAction, sAltChars)
@@ -298,8 +298,8 @@ Module modMsgBoxes
 		  end if
 		  oTaskDialog.Buttons = oButtons
 		  oTaskDialog.Flags = TaskDialogFlags.TDF_USE_COMMAND_LINKS
-		  Dim retButton, retRButton As TaskDialogButtonID
-		  Dim bFlagChecked As Boolean
+		  Var retButton, retRButton As TaskDialogButtonID
+		  Var bFlagChecked As Boolean
 		  oTaskDialog.ShowModalWithin(retButton, retRButton, bFlagChecked)
 		  
 		  select case retButton

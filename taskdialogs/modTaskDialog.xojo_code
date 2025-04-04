@@ -29,7 +29,7 @@ Module modTaskDialog
 		  
 		  
 		  'create TaskDialogIndirect
-		  Dim dlgTaskDialogIndirect As New RSTaskDialogIndirect
+		  Var dlgTaskDialogIndirect As New RSTaskDialogIndirect
 		  
 		  if (not dlgTaskDialogIndirect.IsAvailable) then
 		    'don't let RSTaskDialogIndirect create another MessageDialog, as we already have one
@@ -62,22 +62,22 @@ Module modTaskDialog
 		  dlgTaskDialogIndirect.ShowInWindow = Parent
 		  
 		  'create buttons
-		  Dim oButtons() As RSTaskDialogIndirectButton
-		  Dim oButton As RSTaskDialogIndirectButton
+		  Var oButtons() As RSTaskDialogIndirectButton
+		  Var oButton As RSTaskDialogIndirectButton
 		  
 		  'do we have a cancel button?
-		  Dim iCancel As Integer
+		  Var iCancel As Integer
 		  if oMessageDialog.ActionButton.Visible and oMessageDialog.ActionButton.Cancel then iCancel = 1
 		  if oMessageDialog.AlternateActionButton.Visible and oMessageDialog.AlternateActionButton.Cancel then iCancel = 2
 		  if oMessageDialog.CancelButton.Visible and oMessageDialog.CancelButton.Cancel then iCancel = 3
 		  
-		  Dim iBtnIDs() As TaskDialogButtonID 'we just use these IDs...
+		  Var iBtnIDs() As TaskDialogButtonID 'we just use these IDs...
 		  iBtnIDs.Append(TaskDialogButtonID.IDYES)
 		  iBtnIDs.Append(TaskDialogButtonID.IDNO)
 		  iBtnIDs.Append(TaskDialogButtonID.IDCANCEL)
-		  Dim dictResult As New Dictionary 'lookup the Button later
+		  Var dictResult As New Dictionary 'lookup the Button later
 		  for i As Integer = 1 to 3
-		    Dim oBtn As MessageDialogButton
+		    Var oBtn As MessageDialogButton
 		    select case i
 		    case 1
 		      oBtn = oMessageDialog.ActionButton
@@ -110,9 +110,9 @@ Module modTaskDialog
 		  '---------------------------------------------------
 		  'show dialog
 		  '---------------------------------------------------
-		  Dim retClickedButton As TaskDialogButtonID
-		  Dim retRadioButton As TaskDialogButtonID
-		  Dim retVerificationFlagChecked As Boolean
+		  Var retClickedButton As TaskDialogButtonID
+		  Var retRadioButton As TaskDialogButtonID
+		  Var retVerificationFlagChecked As Boolean
 		  
 		  if (Parent <> nil) and Parent.Visible then
 		    dlgTaskDialogIndirect.ShowModalWithin(retClickedButton, retRadioButton, retVerificationFlagChecked)
@@ -140,7 +140,7 @@ Module modTaskDialog
 		Function UTF16String2MemoryBlock(psText As String) As MemoryBlock
 		  psText = ConvertEncoding(psText, Encodings.UTF16)
 		  
-		  Dim mb As MemoryBlock
+		  Var mb As MemoryBlock
 		  mb = New MemoryBlock( (Len( psText ) + 1)  * 2 )
 		  mb.WString( 0 ) = psText
 		  

@@ -1678,7 +1678,7 @@ End
 		  ' - Button2: AlternateActionButton
 		  ' - Button3: CancelButton
 		  
-		  Dim oDlg As New MessageDialog
+		  Var oDlg As New MessageDialog
 		  oDlg.Title = edtTaskDialogIndirectTitle.Text
 		  oDlg.Message = edtTaskDialogIndirectMainInstruction.Text
 		  oDlg.Explanation = edtTaskDialogIndirectContent.Text
@@ -1744,7 +1744,7 @@ End
 		  '---------------------------------------------------------------------------------------------
 		  
 		  'create TaskDialogIndirect
-		  Dim dlgTaskDialogIndirect As New RSTaskDialogIndirect
+		  Var dlgTaskDialogIndirect As New RSTaskDialogIndirect
 		  'set properties
 		  dlgTaskDialogIndirect.WindowTitle = edtTaskDialogIndirectTitle.Text
 		  dlgTaskDialogIndirect.MainInstruction = edtTaskDialogIndirectMainInstruction.Text
@@ -1768,8 +1768,8 @@ End
 		  
 		  'create buttons
 		  'note: in the demo, we always set the first button as default
-		  Dim oButtons() As RSTaskDialogIndirectButton
-		  Dim oButton As RSTaskDialogIndirectButton
+		  Var oButtons() As RSTaskDialogIndirectButton
+		  Var oButton As RSTaskDialogIndirectButton
 		  If (edtTaskDialogIndirectButtonCaption1.Text.Trim <> "") Then
 		    oButton = New RSTaskDialogIndirectButton
 		    oButton.Caption = edtTaskDialogIndirectButtonCaption1.Text
@@ -1787,7 +1787,7 @@ End
 		    oButtons.Append(oButton)
 		  End If
 		  
-		  Dim bThirdButtonAsCommandLinksCancel As Boolean = False
+		  Var bThirdButtonAsCommandLinksCancel As Boolean = False
 		  If (lstTaskDialogIndirectShowButtons.SelectedRowText = "Command Links") Then
 		    If (TaskDialogButtonID.IDCANCEL = lstTaskDialogIndirectButtonID3.RowTagAt(lstTaskDialogIndirectButtonID3.SelectedRowIndex)) Then
 		      '3rd Button is set to 'Cancel' -> show as Cancel Button, below the Command Links
@@ -1815,9 +1815,9 @@ End
 		  
 		  
 		  'show dialog
-		  Dim retClickedButton As TaskDialogButtonID
-		  Dim retRadioButton As TaskDialogButtonID
-		  Dim retVerificationFlagChecked As Boolean
+		  Var retClickedButton As TaskDialogButtonID
+		  Var retRadioButton As TaskDialogButtonID
+		  Var retVerificationFlagChecked As Boolean
 		  '---------------------------------------------------
 		  'show dialog
 		  '---------------------------------------------------
@@ -1826,7 +1826,7 @@ End
 		  
 		  
 		  'display the result
-		  Dim sResult() As String
+		  Var sResult() As String
 		  sResult.Append("Button '" + Self.TaskDialogButtonID_Caption(retClickedButton) + "'")
 		  sResult.Append("RadioButton '" + Self.TaskDialogButtonID_Caption(retRadioButton) + "'")
 		  If retVerificationFlagChecked Then
