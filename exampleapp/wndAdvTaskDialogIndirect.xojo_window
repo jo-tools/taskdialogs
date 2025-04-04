@@ -1553,7 +1553,7 @@ Begin DesktopWindow wndAdvTaskDialogIndirect
       TabIndex        =   43
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "[TaskDialogIndirect available] (Windows Vista and newer): shows the TaskDialogIndirect with your settings\n[TaskDialogIndirect not available]: shows a MessageDialog instead (uses only bold items)"
+      Text            =   "[TaskDialogIndirect available] (Windows Vista and newer): shows the TaskDialogIndirect\n[TaskDialogIndirect not available]: shows a MessageDialog instead (uses only bold items)"
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
