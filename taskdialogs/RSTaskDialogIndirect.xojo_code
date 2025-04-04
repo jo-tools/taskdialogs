@@ -5,7 +5,7 @@ Protected Class RSTaskDialogIndirect
 		Private Function Buttons_Create(ByRef TaskDialogButtonArray() As TaskDialogButton, ByRef mbButtons() As MemoryBlock, ButtonArray() As RSTaskDialogIndirectButton, ByRef defaultButton As TaskDialogButtonID) As MemoryBlock
 		  defaultButton = TaskDialogButtonID.None
 		  
-		  for i As Integer = 0 to UBound(ButtonArray)
+		  For i As Integer = 0 To ButtonArray.LastIndex
 		    Var mb As MemoryBlock
 		    Var sCaption As String
 		    sCaption = ButtonArray(i).Caption.ReplaceLineEndings(" ")
@@ -13,12 +13,12 @@ Protected Class RSTaskDialogIndirect
 		      sCaption = sCaption + EndOfLine + ButtonArray(i).CaptionExplanation
 		    end if
 		    mb = me.UTF16String2MemoryBlock(sCaption)
-		    mbButtons.Append(mb)
+		    mbButtons.Add(mb)
 		    
 		    Var oTDB As TaskDialogButton
 		    oTDB.nButtonID = ButtonArray(i).ID
 		    oTDB.pszButtonText = mb
-		    TaskDialogButtonArray.Append(oTDB)
+		    TaskDialogButtonArray.Add(oTDB)
 		    
 		    'set default Button
 		    if ButtonArray(i).Default then defaultButton = ButtonArray(i).ID
@@ -38,9 +38,9 @@ Protected Class RSTaskDialogIndirect
 		    Raise r
 		  #endif
 		  
-		  mbButtonsArray = New MemoryBlock( ByteSizePerButton * (UBound(TaskDialogButtonArray) + 1) )
+		  mbButtonsArray = New MemoryBlock( ByteSizePerButton * (TaskDialogButtonArray.LastIndex + 1) )
 		  Var iPos As Integer
-		  for i As Integer = 0 to UBound(TaskDialogButtonArray)
+		  for i As Integer = 0 to TaskDialogButtonArray.LastIndex
 		    mbButtonsArray.Int32Value(iPos) = Int32(TaskDialogButtonArray(i).nButtonID)
 		    Var iPtr As ptr = (TaskDialogButtonArray(i).pszButtonText)
 		    mbButtonsArray.Ptr(iPos + 4) = iPtr
@@ -128,13 +128,13 @@ Protected Class RSTaskDialogIndirect
 		  oMsgDlg.CancelButton.Cancel = false
 		  oMsgDlg.CancelButton.Visible = false
 		  
-		  if (UBound(Buttons) >= 0) then
+		  if (Buttons.LastIndex >= 0) then
 		    'search for Cancel Button
 		    Var iButtonsUsed() As Integer
 		    Var iCancel As Integer
-		    for i As Integer = 0 to UBound(Buttons)
+		    for i As Integer = 0 to Buttons.LastIndex
 		      if (Buttons(i).ID = TaskDialogButtonID.IDCANCEL) then iCancel = i
-		      iButtonsUsed.Append(i)
+		      iButtonsUsed.Add(i)
 		    next
 		    
 		    if (iCancel > 0) then
@@ -152,7 +152,7 @@ Protected Class RSTaskDialogIndirect
 		      end if
 		    end if
 		    
-		    if (UBound(iButtonsUsed) < 0) then
+		    if (iButtonsUsed.LastIndex < 0) then
 		      'only cancel button! -> switch to ActionButton
 		      oMsgDlg.ActionButton.Caption = oMsgDlg.CancelButton.Caption
 		      oMsgDlg.ActionButton.Cancel = true
@@ -162,7 +162,7 @@ Protected Class RSTaskDialogIndirect
 		      oMsgDlg.CancelButton.Visible = false
 		    else
 		      'assign other buttons (max 2)
-		      for i As Integer = 0 to UBound(iButtonsUsed)
+		      for i As Integer = 0 to iButtonsUsed.LastIndex
 		        if (i > 1) then exit
 		        if (i < 1) then
 		          oMsgDlg.ActionButton.Visible = true
@@ -191,7 +191,7 @@ Protected Class RSTaskDialogIndirect
 		  end if
 		  
 		  'return result
-		  for i As Integer = 0 to UBound(Buttons)
+		  for i As Integer = 0 to Buttons.LastIndex
 		    if (Buttons(i).Caption = sRes) then return Buttons(i).ID
 		  next
 		  
@@ -255,10 +255,10 @@ Protected Class RSTaskDialogIndirect
 		  end if
 		  oTaskDialogConfig.pszMainInstruction = mbMainInstruction
 		  oTaskDialogConfig.pszContent = mbContent
-		  oTaskDialogConfig.cButtons = CType(UBound(Buttons) + 1, UInt32)
+		  oTaskDialogConfig.cButtons = CType(Buttons.LastIndex + 1, UInt32)
 		  oTaskDialogConfig.pButtons = mbButtonsArray
 		  oTaskDialogConfig.nDefaultButton = CType(defaultButton, Integer)
-		  oTaskDialogConfig.cRadioButtons = CType(UBound(RadioButtons) + 1, UInt32)
+		  oTaskDialogConfig.cRadioButtons = CType(RadioButtons.LastIndex + 1, UInt32)
 		  oTaskDialogConfig.pRadioButtons = mbRadioButtonsArray
 		  oTaskDialogConfig.nDefaultRadioButton = CType(defaultRadioButton, Integer)
 		  oTaskDialogConfig.pszVerificationText = mbVerify

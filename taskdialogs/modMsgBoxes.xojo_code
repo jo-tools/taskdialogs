@@ -181,13 +181,13 @@ Module modMsgBoxes
 		Private Function TaskDialog_BtnCaption(psCaption As String, ByRef paAltChars() As String) As String
 		  #if TargetWindows then
 		    if (InStr(psCaption, "&") > 0) and (paAltChars.IndexOf(Mid(psCaption, InStr(psCaption, "&") + 1, 1)) < 0) then
-		      paAltChars.Append(Mid(psCaption, InStr(psCaption, "&") + 1, 1))
+		      paAltChars.Add(Mid(psCaption, InStr(psCaption, "&") + 1, 1))
 		      return psCaption
 		    end if
 		    psCaption = ReplaceAll(psCaption, "&", "")
 		    for i As Integer = 1 to Len(psCaption) - 1
 		      if (paAltChars.IndexOf(Mid(psCaption, i, 1)) < 0) then
-		        paAltChars.Append(Mid(psCaption, i, 1))
+		        paAltChars.Add(Mid(psCaption, i, 1))
 		        psCaption = Mid(psCaption, 1, i-1) + "&" + Mid(psCaption, i, Len(psCaption) - i + 1)
 		        return psCaption
 		      end if
@@ -255,7 +255,7 @@ Module modMsgBoxes
 		  end if
 		  
 		  Var sAltChars() As String
-		  if pbCancel then sAltChars.Append("c")
+		  if pbCancel then sAltChars.Add("c")
 		  
 		  Var oTaskDialog As New RSTaskDialogIndirect
 		  oTaskDialog.WindowTitle = psTitle
@@ -282,14 +282,14 @@ Module modMsgBoxes
 		    oButton.Caption = TaskDialog_BtnCaption(psDefaultAction, sAltChars)
 		    oButton.ID = TaskDialogButtonID.IDYES
 		    oButton.Default = true
-		    oButtons.Append(oButton)
+		    oButtons.Add(oButton)
 		  end if
 		  if (psSecondAction <> "") then
 		    oButton = New RSTaskDialogIndirectButton
 		    oButton.Caption = TaskDialog_BtnCaption(psSecondAction, sAltChars)
 		    oButton.ID = TaskDialogButtonID.IDNO
 		    oButton.Default = false
-		    oButtons.Append(oButton)
+		    oButtons.Add(oButton)
 		  end if
 		  if pbCancel then
 		    oTaskDialog.CommonButtonFlags = TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON

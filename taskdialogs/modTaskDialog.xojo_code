@@ -72,9 +72,9 @@ Module modTaskDialog
 		  if oMessageDialog.CancelButton.Visible and oMessageDialog.CancelButton.Cancel then iCancel = 3
 		  
 		  Var iBtnIDs() As TaskDialogButtonID 'we just use these IDs...
-		  iBtnIDs.Append(TaskDialogButtonID.IDYES)
-		  iBtnIDs.Append(TaskDialogButtonID.IDNO)
-		  iBtnIDs.Append(TaskDialogButtonID.IDCANCEL)
+		  iBtnIDs.Add(TaskDialogButtonID.IDYES)
+		  iBtnIDs.Add(TaskDialogButtonID.IDNO)
+		  iBtnIDs.Add(TaskDialogButtonID.IDCANCEL)
 		  Var dictResult As New Dictionary 'lookup the Button later
 		  for i As Integer = 1 to 3
 		    Var oBtn As MessageDialogButton
@@ -93,15 +93,15 @@ Module modTaskDialog
 		      oButton.Caption = oBtn.Caption
 		      oButton.Default = oBtn.Default
 		      if oBtn.Cancel then
-		        oButton.ID = iBtnIDs(UBound(iBtnIDs)) 'the last one
-		        dictResult.Value(iBtnIDs(UBound(iBtnIDs))) = i
-		        iBtnIDs.Remove(UBound(iBtnIDs))
+		        oButton.ID = iBtnIDs(iBtnIDs.LastIndex) 'the last one
+		        dictResult.Value(iBtnIDs(iBtnIDs.LastIndex)) = i
+		        iBtnIDs.Remove(iBtnIDs.LastIndex)
 		      else
 		        oButton.ID = iBtnIDs(0) 'the first one still available
 		        dictResult.Value(iBtnIDs(0)) = i
 		        iBtnIDs.Remove(0)
 		      end if
-		      oButtons.Append(oButton)
+		      oButtons.Add(oButton)
 		    end if
 		  next
 		  dlgTaskDialogIndirect.Buttons = oButtons

@@ -1776,7 +1776,7 @@ End
 		    oButton.CaptionExplanation = edtTaskDialogIndirectButtonExplanation1.Text
 		    oButton.ID = lstTaskDialogIndirectButtonID1.RowTagAt(lstTaskDialogIndirectButtonID1.SelectedRowIndex)
 		    If radTaskDialogIndirectDefaultButton1.Value Then oButton.Default = True
-		    oButtons.Append(oButton)
+		    oButtons.Add(oButton)
 		  End If
 		  If (edtTaskDialogIndirectButtonCaption2.Text.Trim <> "") Then
 		    oButton = New RSTaskDialogIndirectButton
@@ -1784,7 +1784,7 @@ End
 		    oButton.CaptionExplanation = edtTaskDialogIndirectButtonExplanation2.Text
 		    oButton.ID = lstTaskDialogIndirectButtonID2.RowTagAt(lstTaskDialogIndirectButtonID2.SelectedRowIndex)
 		    If radTaskDialogIndirectDefaultButton2.Value Then oButton.Default = True
-		    oButtons.Append(oButton)
+		    oButtons.Add(oButton)
 		  End If
 		  
 		  Var bThirdButtonAsCommandLinksCancel As Boolean = False
@@ -1801,7 +1801,7 @@ End
 		    oButton.CaptionExplanation = edtTaskDialogIndirectButtonExplanation3.Text
 		    oButton.ID = lstTaskDialogIndirectButtonID3.RowTagAt(lstTaskDialogIndirectButtonID3.SelectedRowIndex)
 		    If radTaskDialogIndirectDefaultButton3.Value Then oButton.Default = True
-		    oButtons.Append(oButton)
+		    oButtons.Add(oButton)
 		  End If
 		  
 		  dlgTaskDialogIndirect.Buttons = oButtons
@@ -1827,12 +1827,12 @@ End
 		  
 		  'display the result
 		  Var sResult() As String
-		  sResult.Append("Button '" + Self.TaskDialogButtonID_Caption(retClickedButton) + "'")
-		  sResult.Append("RadioButton '" + Self.TaskDialogButtonID_Caption(retRadioButton) + "'")
+		  sResult.Add("Button '" + Self.TaskDialogButtonID_Caption(retClickedButton) + "'")
+		  sResult.Add("RadioButton '" + Self.TaskDialogButtonID_Caption(retRadioButton) + "'")
 		  If retVerificationFlagChecked Then
-		    sResult.Append("VerificationFlag 'checked'")
+		    sResult.Add("VerificationFlag 'checked'")
 		  Else
-		    sResult.Append("VerificationFlag 'not checked'")
+		    sResult.Add("VerificationFlag 'not checked'")
 		  End If
 		  labTaskDialogIndirectResult.Text = "Return: " + Join(sResult, ", ")
 		  
