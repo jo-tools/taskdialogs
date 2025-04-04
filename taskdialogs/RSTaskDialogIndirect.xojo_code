@@ -8,7 +8,7 @@ Protected Class RSTaskDialogIndirect
 		  for i As Integer = 0 to UBound(ButtonArray)
 		    Var mb As MemoryBlock
 		    Var sCaption As String
-		    sCaption = ReplaceLineEndings(ButtonArray(i).Caption, " ")
+		    sCaption = ButtonArray(i).Caption.ReplaceLineEndings(" ")
 		    if (Flags = TaskDialogFlags.TDF_USE_COMMAND_LINKS) then
 		      sCaption = sCaption + EndOfLine + ButtonArray(i).CaptionExplanation
 		    end if
@@ -103,9 +103,9 @@ Protected Class RSTaskDialogIndirect
 	#tag Method, Flags = &h21
 		Private Function ShowModal_MessageDialog(pbShowModalWithin As Boolean) As TaskDialogButtonID
 		  Var oMsgDlg As New MessageDialog
-		  oMsgDlg.Title = ReplaceLineEndings(WindowTitle, " ").Trim
-		  oMsgDlg.Message = ReplaceLineEndings(MainInstruction, " ").Trim
-		  oMsgDlg.Explanation = ReplaceLineEndings(Content, " ").Trim
+		  oMsgDlg.Title = WindowTitle.ReplaceLineEndings(" ").Trim
+		  oMsgDlg.Message = MainInstruction.ReplaceLineEndings(" ").Trim
+		  oMsgDlg.Explanation = Content.ReplaceLineEndings(" ").Trim
 		  
 		  select case MainIcon
 		  case TaskDialogIcon.TD_ERROR_ICON
@@ -211,14 +211,14 @@ Protected Class RSTaskDialogIndirect
 		  ' - Replace LineBreaks where appropriate
 		  ' - we need to have them in memory while displaying the Dialog (which has Ptr to them)
 		  Var mbWindowTitle, mbMainInstruction, mbContent, mbVerify, mbExpanded, mbExpandedControlText, mbCollapsedControlText, mbFooter As MemoryBlock
-		  mbWindowTitle = me.UTF16String2MemoryBlock(ReplaceLineEndings(WindowTitle, " "))
-		  mbMainInstruction = me.UTF16String2MemoryBlock(ReplaceLineEndings(MainInstruction, " "))
+		  mbWindowTitle = me.UTF16String2MemoryBlock(WindowTitle.ReplaceLineEndings(" "))
+		  mbMainInstruction = me.UTF16String2MemoryBlock(MainInstruction.ReplaceLineEndings(" "))
 		  mbContent = me.UTF16String2MemoryBlock(Content)
-		  mbVerify = me.UTF16String2MemoryBlock(ReplaceLineEndings(Verify, " "))
+		  mbVerify = me.UTF16String2MemoryBlock(Verify.ReplaceLineEndings(" "))
 		  mbExpanded = me.UTF16String2MemoryBlock(Expanded)
 		  mbExpandedControlText = me.UTF16String2MemoryBlock(ExpandedControlText)
-		  mbCollapsedControlText = me.UTF16String2MemoryBlock(ReplaceLineEndings(CollapsedControlText, " "))
-		  mbFooter = me.UTF16String2MemoryBlock(ReplaceLineEndings(Footer, " "))
+		  mbCollapsedControlText = me.UTF16String2MemoryBlock(CollapsedControlText.ReplaceLineEndings(" "))
+		  mbFooter = me.UTF16String2MemoryBlock(Footer.ReplaceLineEndings(" "))
 		  
 		  
 		  'Build the Buttons

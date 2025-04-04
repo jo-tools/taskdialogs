@@ -182,10 +182,10 @@ Protected Class RSTaskDialog
 		  if (Content = "") then
 		    sMsgBoxText = MainInstruction.Trim
 		  else
-		    sMsgBoxText = ReplaceLineEndings(MainInstruction, " ").Trim + EndOfLine + EndOfLine + ReplaceLineEndings(Content, " ").Trim
+		    sMsgBoxText = MainInstruction.ReplaceLineEndings(" ").Trim + EndOfLine + EndOfLine + Content.ReplaceLineEndings(" ").Trim
 		  End If
 		  
-		  Return MsgBox(sMsgBoxText, (piMsgBoxButtons + piMsgBoxIcon + Integer(MsgBoxButtonDefault.First)), ReplaceLineEndings(WindowTitle, " ").Trim)
+		  Return MsgBox(sMsgBoxText, (piMsgBoxButtons + piMsgBoxIcon + Integer(MsgBoxButtonDefault.First)), WindowTitle.ReplaceLineEndings(" ").Trim)
 		End Function
 	#tag EndMethod
 
@@ -218,7 +218,7 @@ Protected Class RSTaskDialog
 		    
 		    if (iIcon = TaskDialogIcon.Question) then iIcon = TaskDialogIcon.TD_INFORMATION_ICON
 		    
-		    If (TaskDialog(ptrHandle, 0, ReplaceLineEndings(WindowTitle, " ").Trim, ReplaceLineEndings(MainInstruction, " ").Trim, Content.Trim, iCommonButtonFlags, iIcon, iRet) <> 0) Then Return TaskDialogCommonButtonFlags.Error
+		    If (TaskDialog(ptrHandle, 0, WindowTitle.ReplaceLineEndings(" ").Trim, MainInstruction.ReplaceLineEndings(" ").Trim, Content.Trim, iCommonButtonFlags, iIcon, iRet) <> 0) Then Return TaskDialogCommonButtonFlags.Error
 		    
 		    select case iRet
 		    case TaskDialogButtonID.IDOK
