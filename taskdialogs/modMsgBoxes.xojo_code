@@ -180,15 +180,15 @@ Module modMsgBoxes
 	#tag Method, Flags = &h21
 		Private Function TaskDialog_BtnCaption(psCaption As String, ByRef paAltChars() As String) As String
 		  #If TargetWindows Then
-		    If (InStr(psCaption, "&") > 0) And (paAltChars.IndexOf(Mid(psCaption, InStr(psCaption, "&") + 1, 1)) < 0) Then
-		      paAltChars.Add(Mid(psCaption, InStr(psCaption, "&") + 1, 1))
+		    If (psCaption.IndexOf("&") >= 0) And (paAltChars.IndexOf(psCaption.Middle(psCaption.IndexOf("&") + 1, 1)) < 0) Then
+		      paAltChars.Add(psCaption.Middle(psCaption.IndexOf("&") + 1, 1))
 		      Return psCaption
 		    End If
-		    psCaption = ReplaceAll(psCaption, "&", "")
-		    For i As Integer = 1 To Len(psCaption) - 1
-		      If (paAltChars.IndexOf(Mid(psCaption, i, 1)) < 0) Then
-		        paAltChars.Add(Mid(psCaption, i, 1))
-		        psCaption = Mid(psCaption, 1, i-1) + "&" + Mid(psCaption, i, Len(psCaption) - i + 1)
+		    psCaption = psCaption.ReplaceAll("&", "")
+		    For i As Integer = 0 To psCaption.Length - 1
+		      If (paAltChars.IndexOf(psCaption.Middle(i, 1)) < 0) Then
+		        paAltChars.Add(psCaption.Middle(i, 1))
+		        psCaption = psCaption.Middle(0, i) + "&" + psCaption.Middle(i, psCaption.Length - i)
 		        Return psCaption
 		      End If
 		    Next
