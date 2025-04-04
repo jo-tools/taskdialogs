@@ -196,7 +196,7 @@ Module modMsgBoxes
 		    
 		  #else
 		    #pragma unused paAltChars
-		    return ReplaceAll(psCaption, "&", "")
+		    return psCaption.ReplaceAll("&", "")
 		    
 		  #endif
 		  

@@ -1834,7 +1834,7 @@ End
 		  Else
 		    sResult.Add("VerificationFlag 'not checked'")
 		  End If
-		  labTaskDialogIndirectResult.Text = "Return: " + Join(sResult, ", ")
+		  labTaskDialogIndirectResult.Text = "Return: " + string.FromArray(sResult, ", ")
 		  
 		End Sub
 	#tag EndMethod

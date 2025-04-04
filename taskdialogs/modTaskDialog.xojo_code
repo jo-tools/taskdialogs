@@ -95,11 +95,11 @@ Module modTaskDialog
 		      if oBtn.Cancel then
 		        oButton.ID = iBtnIDs(iBtnIDs.LastIndex) 'the last one
 		        dictResult.Value(iBtnIDs(iBtnIDs.LastIndex)) = i
-		        iBtnIDs.Remove(iBtnIDs.LastIndex)
+		        iBtnIDs.RemoveAt(iBtnIDs.LastIndex)
 		      else
 		        oButton.ID = iBtnIDs(0) 'the first one still available
 		        dictResult.Value(iBtnIDs(0)) = i
-		        iBtnIDs.Remove(0)
+		        iBtnIDs.RemoveAt(0)
 		      end if
 		      oButtons.Add(oButton)
 		    end if

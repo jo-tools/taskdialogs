@@ -142,7 +142,7 @@ Protected Class RSTaskDialogIndirect
 		      oMsgDlg.CancelButton.Visible = true
 		      oMsgDlg.CancelButton.Caption = Buttons(iCancel).Caption
 		      oMsgDlg.CancelButton.Default = Buttons(iCancel).Default
-		      iButtonsUsed.Remove(iCancel)
+		      iButtonsUsed.RemoveAt(iCancel)
 		    else
 		      'is cancel in CommonButtonFlags?
 		      if (CType(Bitwise.BitAnd(UInt32(me.CommonButtonFlags), UInt32(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON)), UInt32) =  UInt32(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON)) then

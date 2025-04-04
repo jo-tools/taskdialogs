@@ -1767,9 +1767,9 @@ End
 		  
 		  g.DrawingColor = &cFFFFFF
 		  If Color.IsDarkMode Then g.DrawingColor = &cD0D0D0
-		  g.FillRect(0, 0, g.Width, g.Height)
+		  g.FillRectangle(0, 0, g.Width, g.Height)
 		  g.DrawingColor = &c909090
-		  g.DrawRect(0, 0, g.Width, g.Height)
+		  g.DrawRectangle(0, 0, g.Width, g.Height)
 		  g.DrawPicture(PayPal, 3, 2, 100, 26, 0, 0, PayPal.Width, PayPal.Height)
 		  
 		End Sub
