@@ -117,7 +117,6 @@ Protected Class RSTaskDialog
 		    
 		    oMsgDlg.AlternateActionButton.Visible = True
 		    oMsgDlg.AlternateActionButton.Caption = "No"
-		    oMsgDlg.AlternateActionButton.Default = False
 		    
 		    Select Case oMsgDlg.ShowModal()
 		    Case oMsgDlg.ActionButton
@@ -138,7 +137,6 @@ Protected Class RSTaskDialog
 		    
 		    oMsgDlg.AlternateActionButton.Visible = True
 		    oMsgDlg.AlternateActionButton.Caption = "No"
-		    oMsgDlg.AlternateActionButton.Default = False
 		    
 		    oMsgDlg.CancelButton.Cancel = True
 		    oMsgDlg.CancelButton.Visible = True
@@ -461,14 +459,6 @@ Protected Class RSTaskDialog
 			Group="ID"
 			InitialValue=""
 			Type="String"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="ShowInWindow"
-			Visible=false
-			Group="Behavior"
-			InitialValue=""
-			Type="Window"
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty

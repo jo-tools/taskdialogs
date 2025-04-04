@@ -141,14 +141,14 @@ Protected Class RSTaskDialogIndirect
 		      'assign cancel button
 		      oMsgDlg.CancelButton.Visible = True
 		      oMsgDlg.CancelButton.Caption = Buttons(iCancel).Caption
-		      oMsgDlg.CancelButton.Default = Buttons(iCancel).Default
+		      If Buttons(iCancel).Default Then oMsgDlg.CancelButton.Default = True
 		      iButtonsUsed.RemoveAt(iCancel)
 		    Else
 		      'is cancel in CommonButtonFlags?
 		      If (CType(Bitwise.BitAnd(UInt32(Me.CommonButtonFlags), UInt32(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON)), UInt32) =  UInt32(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON)) Then
 		        oMsgDlg.CancelButton.Visible = True
 		        oMsgDlg.CancelButton.Caption = constMessageDialog_CancelCaption
-		        oMsgDlg.CancelButton.Default = False
+		        oMsgDlg.CancelButton.Default = True
 		      End If
 		    End If
 		    
@@ -167,11 +167,11 @@ Protected Class RSTaskDialogIndirect
 		        If (i < 1) Then
 		          oMsgDlg.ActionButton.Visible = True
 		          oMsgDlg.ActionButton.Caption = Buttons(iButtonsUsed(i)).Caption
-		          oMsgDlg.ActionButton.Default = Buttons(iButtonsUsed(i)).Default
+		          If Buttons(iButtonsUsed(i)).Default Then oMsgDlg.ActionButton.Default = True
 		        Else
 		          oMsgDlg.AlternateActionButton.Visible = True
 		          oMsgDlg.AlternateActionButton.Caption = Buttons(iButtonsUsed(i)).Caption
-		          oMsgDlg.AlternateActionButton.Default = Buttons(iButtonsUsed(i)).Default
+		          If Buttons(iButtonsUsed(i)).Default Then oMsgDlg.AlternateActionButton.Default = True
 		        End If
 		      Next
 		    End If
