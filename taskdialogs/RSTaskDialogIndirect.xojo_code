@@ -9,10 +9,10 @@ Protected Class RSTaskDialogIndirect
 		    Var mb As MemoryBlock
 		    Var sCaption As String
 		    sCaption = ButtonArray(i).Caption.ReplaceLineEndings(" ")
-		    if (Flags = TaskDialogFlags.TDF_USE_COMMAND_LINKS) then
+		    If (Flags = TaskDialogFlags.TDF_USE_COMMAND_LINKS) Then
 		      sCaption = sCaption + EndOfLine + ButtonArray(i).CaptionExplanation
-		    end if
-		    mb = me.UTF16String2MemoryBlock(sCaption)
+		    End If
+		    mb = Me.UTF16String2MemoryBlock(sCaption)
 		    mbButtons.Add(mb)
 		    
 		    Var oTDB As TaskDialogButton
@@ -21,81 +21,81 @@ Protected Class RSTaskDialogIndirect
 		    TaskDialogButtonArray.Add(oTDB)
 		    
 		    'set default Button
-		    if ButtonArray(i).Default then defaultButton = ButtonArray(i).ID
-		  next
+		    If ButtonArray(i).Default Then defaultButton = ButtonArray(i).ID
+		  Next
 		  
 		  'Build a MemoryBlock (stores an Array of Buttons - that's what the TaskDialogConfig needs)
 		  Var mbButtonsArray As MemoryBlock
 		  
-		  #if Target32Bit then
-		    const ByteSizePerButton = 8
-		  #elseif Target64Bit then
-		    const ByteSizePerButton = 12
-		  #else
+		  #If Target32Bit Then
+		    Const ByteSizePerButton = 8
+		  #ElseIf Target64Bit Then
+		    Const ByteSizePerButton = 12
+		  #Else
 		    Var r As New RuntimeException
 		    r.ErrorNumber = -1
 		    r.Message = "Target not implemented"
 		    Raise r
-		  #endif
+		  #EndIf
 		  
 		  mbButtonsArray = New MemoryBlock( ByteSizePerButton * (TaskDialogButtonArray.LastIndex + 1) )
 		  Var iPos As Integer
-		  for i As Integer = 0 to TaskDialogButtonArray.LastIndex
+		  For i As Integer = 0 To TaskDialogButtonArray.LastIndex
 		    mbButtonsArray.Int32Value(iPos) = Int32(TaskDialogButtonArray(i).nButtonID)
-		    Var iPtr As ptr = (TaskDialogButtonArray(i).pszButtonText)
+		    Var iPtr As Ptr = (TaskDialogButtonArray(i).pszButtonText)
 		    mbButtonsArray.Ptr(iPos + 4) = iPtr
 		    iPos = iPos + ByteSizePerButton
-		  next
+		  Next
 		  
-		  return mbButtonsArray
+		  Return mbButtonsArray
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub Constructor()
-		  #if TargetWindows then
+		  #If TargetWindows Then
 		    ebTD_Available = System.IsFunctionAvailable("TaskDialogIndirect", "ComCtl32")
-		  #endif
+		  #EndIf
 		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Function IsAvailable() As Boolean
-		  return ebTD_Available
+		  Return ebTD_Available
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub ShowModal(ByRef retButtonClicked As TaskDialogButtonID, ByRef retRadioButtonClicked As TaskDialogButtonID, ByRef retVerificationFlagChecked As Boolean)
-		  if ebTD_Available then
+		  If ebTD_Available Then
 		    'Show TaskDialogIndirect
-		    me.ShowModal_TaskDialogIndirect(retButtonClicked, retRadioButtonClicked, retVerificationFlagChecked)
-		    return
-		  else
+		    Me.ShowModal_TaskDialogIndirect(retButtonClicked, retRadioButtonClicked, retVerificationFlagChecked)
+		    Return
+		  Else
 		    'Show MessageDialog
-		    retButtonClicked = me.ShowModal_MessageDialog(false)
+		    retButtonClicked = Me.ShowModal_MessageDialog(False)
 		    retRadioButtonClicked = TaskDialogButtonID.None
-		    retVerificationFlagChecked = false
-		    return
-		  end if
+		    retVerificationFlagChecked = False
+		    Return
+		  End If
 		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub ShowModalWithin(ByRef retButtonClicked As TaskDialogButtonID, ByRef retRadioButtonClicked As TaskDialogButtonID, ByRef retVerificationFlagChecked As Boolean)
-		  if ebTD_Available then
+		  If ebTD_Available Then
 		    'Show TaskDialogIndirect
-		    me.ShowModal_TaskDialogIndirect(retButtonClicked, retRadioButtonClicked, retVerificationFlagChecked)
-		    return
-		  else
+		    Me.ShowModal_TaskDialogIndirect(retButtonClicked, retRadioButtonClicked, retVerificationFlagChecked)
+		    Return
+		  Else
 		    'Show MessageDialog
-		    retButtonClicked = me.ShowModal_MessageDialog(true)
+		    retButtonClicked = Me.ShowModal_MessageDialog(True)
 		    retRadioButtonClicked = TaskDialogButtonID.None
-		    retVerificationFlagChecked = false
-		    return
-		  end if
+		    retVerificationFlagChecked = False
+		    Return
+		  End If
 		  
 		End Sub
 	#tag EndMethod
@@ -107,118 +107,118 @@ Protected Class RSTaskDialogIndirect
 		  oMsgDlg.Message = MainInstruction.ReplaceLineEndings(" ").Trim
 		  oMsgDlg.Explanation = Content.ReplaceLineEndings(" ").Trim
 		  
-		  select case MainIcon
-		  case TaskDialogIcon.TD_ERROR_ICON
+		  Select Case MainIcon
+		  Case TaskDialogIcon.TD_ERROR_ICON
 		    oMsgDlg.IconType = MessageDialog.IconTypes.Stop
-		  case TaskDialogIcon.TD_INFORMATION_ICON
+		  Case TaskDialogIcon.TD_INFORMATION_ICON
 		    oMsgDlg.IconType = MessageDialog.IconTypes.Note
-		  case TaskDialogIcon.TD_SHIELD_ICON
+		  Case TaskDialogIcon.TD_SHIELD_ICON
 		    'not supported...
 		    oMsgDlg.IconType = MessageDialog.IconTypes.Caution
-		  case TaskDialogIcon.TD_WARNING_ICON
+		  Case TaskDialogIcon.TD_WARNING_ICON
 		    oMsgDlg.IconType = MessageDialog.IconTypes.Caution
-		  case TaskDialogIcon.Question
+		  Case TaskDialogIcon.Question
 		    oMsgDlg.IconType = MessageDialog.IconTypes.Question
-		  end select
+		  End Select
 		  
 		  
 		  'default settings (if no buttons assigned)
-		  oMsgDlg.ActionButton.Visible = true
-		  oMsgDlg.AlternateActionButton.Visible = false
-		  oMsgDlg.CancelButton.Cancel = false
-		  oMsgDlg.CancelButton.Visible = false
+		  oMsgDlg.ActionButton.Visible = True
+		  oMsgDlg.AlternateActionButton.Visible = False
+		  oMsgDlg.CancelButton.Cancel = False
+		  oMsgDlg.CancelButton.Visible = False
 		  
-		  if (Buttons.LastIndex >= 0) then
+		  If (Buttons.LastIndex >= 0) Then
 		    'search for Cancel Button
 		    Var iButtonsUsed() As Integer
 		    Var iCancel As Integer
-		    for i As Integer = 0 to Buttons.LastIndex
-		      if (Buttons(i).ID = TaskDialogButtonID.IDCANCEL) then iCancel = i
+		    For i As Integer = 0 To Buttons.LastIndex
+		      If (Buttons(i).ID = TaskDialogButtonID.IDCANCEL) Then iCancel = i
 		      iButtonsUsed.Add(i)
-		    next
+		    Next
 		    
-		    if (iCancel > 0) then
+		    If (iCancel > 0) Then
 		      'assign cancel button
-		      oMsgDlg.CancelButton.Visible = true
+		      oMsgDlg.CancelButton.Visible = True
 		      oMsgDlg.CancelButton.Caption = Buttons(iCancel).Caption
 		      oMsgDlg.CancelButton.Default = Buttons(iCancel).Default
 		      iButtonsUsed.RemoveAt(iCancel)
-		    else
+		    Else
 		      'is cancel in CommonButtonFlags?
-		      if (CType(Bitwise.BitAnd(UInt32(me.CommonButtonFlags), UInt32(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON)), UInt32) =  UInt32(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON)) then
-		        oMsgDlg.CancelButton.Visible = true
+		      If (CType(Bitwise.BitAnd(UInt32(Me.CommonButtonFlags), UInt32(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON)), UInt32) =  UInt32(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON)) Then
+		        oMsgDlg.CancelButton.Visible = True
 		        oMsgDlg.CancelButton.Caption = constMessageDialog_CancelCaption
-		        oMsgDlg.CancelButton.Default = false
-		      end if
-		    end if
+		        oMsgDlg.CancelButton.Default = False
+		      End If
+		    End If
 		    
-		    if (iButtonsUsed.LastIndex < 0) then
+		    If (iButtonsUsed.LastIndex < 0) Then
 		      'only cancel button! -> switch to ActionButton
 		      oMsgDlg.ActionButton.Caption = oMsgDlg.CancelButton.Caption
-		      oMsgDlg.ActionButton.Cancel = true
-		      oMsgDlg.ActionButton.Visible = true
-		      oMsgDlg.ActionButton.Default = true
-		      oMsgDlg.CancelButton.Cancel = false
-		      oMsgDlg.CancelButton.Visible = false
-		    else
+		      oMsgDlg.ActionButton.Cancel = True
+		      oMsgDlg.ActionButton.Visible = True
+		      oMsgDlg.ActionButton.Default = True
+		      oMsgDlg.CancelButton.Cancel = False
+		      oMsgDlg.CancelButton.Visible = False
+		    Else
 		      'assign other buttons (max 2)
-		      for i As Integer = 0 to iButtonsUsed.LastIndex
-		        if (i > 1) then exit
-		        if (i < 1) then
-		          oMsgDlg.ActionButton.Visible = true
+		      For i As Integer = 0 To iButtonsUsed.LastIndex
+		        If (i > 1) Then Exit
+		        If (i < 1) Then
+		          oMsgDlg.ActionButton.Visible = True
 		          oMsgDlg.ActionButton.Caption = Buttons(iButtonsUsed(i)).Caption
 		          oMsgDlg.ActionButton.Default = Buttons(iButtonsUsed(i)).Default
-		        else
-		          oMsgDlg.AlternateActionButton.Visible = true
+		        Else
+		          oMsgDlg.AlternateActionButton.Visible = True
 		          oMsgDlg.AlternateActionButton.Caption = Buttons(iButtonsUsed(i)).Caption
 		          oMsgDlg.AlternateActionButton.Default = Buttons(iButtonsUsed(i)).Default
-		        end if
-		      next
-		    end if
-		  end if
+		        End If
+		      Next
+		    End If
+		  End If
 		  
 		  'show
 		  Var oReturnBtn As MessageDialogButton
-		  if pbShowModalWithin and (ShowInWindow <> nil) and ShowInWindow.Visible then
+		  If pbShowModalWithin And (ShowInWindow <> Nil) And ShowInWindow.Visible Then
 		    oReturnBtn = oMsgDlg.ShowModal(ShowInWindow)
-		  else
+		  Else
 		    oReturnBtn = oMsgDlg.ShowModal()
-		  end if
+		  End If
 		  Var sRes As String
-		  if (oReturnBtn <> nil) then
+		  If (oReturnBtn <> Nil) Then
 		    sRes = oReturnBtn.Caption
-		    if (oReturnBtn = oMsgDlg.CancelButton) then return TaskDialogButtonID.IDCANCEL
-		  end if
+		    If (oReturnBtn = oMsgDlg.CancelButton) Then Return TaskDialogButtonID.IDCANCEL
+		  End If
 		  
 		  'return result
-		  for i As Integer = 0 to Buttons.LastIndex
-		    if (Buttons(i).Caption = sRes) then return Buttons(i).ID
-		  next
+		  For i As Integer = 0 To Buttons.LastIndex
+		    If (Buttons(i).Caption = sRes) Then Return Buttons(i).ID
+		  Next
 		  
 		  'error
-		  return TaskDialogButtonID.None
+		  Return TaskDialogButtonID.None
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
 		Private Sub ShowModal_TaskDialogIndirect(ByRef retButtonClicked As TaskDialogButtonID, ByRef retRadioButtonClicked As TaskDialogButtonID, ByRef retVerificationFlagChecked As Boolean)
-		  #pragma unused retRadioButtonClicked
-		  #pragma unused retButtonClicked
-		  #pragma unused retVerificationFlagChecked
+		  #Pragma unused retRadioButtonClicked
+		  #Pragma unused retButtonClicked
+		  #Pragma unused retVerificationFlagChecked
 		  
 		  'Build the MemoryBlocks for the Strings
 		  '--------------------------------------
 		  ' - Replace LineBreaks where appropriate
 		  ' - we need to have them in memory while displaying the Dialog (which has Ptr to them)
 		  Var mbWindowTitle, mbMainInstruction, mbContent, mbVerify, mbExpanded, mbExpandedControlText, mbCollapsedControlText, mbFooter As MemoryBlock
-		  mbWindowTitle = me.UTF16String2MemoryBlock(WindowTitle.ReplaceLineEndings(" "))
-		  mbMainInstruction = me.UTF16String2MemoryBlock(MainInstruction.ReplaceLineEndings(" "))
-		  mbContent = me.UTF16String2MemoryBlock(Content)
-		  mbVerify = me.UTF16String2MemoryBlock(Verify.ReplaceLineEndings(" "))
-		  mbExpanded = me.UTF16String2MemoryBlock(Expanded)
-		  mbExpandedControlText = me.UTF16String2MemoryBlock(ExpandedControlText)
-		  mbCollapsedControlText = me.UTF16String2MemoryBlock(CollapsedControlText.ReplaceLineEndings(" "))
-		  mbFooter = me.UTF16String2MemoryBlock(Footer.ReplaceLineEndings(" "))
+		  mbWindowTitle = Me.UTF16String2MemoryBlock(WindowTitle.ReplaceLineEndings(" "))
+		  mbMainInstruction = Me.UTF16String2MemoryBlock(MainInstruction.ReplaceLineEndings(" "))
+		  mbContent = Me.UTF16String2MemoryBlock(Content)
+		  mbVerify = Me.UTF16String2MemoryBlock(Verify.ReplaceLineEndings(" "))
+		  mbExpanded = Me.UTF16String2MemoryBlock(Expanded)
+		  mbExpandedControlText = Me.UTF16String2MemoryBlock(ExpandedControlText)
+		  mbCollapsedControlText = Me.UTF16String2MemoryBlock(CollapsedControlText.ReplaceLineEndings(" "))
+		  mbFooter = Me.UTF16String2MemoryBlock(Footer.ReplaceLineEndings(" "))
 		  
 		  
 		  'Build the Buttons
@@ -227,7 +227,7 @@ Protected Class RSTaskDialogIndirect
 		  Var mbButtons() As MemoryBlock
 		  Var defaultButton As TaskDialogButtonID
 		  Var mbButtonsArray As MemoryBlock
-		  mbButtonsArray = me.Buttons_Create(TaskDialogButtonArray, mbButtons, Buttons, defaultButton)
+		  mbButtonsArray = Me.Buttons_Create(TaskDialogButtonArray, mbButtons, Buttons, defaultButton)
 		  
 		  'Build the RadioButtons
 		  '----------------------
@@ -235,24 +235,24 @@ Protected Class RSTaskDialogIndirect
 		  Var mbRadioButtons() As MemoryBlock
 		  Var defaultRadioButton As TaskDialogButtonID
 		  Var mbRadioButtonsArray As MemoryBlock
-		  mbRadioButtonsArray = me.Buttons_Create(TaskDialogRadioButtonArray, mbRadioButtons, RadioButtons, defaultRadioButton)
+		  mbRadioButtonsArray = Me.Buttons_Create(TaskDialogRadioButtonArray, mbRadioButtons, RadioButtons, defaultRadioButton)
 		  
 		  'Build the final TaskDialogConfig
 		  '--------------------------------
 		  Var oTaskDialogConfig As TaskDialogConfig
-		  if (ShowInWindow <> nil) then
+		  If (ShowInWindow <> Nil) Then
 		    oTaskDialogConfig.hwndParent = ShowInWindow.Handle
-		  else
+		  Else
 		    oTaskDialogConfig.hwndParent = Nil
-		  end if
+		  End If
 		  oTaskDialogConfig.dwFlags = CType(Bitwise.BitOr(UInt32(Flags), UInt32(TaskDialogFlags.TDF_POSITION_RELATIVE_TO_WINDOW)), Integer)
 		  oTaskDialogConfig.dwCommonButtons = CommonButtonFlags
 		  oTaskDialogConfig.pszWindowTitle = mbWindowTitle
-		  if (MainIcon = TaskDialogIcon.Question) then
+		  If (MainIcon = TaskDialogIcon.Question) Then
 		    oTaskDialogConfig.hMainIcon = Integer(TaskDialogIcon.TD_INFORMATION_ICON)
-		  else
+		  Else
 		    oTaskDialogConfig.hMainIcon = Integer(MainIcon)
-		  end if
+		  End If
 		  oTaskDialogConfig.pszMainInstruction = mbMainInstruction
 		  oTaskDialogConfig.pszContent = mbContent
 		  oTaskDialogConfig.cButtons = CType(Buttons.LastIndex + 1, UInt32)
@@ -265,25 +265,25 @@ Protected Class RSTaskDialogIndirect
 		  oTaskDialogConfig.pszExpandedInformation = mbExpanded
 		  oTaskDialogConfig.pszExpandedControlText = mbExpandedControlText
 		  oTaskDialogConfig.pszCollapsedControlText = mbCollapsedControlText
-		  if (FooterIcon = TaskDialogIcon.Question) then
+		  If (FooterIcon = TaskDialogIcon.Question) Then
 		    oTaskDialogConfig.hFooterIcon = Integer(TaskDialogIcon.TD_INFORMATION_ICON)
-		  else
+		  Else
 		    oTaskDialogConfig.hFooterIcon = Integer(FooterIcon)
-		  end if
+		  End If
 		  
 		  oTaskDialogConfig.pszFooter = mbFooter
 		  
 		  
 		  'finally... -> show the TaskDialogIndirect
 		  '-----------------------------------------
-		  #if TargetWindows then
+		  #If TargetWindows Then
 		    // https://docs.microsoft.com/en-us/windows/win32/api/commctrl/nf-commctrl-taskdialogindirect
 		    
 		    Var iVerificationFlagChecked As Int32
 		    
 		    Soft Declare Function TaskDialogIndirect Lib "ComCtl32" ( ByRef pTaskDialogConfig As TaskDialogConfig, ByRef retButton As TaskDialogButtonID, ByRef retRadioButton As TaskDialogButtonID, ByRef retVerificationFlagChecked As Int32 ) As Integer
 		    
-		    if System.IsFunctionAvailable("TaskDialogIndirect", "ComCtl32") then
+		    If System.IsFunctionAvailable("TaskDialogIndirect", "ComCtl32") Then
 		      'these settings remain the same
 		      oTaskDialogConfig.cbSize = oTaskDialogConfig.size
 		      oTaskDialogConfig.hInstance = 0
@@ -292,17 +292,17 @@ Protected Class RSTaskDialogIndirect
 		      
 		      'call and show the TaskDialogIndirect
 		      '------------------------------------
-		      if (TaskDialogIndirect(oTaskDialogConfig, retButtonClicked, retRadioButtonClicked, iVerificationFlagChecked) <> 0) then
+		      If (TaskDialogIndirect(oTaskDialogConfig, retButtonClicked, retRadioButtonClicked, iVerificationFlagChecked) <> 0) Then
 		        'error
 		        retButtonClicked = TaskDialogButtonID.None
 		        retRadioButtonClicked = TaskDialogButtonID.None
-		        retVerificationFlagChecked = false
-		      else
+		        retVerificationFlagChecked = False
+		      Else
 		        retVerificationFlagChecked = (iVerificationFlagChecked = 1)
-		      end if
-		    end if
+		      End If
+		    End If
 		    
-		  #endif
+		  #EndIf
 		  
 		End Sub
 	#tag EndMethod
@@ -314,7 +314,7 @@ Protected Class RSTaskDialogIndirect
 		  Var mb As New MemoryBlock((psText.Length + 2) * 2)
 		  mb.WString( 0 ) = psText
 		  
-		  return mb
+		  Return mb
 		End Function
 	#tag EndMethod
 

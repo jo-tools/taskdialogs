@@ -11,7 +11,7 @@ Module modTaskDialog
 		  ' to use it, simply replace your (MessageDialog).ShowModal with (MessageDialog).ShowAsTaskDialog_Modal
 		  '-----------------------------------------------------------------------------------------------------------
 		  
-		  return oMessageDialog.ShowAsTaskDialog_ModalWithin(nil)
+		  Return oMessageDialog.ShowAsTaskDialog_ModalWithin(Nil)
 		  
 		End Function
 	#tag EndMethod
@@ -31,14 +31,14 @@ Module modTaskDialog
 		  'create TaskDialogIndirect
 		  Var dlgTaskDialogIndirect As New RSTaskDialogIndirect
 		  
-		  if (not dlgTaskDialogIndirect.IsAvailable) then
+		  If (Not dlgTaskDialogIndirect.IsAvailable) Then
 		    'don't let RSTaskDialogIndirect create another MessageDialog, as we already have one
-		    if (Parent <> nil) and Parent.Visible then
-		      return oMessageDialog.ShowModal(Parent)
-		    else
-		      return oMessageDialog.ShowModal()
-		    end if
-		  end if
+		    If (Parent <> Nil) And Parent.Visible Then
+		      Return oMessageDialog.ShowModal(Parent)
+		    Else
+		      Return oMessageDialog.ShowModal()
+		    End If
+		  End If
 		  
 		  'set properties
 		  dlgTaskDialogIndirect.WindowTitle = oMessageDialog.Title
@@ -53,11 +53,11 @@ Module modTaskDialog
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.TD_INFORMATION_ICON
 		  Case MessageDialog.IconTypes.Question
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.TD_INFORMATION_ICON
-		  case MessageDialog.IconTypes.Stop
+		  Case MessageDialog.IconTypes.Stop
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.TD_ERROR_ICON
-		  else
+		  Else
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.None
-		  end select
+		  End Select
 		  
 		  dlgTaskDialogIndirect.ShowInWindow = Parent
 		  
@@ -67,43 +67,43 @@ Module modTaskDialog
 		  
 		  'do we have a cancel button?
 		  Var iCancel As Integer
-		  if oMessageDialog.ActionButton.Visible and oMessageDialog.ActionButton.Cancel then iCancel = 1
-		  if oMessageDialog.AlternateActionButton.Visible and oMessageDialog.AlternateActionButton.Cancel then iCancel = 2
-		  if oMessageDialog.CancelButton.Visible and oMessageDialog.CancelButton.Cancel then iCancel = 3
+		  If oMessageDialog.ActionButton.Visible And oMessageDialog.ActionButton.Cancel Then iCancel = 1
+		  If oMessageDialog.AlternateActionButton.Visible And oMessageDialog.AlternateActionButton.Cancel Then iCancel = 2
+		  If oMessageDialog.CancelButton.Visible And oMessageDialog.CancelButton.Cancel Then iCancel = 3
 		  
 		  Var iBtnIDs() As TaskDialogButtonID 'we just use these IDs...
 		  iBtnIDs.Add(TaskDialogButtonID.IDYES)
 		  iBtnIDs.Add(TaskDialogButtonID.IDNO)
 		  iBtnIDs.Add(TaskDialogButtonID.IDCANCEL)
 		  Var dictResult As New Dictionary 'lookup the Button later
-		  for i As Integer = 1 to 3
+		  For i As Integer = 1 To 3
 		    Var oBtn As MessageDialogButton
-		    select case i
-		    case 1
+		    Select Case i
+		    Case 1
 		      oBtn = oMessageDialog.ActionButton
-		    case 2
+		    Case 2
 		      oBtn = oMessageDialog.AlternateActionButton
-		    case 3
+		    Case 3
 		      oBtn = oMessageDialog.CancelButton
-		    else
-		      continue
-		    end select
-		    if oBtn.Visible then
+		    Else
+		      Continue
+		    End Select
+		    If oBtn.Visible Then
 		      oButton = New RSTaskDialogIndirectButton
 		      oButton.Caption = oBtn.Caption
 		      oButton.Default = oBtn.Default
-		      if oBtn.Cancel then
+		      If oBtn.Cancel Then
 		        oButton.ID = iBtnIDs(iBtnIDs.LastIndex) 'the last one
 		        dictResult.Value(iBtnIDs(iBtnIDs.LastIndex)) = i
 		        iBtnIDs.RemoveAt(iBtnIDs.LastIndex)
-		      else
+		      Else
 		        oButton.ID = iBtnIDs(0) 'the first one still available
 		        dictResult.Value(iBtnIDs(0)) = i
 		        iBtnIDs.RemoveAt(0)
-		      end if
+		      End If
 		      oButtons.Add(oButton)
-		    end if
-		  next
+		    End If
+		  Next
 		  dlgTaskDialogIndirect.Buttons = oButtons
 		  
 		  
@@ -114,24 +114,24 @@ Module modTaskDialog
 		  Var retRadioButton As TaskDialogButtonID
 		  Var retVerificationFlagChecked As Boolean
 		  
-		  if (Parent <> nil) and Parent.Visible then
+		  If (Parent <> Nil) And Parent.Visible Then
 		    dlgTaskDialogIndirect.ShowModalWithin(retClickedButton, retRadioButton, retVerificationFlagChecked)
-		  else
+		  Else
 		    dlgTaskDialogIndirect.ShowModal(retClickedButton, retRadioButton, retVerificationFlagChecked)
-		  end if
+		  End If
 		  
 		  
 		  'return the result
-		  select case dictResult.Lookup(retClickedButton, TaskDialogButtonID.None)
-		  case 1
-		    return oMessageDialog.ActionButton
-		  case 2
-		    return oMessageDialog.AlternateActionButton
-		  case 3
-		    return oMessageDialog.CancelButton
-		  else
-		    return nil
-		  end select
+		  Select Case dictResult.Lookup(retClickedButton, TaskDialogButtonID.None)
+		  Case 1
+		    Return oMessageDialog.ActionButton
+		  Case 2
+		    Return oMessageDialog.AlternateActionButton
+		  Case 3
+		    Return oMessageDialog.CancelButton
+		  Else
+		    Return Nil
+		  End Select
 		  
 		End Function
 	#tag EndMethod
@@ -143,7 +143,7 @@ Module modTaskDialog
 		  Var mb As New MemoryBlock((psText.Length + 1) * 2)
 		  mb.WString( 0 ) = psText
 		  
-		  return mb
+		  Return mb
 		End Function
 	#tag EndMethod
 

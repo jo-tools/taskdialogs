@@ -9,12 +9,12 @@ Module modMsgBoxes
 		  oTaskDialog.Buttons_Icon_Set = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OKCancel_IsError
 		  oTaskDialog.ShowInWindow = poShowWithinWindow
 		  
-		  select case oTaskDialog.Show()
-		  case TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
-		    return true
-		  else
-		    return false
-		  end select
+		  Select Case oTaskDialog.Show()
+		  Case TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
+		    Return True
+		  Else
+		    Return False
+		  End Select
 		  
 		End Function
 	#tag EndMethod
@@ -28,12 +28,12 @@ Module modMsgBoxes
 		  oTaskDialog.Buttons_Icon_Set = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OKCancel_IsInfo
 		  oTaskDialog.ShowInWindow = poShowWithinWindow
 		  
-		  select case oTaskDialog.Show()
-		  case TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
-		    return true
-		  else
-		    return false
-		  end select
+		  Select Case oTaskDialog.Show()
+		  Case TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
+		    Return True
+		  Else
+		    Return False
+		  End Select
 		  
 		End Function
 	#tag EndMethod
@@ -47,12 +47,12 @@ Module modMsgBoxes
 		  oTaskDialog.Buttons_Icon_Set = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OKCancel_IsQuestion
 		  oTaskDialog.ShowInWindow = poShowWithinWindow
 		  
-		  select case oTaskDialog.Show()
-		  case TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
-		    return true
-		  else
-		    return false
-		  end select
+		  Select Case oTaskDialog.Show()
+		  Case TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
+		    Return True
+		  Else
+		    Return False
+		  End Select
 		  
 		End Function
 	#tag EndMethod
@@ -66,12 +66,12 @@ Module modMsgBoxes
 		  oTaskDialog.Buttons_Icon_Set = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OKCancel_IsWarning
 		  oTaskDialog.ShowInWindow = poShowWithinWindow
 		  
-		  select case oTaskDialog.Show()
-		  case TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
-		    return true
-		  else
-		    return false
-		  end select
+		  Select Case oTaskDialog.Show()
+		  Case TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
+		    Return True
+		  Else
+		    Return False
+		  End Select
 		  
 		End Function
 	#tag EndMethod
@@ -85,7 +85,7 @@ Module modMsgBoxes
 		  oTaskDialog.Buttons_Icon_Set = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OK_IsError
 		  oTaskDialog.ShowInWindow = poShowWithinWindow
 		  
-		  call oTaskDialog.Show()
+		  Call oTaskDialog.Show()
 		  
 		End Sub
 	#tag EndMethod
@@ -99,7 +99,7 @@ Module modMsgBoxes
 		  oTaskDialog.Buttons_Icon_Set = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OK_IsInfo
 		  oTaskDialog.ShowInWindow = poShowWithinWindow
 		  
-		  call oTaskDialog.Show()
+		  Call oTaskDialog.Show()
 		  
 		End Sub
 	#tag EndMethod
@@ -113,7 +113,7 @@ Module modMsgBoxes
 		  oTaskDialog.Buttons_Icon_Set = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OK_IsWarning
 		  oTaskDialog.ShowInWindow = poShowWithinWindow
 		  
-		  call oTaskDialog.Show()
+		  Call oTaskDialog.Show()
 		  
 		End Sub
 	#tag EndMethod
@@ -127,12 +127,12 @@ Module modMsgBoxes
 		  oTaskDialog.Buttons_Icon_Set = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_RetryCancel_Warning
 		  oTaskDialog.ShowInWindow = poShowWithinWindow
 		  
-		  select case oTaskDialog.Show()
-		  case TaskDialogCommonButtonFlags.TDCBF_RETRY_BUTTON
-		    return true
-		  else
-		    return false
-		  end select
+		  Select Case oTaskDialog.Show()
+		  Case TaskDialogCommonButtonFlags.TDCBF_RETRY_BUTTON
+		    Return True
+		  Else
+		    Return False
+		  End Select
 		  
 		End Function
 	#tag EndMethod
@@ -146,12 +146,12 @@ Module modMsgBoxes
 		  oTaskDialog.Buttons_Icon_Set = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_YesNo
 		  oTaskDialog.ShowInWindow = poShowWithinWindow
 		  
-		  select case oTaskDialog.Show()
-		  case TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
-		    return true
-		  else
-		    return false
-		  end select
+		  Select Case oTaskDialog.Show()
+		  Case TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
+		    Return True
+		  Else
+		    Return False
+		  End Select
 		  
 		End Function
 	#tag EndMethod
@@ -165,40 +165,40 @@ Module modMsgBoxes
 		  oTaskDialog.Buttons_Icon_Set = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_YesNoCancel
 		  oTaskDialog.ShowInWindow = poShowWithinWindow
 		  
-		  select case oTaskDialog.Show()
-		  case TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
-		    return 1
-		  case TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON
-		    return 2
-		  else
-		    return 0
-		  end select
+		  Select Case oTaskDialog.Show()
+		  Case TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
+		    Return 1
+		  Case TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON
+		    Return 2
+		  Else
+		    Return 0
+		  End Select
 		  
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
 		Private Function TaskDialog_BtnCaption(psCaption As String, ByRef paAltChars() As String) As String
-		  #if TargetWindows then
-		    if (InStr(psCaption, "&") > 0) and (paAltChars.IndexOf(Mid(psCaption, InStr(psCaption, "&") + 1, 1)) < 0) then
+		  #If TargetWindows Then
+		    If (InStr(psCaption, "&") > 0) And (paAltChars.IndexOf(Mid(psCaption, InStr(psCaption, "&") + 1, 1)) < 0) Then
 		      paAltChars.Add(Mid(psCaption, InStr(psCaption, "&") + 1, 1))
-		      return psCaption
-		    end if
+		      Return psCaption
+		    End If
 		    psCaption = ReplaceAll(psCaption, "&", "")
-		    for i As Integer = 1 to Len(psCaption) - 1
-		      if (paAltChars.IndexOf(Mid(psCaption, i, 1)) < 0) then
+		    For i As Integer = 1 To Len(psCaption) - 1
+		      If (paAltChars.IndexOf(Mid(psCaption, i, 1)) < 0) Then
 		        paAltChars.Add(Mid(psCaption, i, 1))
 		        psCaption = Mid(psCaption, 1, i-1) + "&" + Mid(psCaption, i, Len(psCaption) - i + 1)
-		        return psCaption
-		      end if
-		    next
-		    return psCaption
+		        Return psCaption
+		      End If
+		    Next
+		    Return psCaption
 		    
-		  #else
-		    #pragma unused paAltChars
-		    return psCaption.ReplaceAll("&", "")
+		  #Else
+		    #Pragma unused paAltChars
+		    Return psCaption.ReplaceAll("&", "")
 		    
-		  #endif
+		  #EndIf
 		  
 		End Function
 	#tag EndMethod
@@ -219,12 +219,12 @@ Module modMsgBoxes
 		  '============================================================
 		  
 		  'NOT ThreadSafe
-		  select case TaskDialog_TwoOptions(psTitle, piIcon, psText, psExplanation, psAction, "", true, poShowWithinWindow)
-		  case 1
-		    return true
-		  else
-		    return false
-		  end select
+		  Select Case TaskDialog_TwoOptions(psTitle, piIcon, psText, psExplanation, psAction, "", True, poShowWithinWindow)
+		  Case 1
+		    Return True
+		  Else
+		    Return False
+		  End Select
 		End Function
 	#tag EndMethod
 
@@ -248,69 +248,69 @@ Module modMsgBoxes
 		  Var bAlternated As Boolean
 		  psDefaultAction = psDefaultAction.Trim
 		  psSecondAction = psSecondAction.Trim
-		  if (psDefaultAction = "") then
-		    bAlternated = true
+		  If (psDefaultAction = "") Then
+		    bAlternated = True
 		    psDefaultAction = psSecondAction
 		    psSecondAction = ""
-		  end if
+		  End If
 		  
 		  Var sAltChars() As String
-		  if pbCancel then sAltChars.Add("c")
+		  If pbCancel Then sAltChars.Add("c")
 		  
 		  Var oTaskDialog As New RSTaskDialogIndirect
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
 		  oTaskDialog.Content = psExplanation
-		  select case piIcon
-		  case MsgBoxIcon.Note
+		  Select Case piIcon
+		  Case MsgBoxIcon.Note
 		    oTaskDialog.MainIcon = TaskDialogIcon.TD_INFORMATION_ICON
-		  case MsgBoxIcon.Caution
+		  Case MsgBoxIcon.Caution
 		    oTaskDialog.MainIcon = TaskDialogIcon.TD_WARNING_ICON
-		  case MsgBoxIcon.Stop
+		  Case MsgBoxIcon.Stop
 		    oTaskDialog.MainIcon = TaskDialogIcon.TD_ERROR_ICON
-		  case MsgBoxIcon.Question
+		  Case MsgBoxIcon.Question
 		    oTaskDialog.MainIcon = TaskDialogIcon.Question
-		  else
+		  Else
 		    oTaskDialog.MainIcon = TaskDialogIcon.None
-		  end select
+		  End Select
 		  
 		  oTaskDialog.ShowInWindow = poShowWithinWindow
 		  Var oButtons() As RSTaskDialogIndirectButton
 		  Var oButton As RSTaskDialogIndirectButton
-		  if (psDefaultAction <> "") then
+		  If (psDefaultAction <> "") Then
 		    oButton = New RSTaskDialogIndirectButton
 		    oButton.Caption = TaskDialog_BtnCaption(psDefaultAction, sAltChars)
 		    oButton.ID = TaskDialogButtonID.IDYES
-		    oButton.Default = true
+		    oButton.Default = True
 		    oButtons.Add(oButton)
-		  end if
-		  if (psSecondAction <> "") then
+		  End If
+		  If (psSecondAction <> "") Then
 		    oButton = New RSTaskDialogIndirectButton
 		    oButton.Caption = TaskDialog_BtnCaption(psSecondAction, sAltChars)
 		    oButton.ID = TaskDialogButtonID.IDNO
-		    oButton.Default = false
+		    oButton.Default = False
 		    oButtons.Add(oButton)
-		  end if
-		  if pbCancel then
+		  End If
+		  If pbCancel Then
 		    oTaskDialog.CommonButtonFlags = TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
-		  else
+		  Else
 		    oTaskDialog.CommonButtonFlags = TaskDialogCommonButtonFlags.None
-		  end if
+		  End If
 		  oTaskDialog.Buttons = oButtons
 		  oTaskDialog.Flags = TaskDialogFlags.TDF_USE_COMMAND_LINKS
 		  Var retButton, retRButton As TaskDialogButtonID
 		  Var bFlagChecked As Boolean
 		  oTaskDialog.ShowModalWithin(retButton, retRButton, bFlagChecked)
 		  
-		  select case retButton
-		  case TaskDialogButtonID.IDYES
-		    if bAlternated then return 2
-		    return 1
-		  case TaskDialogButtonID.IDNO
-		    return 2
-		  else
-		    return 0
-		  end select
+		  Select Case retButton
+		  Case TaskDialogButtonID.IDYES
+		    If bAlternated Then Return 2
+		    Return 1
+		  Case TaskDialogButtonID.IDNO
+		    Return 2
+		  Else
+		    Return 0
+		  End Select
 		  
 		End Function
 	#tag EndMethod

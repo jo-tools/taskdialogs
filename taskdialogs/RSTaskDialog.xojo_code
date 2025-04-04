@@ -3,93 +3,93 @@ Protected Class RSTaskDialog
 	#tag CompatibilityFlags = TargetHasGUI
 	#tag Method, Flags = &h0
 		Sub Constructor()
-		  #if TargetWindows then
+		  #If TargetWindows Then
 		    ebTD_Available = System.IsFunctionAvailable("TaskDialog", "ComCtl32")
-		  #endif
+		  #EndIf
 		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Function Get_CommonButtonFlags_Set(piIconSet As Integer) As Integer
-		  select case piIconSet
+		  Select Case piIconSet
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_YesNo
-		    return CType(TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON, Integer) or CType(TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON, Integer)
+		  Case constTaskDialog_CommonButtonFlag_Set_YesNo
+		    Return CType(TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON, Integer) Or CType(TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON, Integer)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_YesNoCancel
-		    return CType(TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON, Integer) or CType(TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON, Integer) or CType(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON, Integer)
+		  Case constTaskDialog_CommonButtonFlag_Set_YesNoCancel
+		    Return CType(TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON, Integer) Or CType(TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON, Integer) Or CType(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON, Integer)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_RetryCancel_Warning
-		    return CType(TaskDialogCommonButtonFlags.TDCBF_RETRY_BUTTON, Integer) or CType(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON, Integer)
+		  Case constTaskDialog_CommonButtonFlag_Set_RetryCancel_Warning
+		    Return CType(TaskDialogCommonButtonFlags.TDCBF_RETRY_BUTTON, Integer) Or CType(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON, Integer)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsInfo, constTaskDialog_CommonButtonFlag_Set_OKCancel_IsError, constTaskDialog_CommonButtonFlag_Set_OKCancel_IsQuestion, constTaskDialog_CommonButtonFlag_Set_OKCancel_IsWarning
-		    return CType(TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON, Integer) or CType(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON, Integer)
+		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsInfo, constTaskDialog_CommonButtonFlag_Set_OKCancel_IsError, constTaskDialog_CommonButtonFlag_Set_OKCancel_IsQuestion, constTaskDialog_CommonButtonFlag_Set_OKCancel_IsWarning
+		    Return CType(TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON, Integer) Or CType(TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON, Integer)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OK_IsInfo, constTaskDialog_CommonButtonFlag_Set_OK_IsError, constTaskDialog_CommonButtonFlag_Set_OK_IsWarning
-		    return CType(TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON, Integer)
+		  Case constTaskDialog_CommonButtonFlag_Set_OK_IsInfo, constTaskDialog_CommonButtonFlag_Set_OK_IsError, constTaskDialog_CommonButtonFlag_Set_OK_IsWarning
+		    Return CType(TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON, Integer)
 		    
-		  else
-		    return CType(TaskDialogCommonButtonFlags.None, Integer)
-		  end select
+		  Else
+		    Return CType(TaskDialogCommonButtonFlags.None, Integer)
+		  End Select
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Function Get_Icon_Set(piIconSet As Integer) As TaskDialogIcon
-		  select case piIconSet
+		  Select Case piIconSet
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_YesNo
-		    return TaskDialogIcon.Question
+		  Case constTaskDialog_CommonButtonFlag_Set_YesNo
+		    Return TaskDialogIcon.Question
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_YesNoCancel
-		    return TaskDialogIcon.Question
+		  Case constTaskDialog_CommonButtonFlag_Set_YesNoCancel
+		    Return TaskDialogIcon.Question
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_RetryCancel_Warning
-		    return TaskDialogIcon.TD_WARNING_ICON
+		  Case constTaskDialog_CommonButtonFlag_Set_RetryCancel_Warning
+		    Return TaskDialogIcon.TD_WARNING_ICON
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsInfo
-		    return TaskDialogIcon.TD_INFORMATION_ICON
+		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsInfo
+		    Return TaskDialogIcon.TD_INFORMATION_ICON
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsError
-		    return TaskDialogIcon.TD_ERROR_ICON
+		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsError
+		    Return TaskDialogIcon.TD_ERROR_ICON
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsQuestion
-		    return TaskDialogIcon.TD_INFORMATION_ICON
+		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsQuestion
+		    Return TaskDialogIcon.TD_INFORMATION_ICON
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsWarning
-		    return TaskDialogIcon.TD_WARNING_ICON
+		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsWarning
+		    Return TaskDialogIcon.TD_WARNING_ICON
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OK_IsInfo
-		    return TaskDialogIcon.TD_INFORMATION_ICON
+		  Case constTaskDialog_CommonButtonFlag_Set_OK_IsInfo
+		    Return TaskDialogIcon.TD_INFORMATION_ICON
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OK_IsError
-		    return TaskDialogIcon.TD_ERROR_ICON
+		  Case constTaskDialog_CommonButtonFlag_Set_OK_IsError
+		    Return TaskDialogIcon.TD_ERROR_ICON
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OK_IsWarning
-		    return TaskDialogIcon.TD_WARNING_ICON
+		  Case constTaskDialog_CommonButtonFlag_Set_OK_IsWarning
+		    Return TaskDialogIcon.TD_WARNING_ICON
 		    
-		  else
-		    return TaskDialogIcon.None
-		  end select
+		  Else
+		    Return TaskDialogIcon.None
+		  End Select
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Function IsAvailable() As Boolean
-		  return ebTD_Available
+		  Return ebTD_Available
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Function Show() As TaskDialogCommonButtonFlags
-		  if ebTD_Available then
+		  If ebTD_Available Then
 		    'Show TaskDialog
-		    return me.Show_TaskDialog()
-		  else
+		    Return Me.Show_TaskDialog()
+		  Else
 		    'Show MsgBox
-		    return me.Show_MsgBox()
-		  end if
+		    Return Me.Show_MsgBox()
+		  End If
 		  
 		End Function
 	#tag EndMethod
@@ -100,88 +100,88 @@ Protected Class RSTaskDialog
 		  Var iMsgBoxButtons As Integer
 		  Var iMsgBoxIcon As Integer
 		  
-		  select case Buttons_Icon_Set
-		  case constTaskDialog_CommonButtonFlag_Set_YesNo
+		  Select Case Buttons_Icon_Set
+		  Case constTaskDialog_CommonButtonFlag_Set_YesNo
 		    iMsgBoxButtons = Integer(MsgBoxButtons.YesNo)
 		    iMsgBoxIcon = Integer(MsgBoxIcon.Question)
-		    iMsgBoxResult = me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_YesNoCancel
+		  Case constTaskDialog_CommonButtonFlag_Set_YesNoCancel
 		    iMsgBoxButtons = Integer(MsgBoxButtons.YesNoCancel)
 		    iMsgBoxIcon = Integer(MsgBoxIcon.Question)
-		    iMsgBoxResult = me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_RetryCancel_Warning
+		  Case constTaskDialog_CommonButtonFlag_Set_RetryCancel_Warning
 		    iMsgBoxButtons = Integer(MsgBoxButtons.RetryCancel)
 		    iMsgBoxIcon = Integer(MsgBoxIcon.Caution)
-		    iMsgBoxResult = me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsInfo
+		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsInfo
 		    iMsgBoxButtons = Integer(MsgBoxButtons.OKCancel)
 		    iMsgBoxIcon = Integer(MsgBoxIcon.Note)
-		    iMsgBoxResult = me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsQuestion
+		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsQuestion
 		    iMsgBoxButtons = Integer(MsgBoxButtons.OKCancel)
 		    iMsgBoxIcon = Integer(MsgBoxIcon.Question)
-		    iMsgBoxResult = me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsWarning
+		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsWarning
 		    iMsgBoxButtons = Integer(MsgBoxButtons.OKCancel)
 		    iMsgBoxIcon = Integer(MsgBoxIcon.Caution)
-		    iMsgBoxResult = me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsError
+		  Case constTaskDialog_CommonButtonFlag_Set_OKCancel_IsError
 		    iMsgBoxButtons = Integer(MsgBoxButtons.OKCancel)
 		    iMsgBoxIcon = Integer(MsgBoxIcon.Stop)
-		    iMsgBoxResult = me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OK_IsInfo
+		  Case constTaskDialog_CommonButtonFlag_Set_OK_IsInfo
 		    iMsgBoxButtons = Integer(MsgBoxButtons.OK)
 		    iMsgBoxIcon = Integer(MsgBoxIcon.Note)
-		    iMsgBoxResult = me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OK_IsError
+		  Case constTaskDialog_CommonButtonFlag_Set_OK_IsError
 		    iMsgBoxButtons = Integer(MsgBoxButtons.OK)
 		    iMsgBoxIcon = Integer(MsgBoxIcon.Stop)
-		    iMsgBoxResult = me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
 		    
-		  case constTaskDialog_CommonButtonFlag_Set_OK_IsWarning
+		  Case constTaskDialog_CommonButtonFlag_Set_OK_IsWarning
 		    iMsgBoxButtons = Integer(MsgBoxButtons.OK)
 		    iMsgBoxIcon = Integer(MsgBoxIcon.Caution)
-		    iMsgBoxResult = me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
+		    iMsgBoxResult = Me.Show_MsgBox_Standard(iMsgBoxButtons, iMsgBoxIcon)
 		    
-		  else
+		  Else
 		    'error
-		  end select
+		  End Select
 		  
-		  select case MsgBoxResult(iMsgBoxResult)
-		  case MsgBoxResult.Abort
-		    return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
-		  case MsgBoxResult.Cancel
-		    return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
-		  case MsgBoxResult.Ignore
-		    return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
-		  case MsgBoxResult.No
-		    return TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON
-		  case MsgBoxResult.OK
-		    return TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
-		  case MsgBoxResult.Retry
-		    return TaskDialogCommonButtonFlags.TDCBF_RETRY_BUTTON
-		  case MsgBoxResult.Yes
-		    return TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
-		  else
-		    return TaskDialogCommonButtonFlags.Error
-		  end select
+		  Select Case MsgBoxResult(iMsgBoxResult)
+		  Case MsgBoxResult.Abort
+		    Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
+		  Case MsgBoxResult.Cancel
+		    Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
+		  Case MsgBoxResult.Ignore
+		    Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
+		  Case MsgBoxResult.No
+		    Return TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON
+		  Case MsgBoxResult.OK
+		    Return TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
+		  Case MsgBoxResult.Retry
+		    Return TaskDialogCommonButtonFlags.TDCBF_RETRY_BUTTON
+		  Case MsgBoxResult.Yes
+		    Return TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
+		  Else
+		    Return TaskDialogCommonButtonFlags.Error
+		  End Select
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
 		Private Function Show_MsgBox_Standard(piMsgBoxButtons As Integer, piMsgBoxIcon As Integer) As Integer
 		  Var sMsgBoxText As String
-		  if (Content = "") then
+		  If (Content = "") Then
 		    sMsgBoxText = MainInstruction.Trim
-		  else
+		  Else
 		    sMsgBoxText = MainInstruction.ReplaceLineEndings(" ").Trim + EndOfLine + EndOfLine + Content.ReplaceLineEndings(" ").Trim
 		  End If
 		  
@@ -191,55 +191,55 @@ Protected Class RSTaskDialog
 
 	#tag Method, Flags = &h21
 		Private Function Show_TaskDialog() As TaskDialogCommonButtonFlags
-		  #if TargetWindows then
+		  #If TargetWindows Then
 		    // https://docs.microsoft.com/en-us/windows/win32/api/commctrl/nf-commctrl-taskdialog
 		    
 		    Soft Declare Function TaskDialog Lib "ComCtl32" ( parent As Ptr, hInstance As Integer, title As WString, mainInstruction As WString, content As WString, buttons As Integer, icon As TaskDialogIcon, ByRef retButton As TaskDialogButtonID ) As Integer
 		    
-		    if not System.IsFunctionAvailable("TaskDialog", "ComCtl32") then return TaskDialogCommonButtonFlags.Error
+		    If Not System.IsFunctionAvailable("TaskDialog", "ComCtl32") Then Return TaskDialogCommonButtonFlags.Error
 		    
 		    Var iRet As TaskDialogButtonID
 		    Var ptrHandle As Ptr
 		    If (ShowInWindow <> Nil) Then ptrHandle = ShowInWindow.Handle
 		    
 		    Var iCommonButtonFlags As Integer
-		    if (CommonButtonFlags = CType(TaskDialogCommonButtonFlags.None, Integer)) then
-		      iCommonButtonFlags = me.Get_CommonButtonFlags_Set(Buttons_Icon_Set)
-		    else
+		    If (CommonButtonFlags = CType(TaskDialogCommonButtonFlags.None, Integer)) Then
+		      iCommonButtonFlags = Me.Get_CommonButtonFlags_Set(Buttons_Icon_Set)
+		    Else
 		      iCommonButtonFlags = CType(CommonButtonFlags, Integer)
-		    end if
+		    End If
 		    
 		    Var iIcon As TaskDialogIcon
-		    if (Icon = TaskDialogIcon.None) then
-		      iIcon = me.Get_Icon_Set(Buttons_Icon_Set)
-		    else
+		    If (Icon = TaskDialogIcon.None) Then
+		      iIcon = Me.Get_Icon_Set(Buttons_Icon_Set)
+		    Else
 		      iIcon = Icon
-		    end if
+		    End If
 		    
-		    if (iIcon = TaskDialogIcon.Question) then iIcon = TaskDialogIcon.TD_INFORMATION_ICON
+		    If (iIcon = TaskDialogIcon.Question) Then iIcon = TaskDialogIcon.TD_INFORMATION_ICON
 		    
 		    If (TaskDialog(ptrHandle, 0, WindowTitle.ReplaceLineEndings(" ").Trim, MainInstruction.ReplaceLineEndings(" ").Trim, Content.Trim, iCommonButtonFlags, iIcon, iRet) <> 0) Then Return TaskDialogCommonButtonFlags.Error
 		    
-		    select case iRet
-		    case TaskDialogButtonID.IDOK
-		      return TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
-		    case TaskDialogButtonID.IDCANCEL
-		      return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
-		    case TaskDialogButtonID.IDRETRY
-		      return TaskDialogCommonButtonFlags.TDCBF_RETRY_BUTTON
-		    case TaskDialogButtonID.IDYES
-		      return TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
-		    case TaskDialogButtonID.IDNO
-		      return TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON
-		    case TaskDialogButtonID.IDCLOSE
-		      return TaskDialogCommonButtonFlags.TDCBF_CLOSE_BUTTON
-		    else
-		      return TaskDialogCommonButtonFlags.Error
-		    end select
+		    Select Case iRet
+		    Case TaskDialogButtonID.IDOK
+		      Return TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
+		    Case TaskDialogButtonID.IDCANCEL
+		      Return TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
+		    Case TaskDialogButtonID.IDRETRY
+		      Return TaskDialogCommonButtonFlags.TDCBF_RETRY_BUTTON
+		    Case TaskDialogButtonID.IDYES
+		      Return TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
+		    Case TaskDialogButtonID.IDNO
+		      Return TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON
+		    Case TaskDialogButtonID.IDCLOSE
+		      Return TaskDialogCommonButtonFlags.TDCBF_CLOSE_BUTTON
+		    Else
+		      Return TaskDialogCommonButtonFlags.Error
+		    End Select
 		    
-		  #endif
+		  #EndIf
 		  
-		  return TaskDialogCommonButtonFlags.Error
+		  Return TaskDialogCommonButtonFlags.Error
 		  
 		End Function
 	#tag EndMethod
