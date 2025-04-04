@@ -17,7 +17,7 @@ Module modTaskDialog
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function ShowAsTaskDialog_ModalWithin(Extends oMessageDialog As MessageDialog, Parent As Window) As MessageDialogButton
+		Function ShowAsTaskDialog_ModalWithin(Extends oMessageDialog As MessageDialog, Parent As DesktopWindow) As MessageDialogButton
 		  '-----------------------------------------------------------------------------------------------------------
 		  'This Example shows how to use the RSTaskDialogIndirect as a substitution for MessageDialog
 		  '
@@ -34,7 +34,7 @@ Module modTaskDialog
 		  if (not dlgTaskDialogIndirect.IsAvailable) then
 		    'don't let RSTaskDialogIndirect create another MessageDialog, as we already have one
 		    if (Parent <> nil) and Parent.Visible then
-		      return oMessageDialog.ShowModalWithin(Parent)
+		      return oMessageDialog.ShowModal(Parent)
 		    else
 		      return oMessageDialog.ShowModal()
 		    end if
@@ -163,7 +163,7 @@ Module modTaskDialog
 
 	#tag Structure, Name = TaskDialogConfig, Flags = &h0, Attributes = \"StructureAlignment \x3D 4"
 		cbSize As UInt32
-		  hwndParent As Integer
+		  hwndParent As Ptr
 		  hInstance As Integer
 		  dwFlags As Int32
 		  dwCommonButtons As TaskDialogCommonButtonFlags
@@ -292,6 +292,7 @@ Module modTaskDialog
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -299,18 +300,23 @@ Module modTaskDialog
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -318,6 +324,7 @@ Module modTaskDialog
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Module

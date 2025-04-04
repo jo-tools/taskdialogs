@@ -1,7 +1,7 @@
 #tag Module
 Module modMsgBoxes
 	#tag Method, Flags = &h0
-		Function MsgBox_OKCancel_Error(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As Window = nil) As Boolean
+		Function MsgBox_OKCancel_Error(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
 		  Dim oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
@@ -20,7 +20,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function MsgBox_OKCancel_Info(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As Window = nil) As Boolean
+		Function MsgBox_OKCancel_Info(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
 		  Dim oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
@@ -39,7 +39,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function MsgBox_OKCancel_Question(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As Window = nil) As Boolean
+		Function MsgBox_OKCancel_Question(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
 		  Dim oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
@@ -58,7 +58,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function MsgBox_OKCancel_Warning(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As Window = nil) As Boolean
+		Function MsgBox_OKCancel_Warning(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
 		  Dim oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
@@ -77,7 +77,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub MsgBox_OK_Error(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As Window = nil)
+		Sub MsgBox_OK_Error(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil)
 		  Dim oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
@@ -91,7 +91,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub MsgBox_OK_Info(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As Window = nil)
+		Sub MsgBox_OK_Info(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil)
 		  Dim oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
@@ -105,7 +105,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub MsgBox_OK_Warning(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As Window = nil)
+		Sub MsgBox_OK_Warning(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil)
 		  Dim oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
@@ -119,7 +119,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function MsgBox_RetryCancel_Warning(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As Window = nil) As Boolean
+		Function MsgBox_RetryCancel_Warning(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
 		  Dim oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
@@ -138,7 +138,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function MsgBox_YesNo(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As Window = nil) As Boolean
+		Function MsgBox_YesNo(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
 		  Dim oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
@@ -157,7 +157,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function MsgBox_YesNoCancel(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As Window = nil) As Integer
+		Function MsgBox_YesNoCancel(psTitle As String, psText As String, psExplanation As String, poShowWithinWindow As DesktopWindow = nil) As Integer
 		  Dim oTaskDialog As New RSTaskDialog
 		  oTaskDialog.WindowTitle = psTitle
 		  oTaskDialog.MainInstruction = psText
@@ -204,7 +204,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function TaskDialog_OneOption(psTitle As String, piIcon As MsgBoxIcon, psText As String, psExplanation As String, psAction As String, poShowWithinWindow As Window = nil) As Boolean
+		Function TaskDialog_OneOption(psTitle As String, piIcon As MsgBoxIcon, psText As String, psExplanation As String, psAction As String, poShowWithinWindow As DesktopWindow = nil) As Boolean
 		  '============================================================
 		  '
 		  ' Dialog mit 1 Optionen und Abbrechen
@@ -229,7 +229,7 @@ Module modMsgBoxes
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function TaskDialog_TwoOptions(psTitle As String, piIcon As MsgBoxIcon, psText As String, psExplanation As String, psDefaultAction As String, psSecondAction As String, pbCancel As Boolean, poShowWithinWindow As Window = nil) As Integer
+		Function TaskDialog_TwoOptions(psTitle As String, piIcon As MsgBoxIcon, psText As String, psExplanation As String, psDefaultAction As String, psSecondAction As String, pbCancel As Boolean, poShowWithinWindow As DesktopWindow = nil) As Integer
 		  '============================================================
 		  '
 		  ' Dialog mit 2 Optionen, mit/ohne Abbrechen
@@ -358,6 +358,7 @@ Module modMsgBoxes
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -365,18 +366,23 @@ Module modMsgBoxes
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -384,6 +390,7 @@ Module modMsgBoxes
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Module

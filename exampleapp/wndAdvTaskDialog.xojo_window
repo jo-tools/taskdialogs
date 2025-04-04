@@ -1,36 +1,32 @@
-#tag Window
-Begin Window wndAdvTaskDialog
-   BackColor       =   &cFFFFFF00
+#tag DesktopWindow
+Begin DesktopWindow wndAdvTaskDialog
    Backdrop        =   0
-   CloseButton     =   True
-   Compatibility   =   ""
+   BackgroundColor =   &cFFFFFF00
    Composite       =   False
-   Frame           =   0
+   DefaultLocation =   4
    FullScreen      =   False
-   FullScreenButton=   False
-   HasBackColor    =   False
+   HasBackgroundColor=   False
+   HasCloseButton  =   True
+   HasFullScreenButton=   False
+   HasMaximizeButton=   False
+   HasMinimizeButton=   False
    Height          =   295
    ImplicitInstance=   True
-   LiveResize      =   True
    MacProcID       =   0
-   MaxHeight       =   32000
-   MaximizeButton  =   False
-   MaxWidth        =   32000
+   MaximumHeight   =   32000
+   MaximumWidth    =   32000
    MenuBar         =   0
    MenuBarVisible  =   True
-   MinHeight       =   295
-   MinimizeButton  =   False
-   MinWidth        =   670
-   Placement       =   0
+   MinimumHeight   =   295
+   MinimumWidth    =   670
    Resizeable      =   False
    Title           =   "Task Dialog (Advanced)"
+   Type            =   0
    Visible         =   True
    Width           =   670
-   Begin Label labTaskDialogTitle
+   Begin DesktopLabel labTaskDialogTitle
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -61,7 +57,7 @@ Begin Window wndAdvTaskDialog
       Visible         =   True
       Width           =   120
    End
-   Begin TextField edtTaskDialogTitle
+   Begin DesktopTextField edtTaskDialogTitle
       AcceptTabs      =   False
       Alignment       =   0
       AutoDeactivate  =   True
@@ -70,8 +66,6 @@ Begin Window wndAdvTaskDialog
       Bold            =   False
       Border          =   True
       CueText         =   ""
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Format          =   ""
       Height          =   22
@@ -104,11 +98,9 @@ Begin Window wndAdvTaskDialog
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogText
+   Begin DesktopLabel labTaskDialogText
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -139,7 +131,7 @@ Begin Window wndAdvTaskDialog
       Visible         =   True
       Width           =   120
    End
-   Begin TextField edtTaskDialogText
+   Begin DesktopTextField edtTaskDialogText
       AcceptTabs      =   False
       Alignment       =   0
       AutoDeactivate  =   True
@@ -148,8 +140,6 @@ Begin Window wndAdvTaskDialog
       Bold            =   False
       Border          =   True
       CueText         =   ""
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Format          =   ""
       Height          =   22
@@ -182,11 +172,9 @@ Begin Window wndAdvTaskDialog
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogExplanation
+   Begin DesktopLabel labTaskDialogExplanation
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -217,7 +205,7 @@ Begin Window wndAdvTaskDialog
       Visible         =   True
       Width           =   120
    End
-   Begin TextArea edtTaskDialogExplanation
+   Begin DesktopTextArea edtTaskDialogExplanation
       AcceptTabs      =   False
       Alignment       =   0
       AutoDeactivate  =   True
@@ -225,8 +213,6 @@ Begin Window wndAdvTaskDialog
       BackColor       =   &cFFFFFF00
       Bold            =   False
       Border          =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Format          =   ""
       Height          =   60
@@ -261,15 +247,14 @@ Begin Window wndAdvTaskDialog
       Top             =   70
       Transparent     =   True
       Underline       =   False
+      UnicodeMode     =   0
       UseFocusRing    =   True
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogType
+   Begin DesktopLabel labTaskDialogType
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -300,11 +285,9 @@ Begin Window wndAdvTaskDialog
       Visible         =   True
       Width           =   120
    End
-   Begin PopupMenu lstTaskDialogType
+   Begin DesktopPopupMenu lstTaskDialogType
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -332,11 +315,9 @@ Begin Window wndAdvTaskDialog
       Visible         =   True
       Width           =   150
    End
-   Begin Label labTaskDialogIndirectHints11
+   Begin DesktopLabel labTaskDialogIndirectHints11
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   80
       HelpTag         =   ""
@@ -367,11 +348,9 @@ Begin Window wndAdvTaskDialog
       Visible         =   True
       Width           =   338
    End
-   Begin Label labTaskDialogIcon
+   Begin DesktopLabel labTaskDialogIcon
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -402,11 +381,9 @@ Begin Window wndAdvTaskDialog
       Visible         =   True
       Width           =   118
    End
-   Begin PopupMenu lstTaskDialogIcon
+   Begin DesktopPopupMenu lstTaskDialogIcon
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -434,10 +411,10 @@ Begin Window wndAdvTaskDialog
       Visible         =   True
       Width           =   150
    End
-   Begin PushButton btnTaskDialog
+   Begin DesktopButton btnTaskDialog
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "TaskDialog"
       Default         =   False
@@ -466,11 +443,9 @@ Begin Window wndAdvTaskDialog
       Visible         =   True
       Width           =   120
    End
-   Begin Label labTaskDialogResult
+   Begin DesktopLabel labTaskDialogResult
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -501,11 +476,9 @@ Begin Window wndAdvTaskDialog
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogIndirectHints1
+   Begin DesktopLabel labTaskDialogIndirectHints1
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   30
       HelpTag         =   ""
@@ -537,12 +510,12 @@ Begin Window wndAdvTaskDialog
       Width           =   500
    End
 End
-#tag EndWindow
+#tag EndDesktopWindow
 
 #tag WindowCode
 	#tag Event
-		Sub Open()
-		  self.Title = self.Title + " v" + Str(App.MajorVersion) + "." + Str(App.MinorVersion) + "." + Str(App.BugVersion)
+		Sub Opening()
+		  Self.Title = Self.Title + " v" + App.MajorVersion.ToString + "." + App.MinorVersion.ToString + "." + App.BugVersion.ToString
 		End Sub
 	#tag EndEvent
 
@@ -568,14 +541,14 @@ End
 		  'Buttons and Icon: get a predefindes set
 		  '                  if this is set to a RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_ - constant, it will use this ones
 		  'Warning: The Fallback to MsgBox is NOT supported if you don't assign a constant such as: RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_YesNo
-		  oTaskDialog.Buttons_Icon_Set = lstTaskDialogType.RowTag(lstTaskDialogType.ListIndex)
+		  oTaskDialog.Buttons_Icon_Set = lstTaskDialogType.RowTagAt(lstTaskDialogType.SelectedRowIndex)
 		  
 		  'Note: you could also set explicitly what you'd like (overriding the Set above)
 		  
 		  'oTaskDialog.CommonButtonFlags = (TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON or TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON)
 		  'oTaskDialog.Icon = TaskDialogIcon.TD_SHIELD_ICON
 		  
-		  oTaskDialog.Icon = lstTaskDialogIcon.RowTag(lstTaskDialogIcon.ListIndex)  'in the demo, we allow to override the icon
+		  oTaskDialog.Icon = lstTaskDialogIcon.RowTagAt(lstTaskDialogIcon.SelectedRowIndex)  'in the demo, we allow to override the icon
 		  
 		  '---------------------------------------------------
 		  'show dialog
@@ -584,29 +557,29 @@ End
 		  ret = oTaskDialog.Show()
 		  
 		  'display the result
-		  labTaskDialogResult.Text = "Result: " + me.TaskDialogCommonButtonFlag_Caption(ret)
+		  labTaskDialogResult.Text = "Result: " + Me.TaskDialogCommonButtonFlag_Caption(ret)
 		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
 		Private Function TaskDialogCommonButtonFlag_Caption(piTDCommonButtonFlag As TaskDialogCommonButtonFlags) As String
-		  select case piTDCommonButtonFlag
-		  case TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
-		    return "Cancel"
-		  case TaskDialogCommonButtonFlags.TDCBF_CLOSE_BUTTON
-		    return "Close"
-		  case TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON
-		    return "No"
-		  case TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
-		    return "Ok"
-		  case TaskDialogCommonButtonFlags.TDCBF_RETRY_BUTTON
-		    return "Retry"
-		  case TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
-		    return "Yes"
-		  else 'e.g. TaskDialogCommonButtonFlags.Error
-		    return "(Error)"
-		  end select
+		  Select Case piTDCommonButtonFlag
+		  Case TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
+		    Return "Cancel"
+		  Case TaskDialogCommonButtonFlags.TDCBF_CLOSE_BUTTON
+		    Return "Close"
+		  Case TaskDialogCommonButtonFlags.TDCBF_NO_BUTTON
+		    Return "No"
+		  Case TaskDialogCommonButtonFlags.TDCBF_OK_BUTTON
+		    Return "Ok"
+		  Case TaskDialogCommonButtonFlags.TDCBF_RETRY_BUTTON
+		    Return "Retry"
+		  Case TaskDialogCommonButtonFlags.TDCBF_YES_BUTTON
+		    Return "Yes"
+		  Else 'e.g. TaskDialogCommonButtonFlags.Error
+		    Return "(Error)"
+		  End Select
 		End Function
 	#tag EndMethod
 
@@ -615,131 +588,100 @@ End
 
 #tag Events lstTaskDialogType
 	#tag Event
-		Sub Open()
-		  me.DeleteAllRows
-		  me.AddRow("Yes - No")
-		  me.AddRow("Yes - No - Cancel")
-		  me.AddRow("Retry - Cancel (Warning)")
-		  me.AddRow("OK - Cancel (Info)")
-		  me.AddRow("OK - Cancel (Question)")
-		  me.AddRow("OK - Cancel (Warning)")
-		  me.AddRow("OK - Cancel (Error)")
-		  me.AddRow("OK (Info)")
-		  me.AddRow("OK (Error)")
-		  me.AddRow("OK (Warning)")
-		  me.ListIndex = 0
+		Sub Opening()
+		  Me.RemoveAllRows
+		  Me.AddRow("Yes - No")
+		  Me.AddRow("Yes - No - Cancel")
+		  Me.AddRow("Retry - Cancel (Warning)")
+		  Me.AddRow("OK - Cancel (Info)")
+		  Me.AddRow("OK - Cancel (Question)")
+		  Me.AddRow("OK - Cancel (Warning)")
+		  Me.AddRow("OK - Cancel (Error)")
+		  Me.AddRow("OK (Info)")
+		  Me.AddRow("OK (Error)")
+		  Me.AddRow("OK (Warning)")
+		  Me.SelectedRowIndex = 0
 		  
-		  me.RowTag(0) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_YesNo
-		  me.RowTag(1) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_YesNoCancel
-		  me.RowTag(2) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_RetryCancel_Warning
-		  me.RowTag(3) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OKCancel_IsInfo
-		  me.RowTag(4) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OKCancel_IsQuestion
-		  me.RowTag(5) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OKCancel_IsWarning
-		  me.RowTag(6) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OKCancel_IsError
-		  me.RowTag(7) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OK_IsInfo
-		  me.RowTag(8) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OK_IsError
-		  me.RowTag(9) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OK_IsWarning
+		  Me.RowTagAt(0) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_YesNo
+		  Me.RowTagAt(1) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_YesNoCancel
+		  Me.RowTagAt(2) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_RetryCancel_Warning
+		  Me.RowTagAt(3) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OKCancel_IsInfo
+		  Me.RowTagAt(4) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OKCancel_IsQuestion
+		  Me.RowTagAt(5) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OKCancel_IsWarning
+		  Me.RowTagAt(6) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OKCancel_IsError
+		  Me.RowTagAt(7) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OK_IsInfo
+		  Me.RowTagAt(8) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OK_IsError
+		  Me.RowTagAt(9) = RSTaskDialog.constTaskDialog_CommonButtonFlag_Set_OK_IsWarning
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events lstTaskDialogIcon
 	#tag Event
-		Sub Open()
-		  me.DeleteAllRows
-		  me.AddRow("(MsgBox Type)")
-		  me.AddRow("Error")
-		  me.AddRow("Information")
-		  me.AddRow("Shield")
-		  me.AddRow("Warning")
-		  me.ListIndex = 0
+		Sub Opening()
+		  Me.RemoveAllRows
+		  Me.AddRow("(MsgBox Type)")
+		  Me.AddRow("Error")
+		  Me.AddRow("Information")
+		  Me.AddRow("Shield")
+		  Me.AddRow("Warning")
+		  Me.SelectedRowIndex = 0
 		  
-		  me.RowTag(0) = TaskDialogIcon.None
-		  me.RowTag(1) = TaskDialogIcon.TD_ERROR_ICON
-		  me.RowTag(2) = TaskDialogIcon.TD_INFORMATION_ICON
-		  me.RowTag(3) = TaskDialogIcon.TD_SHIELD_ICON
-		  me.RowTag(4) = TaskDialogIcon.TD_WARNING_ICON
+		  Me.RowTagAt(0) = TaskDialogIcon.None
+		  Me.RowTagAt(1) = TaskDialogIcon.TD_ERROR_ICON
+		  Me.RowTagAt(2) = TaskDialogIcon.TD_INFORMATION_ICON
+		  Me.RowTagAt(3) = TaskDialogIcon.TD_SHIELD_ICON
+		  Me.RowTagAt(4) = TaskDialogIcon.TD_WARNING_ICON
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events btnTaskDialog
 	#tag Event
-		Sub Action()
-		  self.Show_TaskDialog()
+		Sub Pressed()
+		  Self.Show_TaskDialog()
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty
-		Name="Name"
-		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Interfaces"
-		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Super"
-		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Width"
-		Visible=true
-		Group="Size"
-		InitialValue="600"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Height"
-		Visible=true
-		Group="Size"
-		InitialValue="400"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MinWidth"
+		Name="MinimumWidth"
 		Visible=true
 		Group="Size"
 		InitialValue="64"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MinHeight"
+		Name="MinimumHeight"
 		Visible=true
 		Group="Size"
 		InitialValue="64"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MaxWidth"
+		Name="MaximumWidth"
 		Visible=true
 		Group="Size"
 		InitialValue="32000"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MaxHeight"
+		Name="MaximumHeight"
 		Visible=true
 		Group="Size"
 		InitialValue="32000"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Frame"
+		Name="Type"
 		Visible=true
 		Group="Frame"
 		InitialValue="0"
-		Type="Integer"
+		Type="Types"
 		EditorType="Enum"
 		#tag EnumValues
 			"0 - Document"
@@ -756,78 +698,43 @@ End
 		#tag EndEnumValues
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Title"
-		Visible=true
-		Group="Frame"
-		InitialValue="Untitled"
-		Type="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="CloseButton"
+		Name="HasCloseButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Resizeable"
+		Name="HasMaximizeButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MaximizeButton"
+		Name="HasMinimizeButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MinimizeButton"
-		Visible=true
-		Group="Frame"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="FullScreenButton"
+		Name="HasFullScreenButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="False"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Composite"
-		Group="OS X (Carbon)"
-		InitialValue="False"
-		Type="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MacProcID"
-		Group="OS X (Carbon)"
-		InitialValue="0"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="ImplicitInstance"
-		Visible=true
-		Group="Behavior"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Placement"
+		Name="DefaultLocation"
 		Visible=true
 		Group="Behavior"
 		InitialValue="0"
-		Type="Integer"
+		Type="Locations"
 		EditorType="Enum"
 		#tag EnumValues
 			"0 - Default"
@@ -838,55 +745,132 @@ End
 		#tag EndEnumValues
 	#tag EndViewProperty
 	#tag ViewProperty
+		Name="HasBackgroundColor"
+		Visible=true
+		Group="Background"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="BackgroundColor"
+		Visible=true
+		Group="Background"
+		InitialValue="&hFFFFFF"
+		Type="Color"
+		EditorType="Color"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Name"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Interfaces"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Super"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Width"
+		Visible=true
+		Group="Size"
+		InitialValue="600"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Height"
+		Visible=true
+		Group="Size"
+		InitialValue="400"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Title"
+		Visible=true
+		Group="Frame"
+		InitialValue="Untitled"
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Resizeable"
+		Visible=true
+		Group="Frame"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Composite"
+		Visible=false
+		Group="OS X (Carbon)"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MacProcID"
+		Visible=false
+		Group="OS X (Carbon)"
+		InitialValue="0"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="ImplicitInstance"
+		Visible=true
+		Group="Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
 		Name="Visible"
 		Visible=true
 		Group="Behavior"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="LiveResize"
-		Visible=true
-		Group="Behavior"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="FullScreen"
+		Visible=false
 		Group="Behavior"
 		InitialValue="False"
 		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="HasBackColor"
-		Visible=true
-		Group="Background"
-		InitialValue="False"
-		Type="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="BackColor"
-		Visible=true
-		Group="Background"
-		InitialValue="&hFFFFFF"
-		Type="Color"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Backdrop"
 		Visible=true
 		Group="Background"
+		InitialValue=""
 		Type="Picture"
-		EditorType="Picture"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="MenuBar"
 		Visible=true
 		Group="Menus"
+		InitialValue=""
 		Type="MenuBar"
-		EditorType="MenuBar"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="MenuBarVisible"
@@ -894,6 +878,6 @@ End
 		Group="Deprecated"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 #tag EndViewBehavior

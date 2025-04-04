@@ -180,7 +180,7 @@ Protected Class RSTaskDialogIndirect
 		  'show
 		  Dim oReturnBtn As MessageDialogButton
 		  if pbShowModalWithin and (ShowInWindow <> nil) and ShowInWindow.Visible then
-		    oReturnBtn = oMsgDlg.ShowModalWithin(ShowInWindow)
+		    oReturnBtn = oMsgDlg.ShowModal(ShowInWindow)
 		  else
 		    oReturnBtn = oMsgDlg.ShowModal()
 		  end if
@@ -243,7 +243,7 @@ Protected Class RSTaskDialogIndirect
 		  if (ShowInWindow <> nil) then
 		    oTaskDialogConfig.hwndParent = ShowInWindow.Handle
 		  else
-		    oTaskDialogConfig.hwndParent = 0
+		    oTaskDialogConfig.hwndParent = Nil
 		  end if
 		  oTaskDialogConfig.dwFlags = CType(Bitwise.BitOr(UInt32(Flags), UInt32(TaskDialogFlags.TDF_POSITION_RELATIVE_TO_WINDOW)), Integer)
 		  oTaskDialogConfig.dwCommonButtons = CommonButtonFlags
@@ -372,7 +372,7 @@ Protected Class RSTaskDialogIndirect
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		ShowInWindow As Window
+		ShowInWindow As DesktopWindow
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
@@ -392,31 +392,41 @@ Protected Class RSTaskDialogIndirect
 	#tag ViewBehavior
 		#tag ViewProperty
 			Name="CollapsedControlText"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Content"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Expanded"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="ExpandedControlText"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Footer"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
@@ -426,6 +436,7 @@ Protected Class RSTaskDialogIndirect
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -433,10 +444,13 @@ Protected Class RSTaskDialogIndirect
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="MainInstruction"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
@@ -444,18 +458,25 @@ Protected Class RSTaskDialogIndirect
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="ShowInWindow"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Window"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -463,22 +484,29 @@ Protected Class RSTaskDialogIndirect
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Verify"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="WindowTitle"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="CommonButtonFlags"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="TaskDialogCommonButtonFlags"
 			EditorType="Enum"
 			#tag EnumValues
@@ -494,7 +522,9 @@ Protected Class RSTaskDialogIndirect
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Flags"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="TaskDialogFlags"
 			EditorType="Enum"
 			#tag EnumValues
@@ -518,7 +548,9 @@ Protected Class RSTaskDialogIndirect
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="FooterIcon"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="TaskDialogIcon"
 			EditorType="Enum"
 			#tag EnumValues
@@ -532,7 +564,9 @@ Protected Class RSTaskDialogIndirect
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="MainIcon"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="TaskDialogIcon"
 			EditorType="Enum"
 			#tag EnumValues

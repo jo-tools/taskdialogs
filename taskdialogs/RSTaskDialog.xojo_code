@@ -194,13 +194,13 @@ Protected Class RSTaskDialog
 		  #if TargetWindows then
 		    // https://docs.microsoft.com/en-us/windows/win32/api/commctrl/nf-commctrl-taskdialog
 		    
-		    Soft Declare Function TaskDialog Lib "ComCtl32" ( parent As Integer, hInstance As Integer, title As WString, mainInstruction As WString, content As WString, buttons As Integer, icon As TaskDialogIcon, ByRef retButton As TaskDialogButtonID ) As Integer
+		    Soft Declare Function TaskDialog Lib "ComCtl32" ( parent As Ptr, hInstance As Integer, title As WString, mainInstruction As WString, content As WString, buttons As Integer, icon As TaskDialogIcon, ByRef retButton As TaskDialogButtonID ) As Integer
 		    
 		    if not System.IsFunctionAvailable("TaskDialog", "ComCtl32") then return TaskDialogCommonButtonFlags.Error
 		    
 		    Dim iRet As TaskDialogButtonID
-		    Dim iHandle As Integer
-		    if (ShowInWindow <> nil) then iHandle = ShowInWindow.Handle
+		    Dim ptrHandle As Ptr
+		    If (ShowInWindow <> Nil) Then ptrHandle = ShowInWindow.Handle
 		    
 		    Dim iCommonButtonFlags As Integer
 		    if (CommonButtonFlags = CType(TaskDialogCommonButtonFlags.None, Integer)) then
@@ -218,7 +218,7 @@ Protected Class RSTaskDialog
 		    
 		    if (iIcon = TaskDialogIcon.Question) then iIcon = TaskDialogIcon.TD_INFORMATION_ICON
 		    
-		    if (TaskDialog(iHandle, 0, Trim(ReplaceLineEndings(WindowTitle, " ")), Trim(ReplaceLineEndings(MainInstruction, " ")), Trim(Content), iCommonButtonFlags, iIcon, iRet) <> 0) then return TaskDialogCommonButtonFlags.Error
+		    If (TaskDialog(ptrHandle, 0, Trim(ReplaceLineEndings(WindowTitle, " ")), Trim(ReplaceLineEndings(MainInstruction, " ")), Trim(Content), iCommonButtonFlags, iIcon, iRet) <> 0) Then Return TaskDialogCommonButtonFlags.Error
 		    
 		    select case iRet
 		    case TaskDialogButtonID.IDOK
@@ -282,7 +282,7 @@ Protected Class RSTaskDialog
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		ShowInWindow As Window
+		ShowInWindow As DesktopWindow
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
@@ -324,18 +324,25 @@ Protected Class RSTaskDialog
 	#tag ViewBehavior
 		#tag ViewProperty
 			Name="Buttons_Icon_Set"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="CommonButtonFlags"
+			Visible=false
 			Group="Behavior"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Content"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
@@ -345,6 +352,7 @@ Protected Class RSTaskDialog
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -352,10 +360,13 @@ Protected Class RSTaskDialog
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="MainInstruction"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
@@ -363,18 +374,25 @@ Protected Class RSTaskDialog
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="ShowInWindow"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="Window"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -382,15 +400,19 @@ Protected Class RSTaskDialog
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="WindowTitle"
+			Visible=false
 			Group="Behavior"
+			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Icon"
+			Visible=false
 			Group="Behavior"
 			InitialValue="TaskDialogIcon.None"
 			Type="TaskDialogIcon"
