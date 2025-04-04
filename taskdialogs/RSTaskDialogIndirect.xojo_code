@@ -463,14 +463,6 @@ Protected Class RSTaskDialogIndirect
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="ShowInWindow"
-			Visible=false
-			Group="Behavior"
-			InitialValue=""
-			Type="Window"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"

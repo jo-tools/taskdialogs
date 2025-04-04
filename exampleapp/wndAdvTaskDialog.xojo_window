@@ -25,11 +25,13 @@ Begin DesktopWindow wndAdvTaskDialog
    Visible         =   True
    Width           =   670
    Begin DesktopLabel labTaskDialogTitle
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -46,11 +48,9 @@ Begin DesktopWindow wndAdvTaskDialog
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Title:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   20
       Transparent     =   False
       Underline       =   False
@@ -58,28 +58,29 @@ Begin DesktopWindow wndAdvTaskDialog
       Width           =   120
    End
    Begin DesktopTextField edtTaskDialogTitle
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -87,23 +88,24 @@ Begin DesktopWindow wndAdvTaskDialog
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Task Title"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   20
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   500
    End
    Begin DesktopLabel labTaskDialogText
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -120,11 +122,9 @@ Begin DesktopWindow wndAdvTaskDialog
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Text:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   45
       Transparent     =   False
       Underline       =   False
@@ -132,28 +132,29 @@ Begin DesktopWindow wndAdvTaskDialog
       Width           =   120
    End
    Begin DesktopTextField edtTaskDialogText
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -161,23 +162,24 @@ Begin DesktopWindow wndAdvTaskDialog
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "This is the Main Instruction of the Task."
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   45
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   500
    End
    Begin DesktopLabel labTaskDialogExplanation
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -194,11 +196,9 @@ Begin DesktopWindow wndAdvTaskDialog
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Explanation:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   70
       Transparent     =   False
       Underline       =   False
@@ -206,22 +206,26 @@ Begin DesktopWindow wndAdvTaskDialog
       Width           =   120
    End
    Begin DesktopTextArea edtTaskDialogExplanation
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   True
-      BackColor       =   &cFFFFFF00
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   True
+      AllowStyledText =   True
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
       Height          =   60
-      HelpTag         =   ""
       HideSelection   =   True
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LineHeight      =   0.0
       LineSpacing     =   1.0
       LockBottom      =   False
@@ -229,35 +233,33 @@ Begin DesktopWindow wndAdvTaskDialog
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Multiline       =   True
       ReadOnly        =   False
       Scope           =   2
-      ScrollbarHorizontal=   False
-      ScrollbarVertical=   True
-      Styled          =   True
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Some additional information about the Task to be performed.\nAnd another Line of additional information."
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   70
       Transparent     =   True
       Underline       =   False
       UnicodeMode     =   0
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   500
    End
    Begin DesktopLabel labTaskDialogType
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -274,11 +276,9 @@ Begin DesktopWindow wndAdvTaskDialog
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "MsgBox Type:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   135
       Transparent     =   False
       Underline       =   False
@@ -286,29 +286,29 @@ Begin DesktopWindow wndAdvTaskDialog
       Width           =   120
    End
    Begin DesktopPopupMenu lstTaskDialogType
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   150
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   135
       Transparent     =   True
       Underline       =   False
@@ -316,11 +316,13 @@ Begin DesktopWindow wndAdvTaskDialog
       Width           =   150
    End
    Begin DesktopLabel labTaskDialogIndirectHints11
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   80
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   True
@@ -337,11 +339,9 @@ Begin DesktopWindow wndAdvTaskDialog
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "(MsgBox Type): Icon gets set according to the Type-constant\r\n(Icon): TaskDialog uses this icon (ignored if MsgBox is shown)\r\nNote: Question-Icon is no longer available in TaskDialogs."
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "SmallSystem"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   135
       Transparent     =   False
       Underline       =   False
@@ -349,11 +349,13 @@ Begin DesktopWindow wndAdvTaskDialog
       Width           =   338
    End
    Begin DesktopLabel labTaskDialogIcon
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -370,11 +372,9 @@ Begin DesktopWindow wndAdvTaskDialog
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Icon:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   165
       Transparent     =   False
       Underline       =   False
@@ -382,29 +382,29 @@ Begin DesktopWindow wndAdvTaskDialog
       Width           =   118
    End
    Begin DesktopPopupMenu lstTaskDialogIcon
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   150
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   165
       Transparent     =   True
       Underline       =   False
@@ -412,15 +412,16 @@ Begin DesktopWindow wndAdvTaskDialog
       Width           =   150
    End
    Begin DesktopButton btnTaskDialog
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "TaskDialog"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -430,13 +431,12 @@ Begin DesktopWindow wndAdvTaskDialog
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   11
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   219
       Transparent     =   True
       Underline       =   False
@@ -444,11 +444,13 @@ Begin DesktopWindow wndAdvTaskDialog
       Width           =   120
    End
    Begin DesktopLabel labTaskDialogResult
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -465,11 +467,9 @@ Begin DesktopWindow wndAdvTaskDialog
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Result:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   220
       Transparent     =   False
       Underline       =   False
@@ -477,11 +477,13 @@ Begin DesktopWindow wndAdvTaskDialog
       Width           =   500
    End
    Begin DesktopLabel labTaskDialogIndirectHints1
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
-      Height          =   30
-      HelpTag         =   ""
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   45
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   True
@@ -498,11 +500,9 @@ Begin DesktopWindow wndAdvTaskDialog
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "[TaskDialog available] (Windows Vista and newer): shows the TaskDialog with your settings\n[TaskDialog not available]: shows a MessageBox instead"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "SmallSystem"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   245
       Transparent     =   False
       Underline       =   False
@@ -513,13 +513,6 @@ End
 #tag EndDesktopWindow
 
 #tag WindowCode
-	#tag Event
-		Sub Opening()
-		  Self.Title = Self.Title + " v" + App.MajorVersion.ToString + "." + App.MinorVersion.ToString + "." + App.BugVersion.ToString
-		End Sub
-	#tag EndEvent
-
-
 	#tag Method, Flags = &h21
 		Private Sub Show_TaskDialog()
 		  '---------------------------------------------------------------------------------------------
@@ -693,8 +686,7 @@ End
 			"6 - Rounded Window"
 			"7 - Global Floating Window"
 			"8 - Sheet Window"
-			"9 - Metal Window"
-			"11 - Modeless Dialog"
+			"9 - Modeless Dialog"
 		#tag EndEnumValues
 	#tag EndViewProperty
 	#tag ViewProperty
@@ -757,8 +749,8 @@ End
 		Visible=true
 		Group="Background"
 		InitialValue="&hFFFFFF"
-		Type="Color"
-		EditorType="Color"
+		Type="ColorGroup"
+		EditorType="ColorGroup"
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Name"
@@ -869,7 +861,7 @@ End
 		Visible=true
 		Group="Menus"
 		InitialValue=""
-		Type="MenuBar"
+		Type="DesktopMenuBar"
 		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
