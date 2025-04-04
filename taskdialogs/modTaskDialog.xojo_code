@@ -44,16 +44,16 @@ Module modTaskDialog
 		  dlgTaskDialogIndirect.WindowTitle = oMessageDialog.Title
 		  dlgTaskDialogIndirect.MainInstruction = oMessageDialog.Message
 		  dlgTaskDialogIndirect.Content = oMessageDialog.Explanation
-		  select case oMessageDialog.Icon
-		  case MessageDialog.GraphicCaution
+		  Select Case oMessageDialog.IconType
+		  Case MessageDialog.IconTypes.Caution
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.TD_WARNING_ICON
-		  case MessageDialog.GraphicNone
+		  Case MessageDialog.IconTypes.None
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.None
-		  case MessageDialog.GraphicNote
+		  Case MessageDialog.IconTypes.Note
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.TD_INFORMATION_ICON
-		  case MessageDialog.GraphicQuestion
+		  Case MessageDialog.IconTypes.Question
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.TD_INFORMATION_ICON
-		  case MessageDialog.GraphicStop
+		  case MessageDialog.IconTypes.Stop
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.TD_ERROR_ICON
 		  else
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.None

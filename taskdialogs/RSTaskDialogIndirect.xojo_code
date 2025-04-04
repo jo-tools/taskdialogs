@@ -109,16 +109,16 @@ Protected Class RSTaskDialogIndirect
 		  
 		  select case MainIcon
 		  case TaskDialogIcon.TD_ERROR_ICON
-		    oMsgDlg.Icon = MessageDialog.GraphicStop
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Stop
 		  case TaskDialogIcon.TD_INFORMATION_ICON
-		    oMsgDlg.Icon = MessageDialog.GraphicNote
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Note
 		  case TaskDialogIcon.TD_SHIELD_ICON
 		    'not supported...
-		    oMsgDlg.Icon = MessageDialog.GraphicCaution
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Caution
 		  case TaskDialogIcon.TD_WARNING_ICON
-		    oMsgDlg.Icon = MessageDialog.GraphicCaution
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Caution
 		  case TaskDialogIcon.Question
-		    oMsgDlg.Icon = MessageDialog.GraphicQuestion
+		    oMsgDlg.IconType = MessageDialog.IconTypes.Question
 		  end select
 		  
 		  

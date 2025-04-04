@@ -1685,17 +1685,17 @@ End
 		  
 		  Select Case lstTaskDialogIndirectMainIcon.RowTagAt(lstTaskDialogIndirectMainIcon.SelectedRowIndex)
 		  Case TaskDialogIcon.None
-		    oDlg.Icon = MessageDialog.GraphicNone
+		    oDlg.IconType = MessageDialog.IconTypes.None
 		  Case TaskDialogIcon.TD_ERROR_ICON
-		    oDlg.Icon = MessageDialog.GraphicStop
+		    oDlg.IconType = MessageDialog.IconTypes.Stop
 		  Case TaskDialogIcon.TD_INFORMATION_ICON
-		    oDlg.Icon = MessageDialog.GraphicNote
+		    oDlg.IconType = MessageDialog.IconTypes.Note
 		  Case TaskDialogIcon.TD_SHIELD_ICON
-		    oDlg.Icon = MessageDialog.GraphicNote
+		    oDlg.IconType = MessageDialog.IconTypes.Note
 		  Case TaskDialogIcon.TD_WARNING_ICON
-		    oDlg.Icon = MessageDialog.GraphicCaution
+		    oDlg.IconType = MessageDialog.IconTypes.Caution
 		  Else
-		    oDlg.Icon = MessageDialog.GraphicNone
+		    oDlg.IconType = MessageDialog.IconTypes.None
 		  End Select
 		  
 		  If (edtTaskDialogIndirectButtonCaption1.Text <> "") Then
