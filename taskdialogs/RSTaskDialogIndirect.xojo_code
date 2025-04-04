@@ -311,7 +311,7 @@ Protected Class RSTaskDialogIndirect
 		Private Function UTF16String2MemoryBlock(psText As String) As MemoryBlock
 		  psText = ConvertEncoding(psText, Encodings.UTF16).Trim
 		  
-		  Var mb as New MemoryBlock( (Len( psText ) + 2)  * 2 )
+		  Var mb As New MemoryBlock((psText.Length + 2) * 2)
 		  mb.WString( 0 ) = psText
 		  
 		  return mb
