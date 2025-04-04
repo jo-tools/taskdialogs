@@ -1770,7 +1770,7 @@ End
 		  'note: in the demo, we always set the first button as default
 		  Dim oButtons() As RSTaskDialogIndirectButton
 		  Dim oButton As RSTaskDialogIndirectButton
-		  If (Trim(edtTaskDialogIndirectButtonCaption1.Text) <> "") Then
+		  If (edtTaskDialogIndirectButtonCaption1.Text.Trim <> "") Then
 		    oButton = New RSTaskDialogIndirectButton
 		    oButton.Caption = edtTaskDialogIndirectButtonCaption1.Text
 		    oButton.CaptionExplanation = edtTaskDialogIndirectButtonExplanation1.Text
@@ -1778,7 +1778,7 @@ End
 		    If radTaskDialogIndirectDefaultButton1.Value Then oButton.Default = True
 		    oButtons.Append(oButton)
 		  End If
-		  If (Trim(edtTaskDialogIndirectButtonCaption2.Text) <> "") Then
+		  If (edtTaskDialogIndirectButtonCaption2.Text.Trim <> "") Then
 		    oButton = New RSTaskDialogIndirectButton
 		    oButton.Caption = edtTaskDialogIndirectButtonCaption2.Text
 		    oButton.CaptionExplanation = edtTaskDialogIndirectButtonExplanation2.Text
@@ -1795,7 +1795,7 @@ End
 		      bThirdButtonAsCommandLinksCancel = True
 		    End If
 		  End If
-		  If (Not bThirdButtonAsCommandLinksCancel) And (Trim(edtTaskDialogIndirectButtonCaption3.Text) <> "") Then
+		  If (Not bThirdButtonAsCommandLinksCancel) And (edtTaskDialogIndirectButtonCaption3.Text.Trim <> "") Then
 		    oButton = New RSTaskDialogIndirectButton
 		    oButton.Caption = edtTaskDialogIndirectButtonCaption3.Text
 		    oButton.CaptionExplanation = edtTaskDialogIndirectButtonExplanation3.Text
@@ -1909,6 +1909,8 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub SelectionChanged(item As DesktopMenuItem)
+		  #Pragma unused item
+		  
 		  Select Case Me.SelectedRowText
 		  Case "Command Links"
 		    edtTaskDialogIndirectButtonExplanation1.Enabled = True

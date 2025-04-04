@@ -103,9 +103,9 @@ Protected Class RSTaskDialogIndirect
 	#tag Method, Flags = &h21
 		Private Function ShowModal_MessageDialog(pbShowModalWithin As Boolean) As TaskDialogButtonID
 		  Dim oMsgDlg As New MessageDialog
-		  oMsgDlg.Title = Trim(ReplaceLineEndings(WindowTitle, " "))
-		  oMsgDlg.Message = Trim(ReplaceLineEndings(MainInstruction, " "))
-		  oMsgDlg.Explanation = Trim(ReplaceLineEndings(Content, " "))
+		  oMsgDlg.Title = ReplaceLineEndings(WindowTitle, " ").Trim
+		  oMsgDlg.Message = ReplaceLineEndings(MainInstruction, " ").Trim
+		  oMsgDlg.Explanation = ReplaceLineEndings(Content, " ").Trim
 		  
 		  select case MainIcon
 		  case TaskDialogIcon.TD_ERROR_ICON
@@ -309,7 +309,7 @@ Protected Class RSTaskDialogIndirect
 
 	#tag Method, Flags = &h21
 		Private Function UTF16String2MemoryBlock(psText As String) As MemoryBlock
-		  psText = Trim(ConvertEncoding(psText, Encodings.UTF16))
+		  psText = ConvertEncoding(psText, Encodings.UTF16).Trim
 		  
 		  Dim mb as New MemoryBlock( (Len( psText ) + 2)  * 2 )
 		  mb.WString( 0 ) = psText

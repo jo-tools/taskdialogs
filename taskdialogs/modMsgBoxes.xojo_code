@@ -246,8 +246,8 @@ Module modMsgBoxes
 		  
 		  'NOT ThreadSafe
 		  Dim bAlternated As Boolean
-		  psDefaultAction = Trim(psDefaultAction)
-		  psSecondAction = Trim(psSecondAction)
+		  psDefaultAction = psDefaultAction.Trim
+		  psSecondAction = psSecondAction.Trim
 		  if (psDefaultAction = "") then
 		    bAlternated = true
 		    psDefaultAction = psSecondAction

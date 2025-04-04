@@ -180,12 +180,12 @@ Protected Class RSTaskDialog
 		Private Function Show_MsgBox_Standard(piMsgBoxButtons As Integer, piMsgBoxIcon As Integer) As Integer
 		  Dim sMsgBoxText As String
 		  if (Content = "") then
-		    sMsgBoxText = Trim(MainInstruction)
+		    sMsgBoxText = MainInstruction.Trim
 		  else
-		    sMsgBoxText = Trim(ReplaceLineEndings(MainInstruction, " ")) + EndOfLine + EndOfLine + Trim(ReplaceLineEndings(Content, " "))
-		  end if
+		    sMsgBoxText = ReplaceLineEndings(MainInstruction, " ").Trim + EndOfLine + EndOfLine + ReplaceLineEndings(Content, " ").Trim
+		  End If
 		  
-		  return MsgBox(sMsgBoxText, (piMsgBoxButtons + piMsgBoxIcon + Integer(MsgBoxButtonDefault.First)), Trim(ReplaceLineEndings(WindowTitle, " ")))
+		  Return MsgBox(sMsgBoxText, (piMsgBoxButtons + piMsgBoxIcon + Integer(MsgBoxButtonDefault.First)), ReplaceLineEndings(WindowTitle, " ").Trim)
 		End Function
 	#tag EndMethod
 
@@ -218,7 +218,7 @@ Protected Class RSTaskDialog
 		    
 		    if (iIcon = TaskDialogIcon.Question) then iIcon = TaskDialogIcon.TD_INFORMATION_ICON
 		    
-		    If (TaskDialog(ptrHandle, 0, Trim(ReplaceLineEndings(WindowTitle, " ")), Trim(ReplaceLineEndings(MainInstruction, " ")), Trim(Content), iCommonButtonFlags, iIcon, iRet) <> 0) Then Return TaskDialogCommonButtonFlags.Error
+		    If (TaskDialog(ptrHandle, 0, ReplaceLineEndings(WindowTitle, " ").Trim, ReplaceLineEndings(MainInstruction, " ").Trim, Content.Trim, iCommonButtonFlags, iIcon, iRet) <> 0) Then Return TaskDialogCommonButtonFlags.Error
 		    
 		    select case iRet
 		    case TaskDialogButtonID.IDOK
@@ -246,7 +246,7 @@ Protected Class RSTaskDialog
 
 	#tag Method, Flags = &h21
 		Private Function UTF16String2MemoryBlock(psText As String) As MemoryBlock
-		  psText = Trim(ConvertEncoding(psText, Encodings.UTF16))
+		  psText = ConvertEncoding(psText, Encodings.UTF16).Trim
 		  
 		  Dim mb As MemoryBlock
 		  mb = New MemoryBlock( (Len( psText ) + 1)  * 2 )
