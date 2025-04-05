@@ -11,13 +11,13 @@ Module modTaskDialog
 		  ' to use it, simply replace your (MessageDialog).ShowModal with (MessageDialog).ShowAsTaskDialog_Modal
 		  '-----------------------------------------------------------------------------------------------------------
 		  
-		  return oMessageDialog.ShowAsTaskDialog_ModalWithin(nil)
+		  Return oMessageDialog.ShowAsTaskDialog_ModalWithin(Nil)
 		  
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function ShowAsTaskDialog_ModalWithin(Extends oMessageDialog As MessageDialog, Parent As Window) As MessageDialogButton
+		Function ShowAsTaskDialog_ModalWithin(Extends oMessageDialog As MessageDialog, Parent As DesktopWindow) As MessageDialogButton
 		  '-----------------------------------------------------------------------------------------------------------
 		  'This Example shows how to use the RSTaskDialogIndirect as a substitution for MessageDialog
 		  '
@@ -29,109 +29,109 @@ Module modTaskDialog
 		  
 		  
 		  'create TaskDialogIndirect
-		  Dim dlgTaskDialogIndirect As New RSTaskDialogIndirect
+		  Var dlgTaskDialogIndirect As New RSTaskDialogIndirect
 		  
-		  if (not dlgTaskDialogIndirect.IsAvailable) then
+		  If (Not dlgTaskDialogIndirect.IsAvailable) Then
 		    'don't let RSTaskDialogIndirect create another MessageDialog, as we already have one
-		    if (Parent <> nil) and Parent.Visible then
-		      return oMessageDialog.ShowModalWithin(Parent)
-		    else
-		      return oMessageDialog.ShowModal()
-		    end if
-		  end if
+		    If (Parent <> Nil) And Parent.Visible Then
+		      Return oMessageDialog.ShowModal(Parent)
+		    Else
+		      Return oMessageDialog.ShowModal()
+		    End If
+		  End If
 		  
 		  'set properties
 		  dlgTaskDialogIndirect.WindowTitle = oMessageDialog.Title
 		  dlgTaskDialogIndirect.MainInstruction = oMessageDialog.Message
 		  dlgTaskDialogIndirect.Content = oMessageDialog.Explanation
-		  select case oMessageDialog.Icon
-		  case MessageDialog.GraphicCaution
+		  Select Case oMessageDialog.IconType
+		  Case MessageDialog.IconTypes.Caution
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.TD_WARNING_ICON
-		  case MessageDialog.GraphicNone
+		  Case MessageDialog.IconTypes.None
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.None
-		  case MessageDialog.GraphicNote
+		  Case MessageDialog.IconTypes.Note
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.TD_INFORMATION_ICON
-		  case MessageDialog.GraphicQuestion
+		  Case MessageDialog.IconTypes.Question
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.TD_INFORMATION_ICON
-		  case MessageDialog.GraphicStop
+		  Case MessageDialog.IconTypes.Stop
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.TD_ERROR_ICON
-		  else
+		  Else
 		    dlgTaskDialogIndirect.MainIcon = TaskDialogIcon.None
-		  end select
+		  End Select
 		  
 		  dlgTaskDialogIndirect.ShowInWindow = Parent
 		  
 		  'create buttons
-		  Dim oButtons() As RSTaskDialogIndirectButton
-		  Dim oButton As RSTaskDialogIndirectButton
+		  Var oButtons() As RSTaskDialogIndirectButton
+		  Var oButton As RSTaskDialogIndirectButton
 		  
 		  'do we have a cancel button?
-		  Dim iCancel As Integer
-		  if oMessageDialog.ActionButton.Visible and oMessageDialog.ActionButton.Cancel then iCancel = 1
-		  if oMessageDialog.AlternateActionButton.Visible and oMessageDialog.AlternateActionButton.Cancel then iCancel = 2
-		  if oMessageDialog.CancelButton.Visible and oMessageDialog.CancelButton.Cancel then iCancel = 3
+		  Var iCancel As Integer
+		  If oMessageDialog.ActionButton.Visible And oMessageDialog.ActionButton.Cancel Then iCancel = 1
+		  If oMessageDialog.AlternateActionButton.Visible And oMessageDialog.AlternateActionButton.Cancel Then iCancel = 2
+		  If oMessageDialog.CancelButton.Visible And oMessageDialog.CancelButton.Cancel Then iCancel = 3
 		  
-		  Dim iBtnIDs() As TaskDialogButtonID 'we just use these IDs...
-		  iBtnIDs.Append(TaskDialogButtonID.IDYES)
-		  iBtnIDs.Append(TaskDialogButtonID.IDNO)
-		  iBtnIDs.Append(TaskDialogButtonID.IDCANCEL)
-		  Dim dictResult As New Dictionary 'lookup the Button later
-		  for i As Integer = 1 to 3
-		    Dim oBtn As MessageDialogButton
-		    select case i
-		    case 1
+		  Var iBtnIDs() As TaskDialogButtonID 'we just use these IDs...
+		  iBtnIDs.Add(TaskDialogButtonID.IDYES)
+		  iBtnIDs.Add(TaskDialogButtonID.IDNO)
+		  iBtnIDs.Add(TaskDialogButtonID.IDCANCEL)
+		  Var dictResult As New Dictionary 'lookup the Button later
+		  For i As Integer = 1 To 3
+		    Var oBtn As MessageDialogButton
+		    Select Case i
+		    Case 1
 		      oBtn = oMessageDialog.ActionButton
-		    case 2
+		    Case 2
 		      oBtn = oMessageDialog.AlternateActionButton
-		    case 3
+		    Case 3
 		      oBtn = oMessageDialog.CancelButton
-		    else
-		      continue
-		    end select
-		    if oBtn.Visible then
+		    Else
+		      Continue
+		    End Select
+		    If oBtn.Visible Then
 		      oButton = New RSTaskDialogIndirectButton
 		      oButton.Caption = oBtn.Caption
 		      oButton.Default = oBtn.Default
-		      if oBtn.Cancel then
-		        oButton.ID = iBtnIDs(UBound(iBtnIDs)) 'the last one
-		        dictResult.Value(iBtnIDs(UBound(iBtnIDs))) = i
-		        iBtnIDs.Remove(UBound(iBtnIDs))
-		      else
+		      If oBtn.Cancel Then
+		        oButton.ID = iBtnIDs(iBtnIDs.LastIndex) 'the last one
+		        dictResult.Value(iBtnIDs(iBtnIDs.LastIndex)) = i
+		        iBtnIDs.RemoveAt(iBtnIDs.LastIndex)
+		      Else
 		        oButton.ID = iBtnIDs(0) 'the first one still available
 		        dictResult.Value(iBtnIDs(0)) = i
-		        iBtnIDs.Remove(0)
-		      end if
-		      oButtons.Append(oButton)
-		    end if
-		  next
+		        iBtnIDs.RemoveAt(0)
+		      End If
+		      oButtons.Add(oButton)
+		    End If
+		  Next
 		  dlgTaskDialogIndirect.Buttons = oButtons
 		  
 		  
 		  '---------------------------------------------------
 		  'show dialog
 		  '---------------------------------------------------
-		  Dim retClickedButton As TaskDialogButtonID
-		  Dim retRadioButton As TaskDialogButtonID
-		  Dim retVerificationFlagChecked As Boolean
+		  Var retClickedButton As TaskDialogButtonID
+		  Var retRadioButton As TaskDialogButtonID
+		  Var retVerificationFlagChecked As Boolean
 		  
-		  if (Parent <> nil) and Parent.Visible then
+		  If (Parent <> Nil) And Parent.Visible Then
 		    dlgTaskDialogIndirect.ShowModalWithin(retClickedButton, retRadioButton, retVerificationFlagChecked)
-		  else
+		  Else
 		    dlgTaskDialogIndirect.ShowModal(retClickedButton, retRadioButton, retVerificationFlagChecked)
-		  end if
+		  End If
 		  
 		  
 		  'return the result
-		  select case dictResult.Lookup(retClickedButton, TaskDialogButtonID.None)
-		  case 1
-		    return oMessageDialog.ActionButton
-		  case 2
-		    return oMessageDialog.AlternateActionButton
-		  case 3
-		    return oMessageDialog.CancelButton
-		  else
-		    return nil
-		  end select
+		  Select Case dictResult.Lookup(retClickedButton, TaskDialogButtonID.None)
+		  Case 1
+		    Return oMessageDialog.ActionButton
+		  Case 2
+		    Return oMessageDialog.AlternateActionButton
+		  Case 3
+		    Return oMessageDialog.CancelButton
+		  Else
+		    Return Nil
+		  End Select
 		  
 		End Function
 	#tag EndMethod
@@ -140,11 +140,10 @@ Module modTaskDialog
 		Function UTF16String2MemoryBlock(psText As String) As MemoryBlock
 		  psText = ConvertEncoding(psText, Encodings.UTF16)
 		  
-		  Dim mb As MemoryBlock
-		  mb = New MemoryBlock( (Len( psText ) + 1)  * 2 )
+		  Var mb As New MemoryBlock((psText.Length + 1) * 2)
 		  mb.WString( 0 ) = psText
 		  
-		  return mb
+		  Return mb
 		End Function
 	#tag EndMethod
 
@@ -163,7 +162,7 @@ Module modTaskDialog
 
 	#tag Structure, Name = TaskDialogConfig, Flags = &h0, Attributes = \"StructureAlignment \x3D 4"
 		cbSize As UInt32
-		  hwndParent As Integer
+		  hwndParent As Ptr
 		  hInstance As Integer
 		  dwFlags As Int32
 		  dwCommonButtons As TaskDialogCommonButtonFlags
@@ -292,6 +291,7 @@ Module modTaskDialog
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -299,18 +299,23 @@ Module modTaskDialog
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -318,6 +323,7 @@ Module modTaskDialog
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Module

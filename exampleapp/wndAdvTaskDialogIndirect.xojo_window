@@ -1,39 +1,37 @@
-#tag Window
-Begin Window wndAdvTaskDialogIndirect
-   BackColor       =   &cFFFFFF00
+#tag DesktopWindow
+Begin DesktopWindow wndAdvTaskDialogIndirect
    Backdrop        =   0
-   CloseButton     =   True
-   Compatibility   =   ""
+   BackgroundColor =   &cFFFFFF00
    Composite       =   False
-   Frame           =   0
+   DefaultLocation =   4
    FullScreen      =   False
-   FullScreenButton=   False
-   HasBackColor    =   False
+   HasBackgroundColor=   False
+   HasCloseButton  =   True
+   HasFullScreenButton=   False
+   HasMaximizeButton=   False
+   HasMinimizeButton=   False
    Height          =   600
    ImplicitInstance=   True
-   LiveResize      =   True
    MacProcID       =   0
-   MaxHeight       =   32000
-   MaximizeButton  =   False
-   MaxWidth        =   32000
+   MaximumHeight   =   32000
+   MaximumWidth    =   32000
    MenuBar         =   1958432767
    MenuBarVisible  =   True
-   MinHeight       =   600
-   MinimizeButton  =   False
-   MinWidth        =   670
-   Placement       =   0
+   MinimumHeight   =   600
+   MinimumWidth    =   670
    Resizeable      =   False
    Title           =   "Task Dialog Indirect (Advanced)"
+   Type            =   0
    Visible         =   True
    Width           =   670
-   Begin Label labTaskDialogIndirectTitle
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectTitle
+      AllowAutoDeactivate=   True
       Bold            =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -50,42 +48,39 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Title:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   20
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
-   Begin TextField edtTaskDialogIndirectTitle
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextField edtTaskDialogIndirectTitle
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   ""
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -93,25 +88,24 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Task Title"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   20
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogIndirectMainInstruction
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectMainInstruction
+      AllowAutoDeactivate=   True
       Bold            =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -128,42 +122,39 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Main Instruction:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   45
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
-   Begin TextField edtTaskDialogIndirectMainInstruction
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextField edtTaskDialogIndirectMainInstruction
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   ""
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -171,25 +162,24 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "This is the Main Instruction of the Task."
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   45
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogIndirectContent
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectContent
+      AllowAutoDeactivate=   True
       Bold            =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -206,36 +196,36 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Content:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   70
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
-   Begin TextArea edtTaskDialogIndirectContent
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   True
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextArea edtTaskDialogIndirectContent
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   True
+      AllowStyledText =   True
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
       Height          =   40
-      HelpTag         =   ""
       HideSelection   =   True
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LineHeight      =   0.0
       LineSpacing     =   1.0
       LockBottom      =   False
@@ -243,36 +233,33 @@ Begin Window wndAdvTaskDialogIndirect
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Multiline       =   True
       ReadOnly        =   False
       Scope           =   2
-      ScrollbarHorizontal=   False
-      ScrollbarVertical=   True
-      Styled          =   True
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Some additional information about the Task to be performed.\nAnd another Line of additional information."
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   70
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      UnicodeMode     =   0
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogIndirectVerify
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectVerify
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -289,42 +276,39 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Verify (checkbox):"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   115
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
-   Begin TextField edtTaskDialogIndirectVerify
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextField edtTaskDialogIndirectVerify
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   ""
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -332,25 +316,24 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Don't ask again"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   115
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogIndirectExpanded
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectExpanded
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -367,36 +350,36 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Expanded Content:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "SmallSystem"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   140
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
-   Begin TextArea edtTaskDialogIndirectExpanded
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   True
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextArea edtTaskDialogIndirectExpanded
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   True
+      AllowStyledText =   True
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
       Height          =   40
-      HelpTag         =   ""
       HideSelection   =   True
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LineHeight      =   0.0
       LineSpacing     =   1.0
       LockBottom      =   False
@@ -404,36 +387,33 @@ Begin Window wndAdvTaskDialogIndirect
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Multiline       =   True
       ReadOnly        =   False
       Scope           =   2
-      ScrollbarHorizontal=   False
-      ScrollbarVertical=   True
-      Styled          =   True
       TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Some more ideas about the Content:\r\n- do this?\n- or do that?"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   140
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      UnicodeMode     =   0
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogIndirectCollapsedControlText
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectCollapsedControlText
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -450,42 +430,39 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "CollapsedControlText:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "SmallSystem"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   185
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
-   Begin TextField edtTaskDialogIndirectCollapsedControlText
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextField edtTaskDialogIndirectCollapsedControlText
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   ""
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -493,25 +470,24 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Why do we need to perform this Task?"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   185
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogIndirectExpandedControlText
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectExpandedControlText
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -528,36 +504,36 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "ExpandedControlText:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "SmallSystem"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   210
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
-   Begin TextArea edtTaskDialogIndirectExpandedControlText
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   True
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextArea edtTaskDialogIndirectExpandedControlText
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   True
+      AllowStyledText =   True
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
       Height          =   40
-      HelpTag         =   ""
       HideSelection   =   True
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LineHeight      =   0.0
       LineSpacing     =   1.0
       LockBottom      =   False
@@ -565,36 +541,33 @@ Begin Window wndAdvTaskDialogIndirect
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Multiline       =   True
       ReadOnly        =   False
       Scope           =   2
-      ScrollbarHorizontal=   False
-      ScrollbarVertical=   True
-      Styled          =   True
       TabIndex        =   13
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "You've expanded the Collapsed Control Text.\nSo here you are: This is some more information about why we need to perform this Task."
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   210
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      UnicodeMode     =   0
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogIndirectFooter
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectFooter
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -611,42 +584,39 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Footer:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   255
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
-   Begin TextField edtTaskDialogIndirectFooter
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextField edtTaskDialogIndirectFooter
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   ""
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -654,25 +624,24 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "This is an Example of TaskDialogIndirect."
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   255
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogIndirectButton1
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectButton1
+      AllowAutoDeactivate=   True
       Bold            =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -689,74 +658,69 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Button 1:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   280
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   55
    End
-   Begin PopupMenu lstTaskDialogIndirectButtonID1
-      AutoDeactivate  =   True
+   Begin DesktopPopupMenu lstTaskDialogIndirectButtonID1
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   80
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   17
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   280
       Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   58
    End
-   Begin TextField edtTaskDialogIndirectButtonCaption1
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextField edtTaskDialogIndirectButtonCaption1
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   ""
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -764,36 +728,37 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Task 1"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   280
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   100
    End
-   Begin TextArea edtTaskDialogIndirectButtonExplanation1
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   True
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextArea edtTaskDialogIndirectButtonExplanation1
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   True
+      AllowStyledText =   True
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
       Height          =   40
-      HelpTag         =   ""
       HideSelection   =   True
       Index           =   -2147483648
       Italic          =   False
       Left            =   260
-      LimitText       =   0
       LineHeight      =   0.0
       LineSpacing     =   1.0
       LockBottom      =   False
@@ -801,36 +766,33 @@ Begin Window wndAdvTaskDialogIndirect
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Multiline       =   True
       ReadOnly        =   False
       Scope           =   2
-      ScrollbarHorizontal=   False
-      ScrollbarVertical=   True
-      Styled          =   True
       TabIndex        =   19
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Just an explanation, in case you're choosing Task 1."
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   280
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      UnicodeMode     =   0
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   150
    End
-   Begin Label labTaskDialogIndirectShowButtons
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectShowButtons
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -847,57 +809,53 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Button-Type:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   281
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   80
    End
-   Begin PopupMenu lstTaskDialogIndirectShowButtons
-      AutoDeactivate  =   True
+   Begin DesktopPopupMenu lstTaskDialogIndirectShowButtons
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   520
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   21
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   280
       Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   130
    End
-   Begin Label labTaskDialogIndirectButton2
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectButton2
+      AllowAutoDeactivate=   True
       Bold            =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -914,74 +872,69 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Button 2:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   325
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   55
    End
-   Begin PopupMenu lstTaskDialogIndirectButtonID2
-      AutoDeactivate  =   True
+   Begin DesktopPopupMenu lstTaskDialogIndirectButtonID2
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   80
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   23
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   325
       Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   58
    End
-   Begin TextField edtTaskDialogIndirectButtonCaption2
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextField edtTaskDialogIndirectButtonCaption2
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   ""
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -989,36 +942,37 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Task 2"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   325
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   100
    End
-   Begin TextArea edtTaskDialogIndirectButtonExplanation2
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   True
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextArea edtTaskDialogIndirectButtonExplanation2
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   True
+      AllowStyledText =   True
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
       Height          =   40
-      HelpTag         =   ""
       HideSelection   =   True
       Index           =   -2147483648
       Italic          =   False
       Left            =   260
-      LimitText       =   0
       LineHeight      =   0.0
       LineSpacing     =   1.0
       LockBottom      =   False
@@ -1026,36 +980,33 @@ Begin Window wndAdvTaskDialogIndirect
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Multiline       =   True
       ReadOnly        =   False
       Scope           =   2
-      ScrollbarHorizontal=   False
-      ScrollbarVertical=   True
-      Styled          =   True
       TabIndex        =   25
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Just an explanation, in case you're choosing Task 2."
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   325
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      UnicodeMode     =   0
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   150
    End
-   Begin Label labTaskDialogIndirectButtonDefault
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectButtonDefault
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1072,24 +1023,24 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Default:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   325
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   80
    End
-   Begin RadioButton radTaskDialogIndirectDefaultButton1
-      AutoDeactivate  =   True
+   Begin DesktopRadioButton radTaskDialogIndirectDefaultButton1
+      AllowAutoDeactivate=   True
       Bold            =   False
       Caption         =   " Button 1 "
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1103,9 +1054,7 @@ Begin Window wndAdvTaskDialogIndirect
       TabIndex        =   27
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   325
       Transparent     =   True
       Underline       =   False
@@ -1113,13 +1062,15 @@ Begin Window wndAdvTaskDialogIndirect
       Visible         =   True
       Width           =   130
    End
-   Begin RadioButton radTaskDialogIndirectDefaultButton2
-      AutoDeactivate  =   True
+   Begin DesktopRadioButton radTaskDialogIndirectDefaultButton2
+      AllowAutoDeactivate=   True
       Bold            =   False
       Caption         =   " Button 2 "
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1133,9 +1084,7 @@ Begin Window wndAdvTaskDialogIndirect
       TabIndex        =   28
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   350
       Transparent     =   True
       Underline       =   False
@@ -1143,14 +1092,14 @@ Begin Window wndAdvTaskDialogIndirect
       Visible         =   True
       Width           =   130
    End
-   Begin Label labTaskDialogIndirectButton3
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectButton3
+      AllowAutoDeactivate=   True
       Bold            =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1167,74 +1116,69 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Button 3:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   370
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   55
    End
-   Begin PopupMenu lstTaskDialogIndirectButtonID3
-      AutoDeactivate  =   True
+   Begin DesktopPopupMenu lstTaskDialogIndirectButtonID3
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   80
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   30
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   370
       Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   58
    End
-   Begin TextField edtTaskDialogIndirectButtonCaption3
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextField edtTaskDialogIndirectButtonCaption3
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   ""
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   150
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -1242,36 +1186,37 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Cancel"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   370
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   100
    End
-   Begin TextArea edtTaskDialogIndirectButtonExplanation3
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   True
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextArea edtTaskDialogIndirectButtonExplanation3
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   True
+      AllowStyledText =   True
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
       Height          =   40
-      HelpTag         =   ""
       HideSelection   =   True
       Index           =   -2147483648
       Italic          =   False
       Left            =   260
-      LimitText       =   0
       LineHeight      =   0.0
       LineSpacing     =   1.0
       LockBottom      =   False
@@ -1279,35 +1224,34 @@ Begin Window wndAdvTaskDialogIndirect
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Multiline       =   True
       ReadOnly        =   False
       Scope           =   2
-      ScrollbarHorizontal=   False
-      ScrollbarVertical=   True
-      Styled          =   True
       TabIndex        =   32
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Just an explanation, in case you're choosing to Cancel."
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   370
       Transparent     =   True
       Underline       =   False
-      UseFocusRing    =   True
+      UnicodeMode     =   0
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   150
    End
-   Begin RadioButton radTaskDialogIndirectDefaultButton3
-      AutoDeactivate  =   True
+   Begin DesktopRadioButton radTaskDialogIndirectDefaultButton3
+      AllowAutoDeactivate=   True
       Bold            =   False
       Caption         =   " Button 3 "
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1321,9 +1265,7 @@ Begin Window wndAdvTaskDialogIndirect
       TabIndex        =   33
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   375
       Transparent     =   True
       Underline       =   False
@@ -1331,14 +1273,14 @@ Begin Window wndAdvTaskDialogIndirect
       Visible         =   True
       Width           =   130
    End
-   Begin Label labTaskDialogIndirectIcon
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectIcon
+      AllowAutoDeactivate=   True
       Bold            =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1355,25 +1297,23 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Icons:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   415
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
-   Begin Label labTaskDialogIndirectMainIcon
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectMainIcon
+      AllowAutoDeactivate=   True
       Bold            =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1390,57 +1330,53 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Main:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   415
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   96
    End
-   Begin PopupMenu lstTaskDialogIndirectMainIcon
-      AutoDeactivate  =   True
+   Begin DesktopPopupMenu lstTaskDialogIndirectMainIcon
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   260
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   36
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   415
       Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   150
    End
-   Begin Label labTaskDialogIndirectButtonHint
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectButtonHint
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   35
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1457,25 +1393,23 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Note: For simplicity of the Demo, we use the same Buttons as RadioButtons. Of course you can create a different RadioButton-set..."
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c55555500
-      TextFont        =   "System"
-      TextSize        =   9.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   415
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   222
    End
-   Begin Label labTaskDialogIndirectFooterIcon
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectFooterIcon
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1492,59 +1426,56 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Footer:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   440
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   96
    End
-   Begin PopupMenu lstTaskDialogIndirectFooterIcon
-      AutoDeactivate  =   True
+   Begin DesktopPopupMenu lstTaskDialogIndirectFooterIcon
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   260
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   39
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   440
       Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   150
    End
-   Begin PushButton btnTaskDialogIndirect
-      AutoDeactivate  =   True
+   Begin DesktopButton btnTaskDialogIndirect
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   "0"
       Cancel          =   False
       Caption         =   "TaskDialogIndirect"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1554,27 +1485,26 @@ Begin Window wndAdvTaskDialogIndirect
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   41
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   482
       Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
-   Begin Label labTaskDialogIndirectResult
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectResult
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1591,25 +1521,23 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Result:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   482
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   500
    End
-   Begin Label labTaskDialogIndirectHints
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectHints
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
-      Height          =   30
-      HelpTag         =   ""
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   40
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   True
@@ -1625,28 +1553,27 @@ Begin Window wndAdvTaskDialogIndirect
       TabIndex        =   43
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "[TaskDialogIndirect available] (Windows Vista and newer): shows the TaskDialogIndirect with your settings\n[TaskDialogIndirect not available]: shows a MessageDialog instead (uses only bold items)"
-      TextAlign       =   0
+      Text            =   "[TaskDialogIndirect available] (Windows Vista and newer): shows the TaskDialogIndirect\n[TaskDialogIndirect not available]: shows a MessageDialog instead (uses only bold items)"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   9.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   507
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   500
    End
-   Begin PushButton btnMessageDialog
-      AutoDeactivate  =   True
+   Begin DesktopButton btnMessageDialog
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   "0"
       Cancel          =   False
       Caption         =   "(MessageDialog)"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1656,27 +1583,26 @@ Begin Window wndAdvTaskDialogIndirect
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   44
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   547
       Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
-   Begin Label labTaskDialogIndirectHints2
-      AutoDeactivate  =   True
+   Begin DesktopLabel labTaskDialogIndirectHints2
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
-      Height          =   40
-      HelpTag         =   ""
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   45
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   True
@@ -1693,22 +1619,21 @@ Begin Window wndAdvTaskDialogIndirect
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Builds a MessageDialog, but shows it with .ShowAsTaskDialog instead of .ShowModal. \r\nNote: for the sake of simplicity, we assign the MessageDialogButtons like this: Button1=ActionButton, Button2=AlternateActionButton, Button3=CancelButton"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   9.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   547
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   500
    End
-   Begin Separator Separator1
-      AutoDeactivate  =   True
+   Begin DesktopSeparator Separator1
+      Active          =   False
+      AllowAutoDeactivate=   True
+      AllowTabStop    =   True
       Enabled         =   True
       Height          =   4
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -1717,26 +1642,24 @@ Begin Window wndAdvTaskDialogIndirect
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
+      PanelIndex      =   0
       Scope           =   2
       TabIndex        =   40
       TabPanelIndex   =   0
-      TabStop         =   True
+      Tooltip         =   ""
       Top             =   472
       Transparent     =   True
       Visible         =   True
       Width           =   670
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
 End
-#tag EndWindow
+#tag EndDesktopWindow
 
 #tag WindowCode
-	#tag Event
-		Sub Open()
-		  self.Title = self.Title + " v" + Str(App.MajorVersion) + "." + Str(App.MinorVersion) + "." + Str(App.BugVersion)
-		End Sub
-	#tag EndEvent
-
-
 	#tag Method, Flags = &h21
 		Private Sub Show_MessageDialog()
 		  '-----------------------------------------------------------------------------------------------------------
@@ -1754,57 +1677,57 @@ End
 		  ' - Button2: AlternateActionButton
 		  ' - Button3: CancelButton
 		  
-		  Dim oDlg As New MessageDialog
+		  Var oDlg As New MessageDialog
 		  oDlg.Title = edtTaskDialogIndirectTitle.Text
 		  oDlg.Message = edtTaskDialogIndirectMainInstruction.Text
 		  oDlg.Explanation = edtTaskDialogIndirectContent.Text
 		  
-		  select case lstTaskDialogIndirectMainIcon.RowTag(lstTaskDialogIndirectMainIcon.ListIndex)
-		  case TaskDialogIcon.None
-		    oDlg.Icon = MessageDialog.GraphicNone
-		  case TaskDialogIcon.TD_ERROR_ICON
-		    oDlg.Icon = MessageDialog.GraphicStop
-		  case TaskDialogIcon.TD_INFORMATION_ICON
-		    oDlg.Icon = MessageDialog.GraphicNote
-		  case TaskDialogIcon.TD_SHIELD_ICON
-		    oDlg.Icon = MessageDialog.GraphicNote
-		  case TaskDialogIcon.TD_WARNING_ICON
-		    oDlg.Icon = MessageDialog.GraphicCaution
-		  else
-		    oDlg.Icon = MessageDialog.GraphicNone
-		  end select
+		  Select Case lstTaskDialogIndirectMainIcon.RowTagAt(lstTaskDialogIndirectMainIcon.SelectedRowIndex)
+		  Case TaskDialogIcon.None
+		    oDlg.IconType = MessageDialog.IconTypes.None
+		  Case TaskDialogIcon.TD_ERROR_ICON
+		    oDlg.IconType = MessageDialog.IconTypes.Stop
+		  Case TaskDialogIcon.TD_INFORMATION_ICON
+		    oDlg.IconType = MessageDialog.IconTypes.Note
+		  Case TaskDialogIcon.TD_SHIELD_ICON
+		    oDlg.IconType = MessageDialog.IconTypes.Note
+		  Case TaskDialogIcon.TD_WARNING_ICON
+		    oDlg.IconType = MessageDialog.IconTypes.Caution
+		  Else
+		    oDlg.IconType = MessageDialog.IconTypes.None
+		  End Select
 		  
-		  if (edtTaskDialogIndirectButtonCaption1.Text <> "") then
-		    oDlg.ActionButton.Visible = true
+		  If (edtTaskDialogIndirectButtonCaption1.Text <> "") Then
+		    oDlg.ActionButton.Visible = True
 		    oDlg.ActionButton.Caption = edtTaskDialogIndirectButtonCaption1.Text
-		    oDlg.ActionButton.Cancel = (TaskDialogButtonID.IDCANCEL = lstTaskDialogIndirectButtonID1.RowTag(lstTaskDialogIndirectButtonID1.ListIndex))
-		    if radTaskDialogIndirectDefaultButton1.Value then oDlg.ActionButton.Default = true
-		  end if
-		  if (edtTaskDialogIndirectButtonCaption2.Text <> "") then
-		    oDlg.AlternateActionButton.Visible = true
+		    oDlg.ActionButton.Cancel = (TaskDialogButtonID.IDCANCEL = lstTaskDialogIndirectButtonID1.RowTagAt(lstTaskDialogIndirectButtonID1.SelectedRowIndex))
+		    If radTaskDialogIndirectDefaultButton1.Value Then oDlg.ActionButton.Default = True
+		  End If
+		  If (edtTaskDialogIndirectButtonCaption2.Text <> "") Then
+		    oDlg.AlternateActionButton.Visible = True
 		    oDlg.AlternateActionButton.Caption = edtTaskDialogIndirectButtonCaption2.Text
-		    oDlg.AlternateActionButton.Cancel = (TaskDialogButtonID.IDCANCEL = lstTaskDialogIndirectButtonID2.RowTag(lstTaskDialogIndirectButtonID2.ListIndex))
-		    if radTaskDialogIndirectDefaultButton2.Value then oDlg.AlternateActionButton.Default = true
-		  end if
-		  if (edtTaskDialogIndirectButtonCaption3.Text <> "") then
-		    oDlg.CancelButton.Visible = true
+		    oDlg.AlternateActionButton.Cancel = (TaskDialogButtonID.IDCANCEL = lstTaskDialogIndirectButtonID2.RowTagAt(lstTaskDialogIndirectButtonID2.SelectedRowIndex))
+		    If radTaskDialogIndirectDefaultButton2.Value Then oDlg.AlternateActionButton.Default = True
+		  End If
+		  If (edtTaskDialogIndirectButtonCaption3.Text <> "") Then
+		    oDlg.CancelButton.Visible = True
 		    oDlg.CancelButton.Caption = edtTaskDialogIndirectButtonCaption3.Text
-		    oDlg.CancelButton.Cancel = (TaskDialogButtonID.IDCANCEL = lstTaskDialogIndirectButtonID3.RowTag(lstTaskDialogIndirectButtonID3.ListIndex))
-		    if radTaskDialogIndirectDefaultButton3.Value then oDlg.CancelButton.Default = true
-		  end if
+		    oDlg.CancelButton.Cancel = (TaskDialogButtonID.IDCANCEL = lstTaskDialogIndirectButtonID3.RowTagAt(lstTaskDialogIndirectButtonID3.SelectedRowIndex))
+		    If radTaskDialogIndirectDefaultButton3.Value Then oDlg.CancelButton.Default = True
+		  End If
 		  
 		  'show and display the result
 		  'select case oDlg.ShowModal()                //replace this one
-		  select case oDlg.ShowAsTaskDialog_Modal()    //with this
-		  case oDlg.ActionButton
+		  Select Case oDlg.ShowAsTaskDialog_Modal()    //with this
+		  Case oDlg.ActionButton
 		    labTaskDialogIndirectResult.Text = "MessageDialog-Result: ActionButton"
-		  case oDlg.AlternateActionButton
+		  Case oDlg.AlternateActionButton
 		    labTaskDialogIndirectResult.Text = "MessageDialog-Result: AlternateActionButton"
-		  case oDlg.CancelButton
+		  Case oDlg.CancelButton
 		    labTaskDialogIndirectResult.Text = "MessageDialog-Result: CancelButton"
-		  else
+		  Else
 		    labTaskDialogIndirectResult.Text = "MessageDialog-Result: (Error)"
-		  end select
+		  End Select
 		End Sub
 	#tag EndMethod
 
@@ -1820,80 +1743,80 @@ End
 		  '---------------------------------------------------------------------------------------------
 		  
 		  'create TaskDialogIndirect
-		  Dim dlgTaskDialogIndirect As New RSTaskDialogIndirect
+		  Var dlgTaskDialogIndirect As New RSTaskDialogIndirect
 		  'set properties
 		  dlgTaskDialogIndirect.WindowTitle = edtTaskDialogIndirectTitle.Text
 		  dlgTaskDialogIndirect.MainInstruction = edtTaskDialogIndirectMainInstruction.Text
 		  dlgTaskDialogIndirect.Content = edtTaskDialogIndirectContent.Text
-		  dlgTaskDialogIndirect.MainIcon = lstTaskDialogIndirectMainIcon.RowTag(lstTaskDialogIndirectMainIcon.ListIndex)
+		  dlgTaskDialogIndirect.MainIcon = lstTaskDialogIndirectMainIcon.RowTagAt(lstTaskDialogIndirectMainIcon.SelectedRowIndex)
 		  
 		  dlgTaskDialogIndirect.Verify = edtTaskDialogIndirectVerify.Text
 		  dlgTaskDialogIndirect.Expanded = edtTaskDialogIndirectExpanded.Text
 		  dlgTaskDialogIndirect.ExpandedControlText = edtTaskDialogIndirectExpandedControlText.Text
 		  dlgTaskDialogIndirect.CollapsedControlText = edtTaskDialogIndirectCollapsedControlText.Text
 		  dlgTaskDialogIndirect.Footer = edtTaskDialogIndirectFooter.Text
-		  dlgTaskDialogIndirect.FooterIcon = lstTaskDialogIndirectFooterIcon.RowTag(lstTaskDialogIndirectFooterIcon.ListIndex)
+		  dlgTaskDialogIndirect.FooterIcon = lstTaskDialogIndirectFooterIcon.RowTagAt(lstTaskDialogIndirectFooterIcon.SelectedRowIndex)
 		  
-		  dlgTaskDialogIndirect.ShowInWindow = self
+		  dlgTaskDialogIndirect.ShowInWindow = Self
 		  dlgTaskDialogIndirect.Flags = TaskDialogFlags.NoFlag
-		  if (lstTaskDialogIndirectShowButtons.Text = "Command Links") then
+		  If (lstTaskDialogIndirectShowButtons.SelectedRowText = "Command Links") Then
 		    'set Flag for CommandLinks (instead of Buttons)
 		    dlgTaskDialogIndirect.Flags = TaskDialogFlags.TDF_USE_COMMAND_LINKS
-		  end if
+		  End If
 		  dlgTaskDialogIndirect.CommonButtonFlags = TaskDialogCommonButtonFlags.None
 		  
 		  'create buttons
 		  'note: in the demo, we always set the first button as default
-		  Dim oButtons() As RSTaskDialogIndirectButton
-		  Dim oButton As RSTaskDialogIndirectButton
-		  if (Trim(edtTaskDialogIndirectButtonCaption1.Text) <> "") then
+		  Var oButtons() As RSTaskDialogIndirectButton
+		  Var oButton As RSTaskDialogIndirectButton
+		  If (edtTaskDialogIndirectButtonCaption1.Text.Trim <> "") Then
 		    oButton = New RSTaskDialogIndirectButton
 		    oButton.Caption = edtTaskDialogIndirectButtonCaption1.Text
 		    oButton.CaptionExplanation = edtTaskDialogIndirectButtonExplanation1.Text
-		    oButton.ID = lstTaskDialogIndirectButtonID1.RowTag(lstTaskDialogIndirectButtonID1.ListIndex)
-		    if radTaskDialogIndirectDefaultButton1.Value then oButton.Default = true
-		    oButtons.Append(oButton)
-		  end if
-		  if (Trim(edtTaskDialogIndirectButtonCaption2.Text) <> "") then
+		    oButton.ID = lstTaskDialogIndirectButtonID1.RowTagAt(lstTaskDialogIndirectButtonID1.SelectedRowIndex)
+		    If radTaskDialogIndirectDefaultButton1.Value Then oButton.Default = True
+		    oButtons.Add(oButton)
+		  End If
+		  If (edtTaskDialogIndirectButtonCaption2.Text.Trim <> "") Then
 		    oButton = New RSTaskDialogIndirectButton
 		    oButton.Caption = edtTaskDialogIndirectButtonCaption2.Text
 		    oButton.CaptionExplanation = edtTaskDialogIndirectButtonExplanation2.Text
-		    oButton.ID = lstTaskDialogIndirectButtonID2.RowTag(lstTaskDialogIndirectButtonID2.ListIndex)
-		    if radTaskDialogIndirectDefaultButton2.Value then oButton.Default = true
-		    oButtons.Append(oButton)
-		  end if
+		    oButton.ID = lstTaskDialogIndirectButtonID2.RowTagAt(lstTaskDialogIndirectButtonID2.SelectedRowIndex)
+		    If radTaskDialogIndirectDefaultButton2.Value Then oButton.Default = True
+		    oButtons.Add(oButton)
+		  End If
 		  
-		  Dim bThirdButtonAsCommandLinksCancel As Boolean = false
-		  if (lstTaskDialogIndirectShowButtons.Text = "Command Links") then
-		    if (TaskDialogButtonID.IDCANCEL = lstTaskDialogIndirectButtonID3.RowTag(lstTaskDialogIndirectButtonID3.ListIndex)) then
+		  Var bThirdButtonAsCommandLinksCancel As Boolean = False
+		  If (lstTaskDialogIndirectShowButtons.SelectedRowText = "Command Links") Then
+		    If (TaskDialogButtonID.IDCANCEL = lstTaskDialogIndirectButtonID3.RowTagAt(lstTaskDialogIndirectButtonID3.SelectedRowIndex)) Then
 		      '3rd Button is set to 'Cancel' -> show as Cancel Button, below the Command Links
 		      dlgTaskDialogIndirect.CommonButtonFlags = TaskDialogCommonButtonFlags.TDCBF_CANCEL_BUTTON
-		      bThirdButtonAsCommandLinksCancel = true
-		    end if
-		  end if
-		  if (not bThirdButtonAsCommandLinksCancel) and (Trim(edtTaskDialogIndirectButtonCaption3.Text) <> "") then
+		      bThirdButtonAsCommandLinksCancel = True
+		    End If
+		  End If
+		  If (Not bThirdButtonAsCommandLinksCancel) And (edtTaskDialogIndirectButtonCaption3.Text.Trim <> "") Then
 		    oButton = New RSTaskDialogIndirectButton
 		    oButton.Caption = edtTaskDialogIndirectButtonCaption3.Text
 		    oButton.CaptionExplanation = edtTaskDialogIndirectButtonExplanation3.Text
-		    oButton.ID = lstTaskDialogIndirectButtonID3.RowTag(lstTaskDialogIndirectButtonID3.ListIndex)
-		    if radTaskDialogIndirectDefaultButton3.Value then oButton.Default = true
-		    oButtons.Append(oButton)
-		  end if
+		    oButton.ID = lstTaskDialogIndirectButtonID3.RowTagAt(lstTaskDialogIndirectButtonID3.SelectedRowIndex)
+		    If radTaskDialogIndirectDefaultButton3.Value Then oButton.Default = True
+		    oButtons.Add(oButton)
+		  End If
 		  
 		  dlgTaskDialogIndirect.Buttons = oButtons
 		  
-		  if (lstTaskDialogIndirectShowButtons.Text = "Buttons + RadioButtons") then
+		  If (lstTaskDialogIndirectShowButtons.SelectedRowText = "Buttons + RadioButtons") Then
 		    'Note: we're going to the the buttons for BOTH Buttons and RadioButtons
 		    '      of course you could create a different Button-Set for the RadioButtons...
 		    dlgTaskDialogIndirect.RadioButtons = oButtons
-		  end if
+		  End If
 		  
 		  
 		  
 		  'show dialog
-		  Dim retClickedButton As TaskDialogButtonID
-		  Dim retRadioButton As TaskDialogButtonID
-		  Dim retVerificationFlagChecked As Boolean
+		  Var retClickedButton As TaskDialogButtonID
+		  Var retRadioButton As TaskDialogButtonID
+		  Var retVerificationFlagChecked As Boolean
 		  '---------------------------------------------------
 		  'show dialog
 		  '---------------------------------------------------
@@ -1902,41 +1825,41 @@ End
 		  
 		  
 		  'display the result
-		  Dim sResult() As String
-		  sResult.Append("Button '" + self.TaskDialogButtonID_Caption(retClickedButton) + "'")
-		  sResult.Append("RadioButton '" + self.TaskDialogButtonID_Caption(retRadioButton) + "'")
-		  if retVerificationFlagChecked then
-		    sResult.Append("VerificationFlag 'checked'")
-		  else
-		    sResult.Append("VerificationFlag 'not checked'")
-		  end if
-		  labTaskDialogIndirectResult.Text = "Return: " + Join(sResult, ", ")
+		  Var sResult() As String
+		  sResult.Add("Button '" + Self.TaskDialogButtonID_Caption(retClickedButton) + "'")
+		  sResult.Add("RadioButton '" + Self.TaskDialogButtonID_Caption(retRadioButton) + "'")
+		  If retVerificationFlagChecked Then
+		    sResult.Add("VerificationFlag 'checked'")
+		  Else
+		    sResult.Add("VerificationFlag 'not checked'")
+		  End If
+		  labTaskDialogIndirectResult.Text = "Return: " + string.FromArray(sResult, ", ")
 		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
 		Private Function TaskDialogButtonID_Caption(poTaskDialogButtonID As TaskDialogButtonID) As String
-		  select case poTaskDialogButtonID
-		  case TaskDialogButtonID.IDABORT
-		    return "abort"
-		  case TaskDialogButtonID.IDCANCEL
-		    return "cancel"
-		  case TaskDialogButtonID.IDCLOSE
-		    return "close"
-		  case TaskDialogButtonID.IDIGNORE
-		    return "ignore"
-		  case TaskDialogButtonID.IDNO
-		    return "no"
-		  case TaskDialogButtonID.IDOK
-		    return "ok"
-		  case TaskDialogButtonID.IDRETRY
-		    return "retry"
-		  case TaskDialogButtonID.IDYES
-		    return "yes"
-		  else
-		    return "-"
-		  end select
+		  Select Case poTaskDialogButtonID
+		  Case TaskDialogButtonID.IDABORT
+		    Return "abort"
+		  Case TaskDialogButtonID.IDCANCEL
+		    Return "cancel"
+		  Case TaskDialogButtonID.IDCLOSE
+		    Return "close"
+		  Case TaskDialogButtonID.IDIGNORE
+		    Return "ignore"
+		  Case TaskDialogButtonID.IDNO
+		    Return "no"
+		  Case TaskDialogButtonID.IDOK
+		    Return "ok"
+		  Case TaskDialogButtonID.IDRETRY
+		    Return "retry"
+		  Case TaskDialogButtonID.IDYES
+		    Return "yes"
+		  Else
+		    Return "-"
+		  End Select
 		  
 		End Function
 	#tag EndMethod
@@ -1946,27 +1869,27 @@ End
 
 #tag Events lstTaskDialogIndirectButtonID1
 	#tag Event
-		Sub Open()
-		  me.DeleteAllRows
-		  me.AddRow("yes")
-		  me.AddRow("no")
-		  me.AddRow("cancel")
-		  me.AddRow("ok")
-		  me.AddRow("retry")
-		  me.AddRow("abort")
-		  me.AddRow("close")
-		  me.AddRow("ignore")
+		Sub Opening()
+		  Me.RemoveAllRows
+		  Me.AddRow("yes")
+		  Me.AddRow("no")
+		  Me.AddRow("cancel")
+		  Me.AddRow("ok")
+		  Me.AddRow("retry")
+		  Me.AddRow("abort")
+		  Me.AddRow("close")
+		  Me.AddRow("ignore")
 		  
-		  me.ListIndex = 0
+		  Me.SelectedRowIndex = 0
 		  
-		  me.RowTag(0) = TaskDialogButtonID.IDYES
-		  me.RowTag(1) = TaskDialogButtonID.IDNO
-		  me.RowTag(2) = TaskDialogButtonID.IDCANCEL
-		  me.RowTag(3) = TaskDialogButtonID.IDOK
-		  me.RowTag(4) = TaskDialogButtonID.IDRETRY
-		  me.RowTag(5) = TaskDialogButtonID.IDABORT
-		  me.RowTag(6) = TaskDialogButtonID.IDCLOSE
-		  me.RowTag(7) = TaskDialogButtonID.IDIGNORE
+		  Me.RowTagAt(0) = TaskDialogButtonID.IDYES
+		  Me.RowTagAt(1) = TaskDialogButtonID.IDNO
+		  Me.RowTagAt(2) = TaskDialogButtonID.IDCANCEL
+		  Me.RowTagAt(3) = TaskDialogButtonID.IDOK
+		  Me.RowTagAt(4) = TaskDialogButtonID.IDRETRY
+		  Me.RowTagAt(5) = TaskDialogButtonID.IDABORT
+		  Me.RowTagAt(6) = TaskDialogButtonID.IDCLOSE
+		  Me.RowTagAt(7) = TaskDialogButtonID.IDIGNORE
 		  
 		  
 		End Sub
@@ -1974,60 +1897,62 @@ End
 #tag EndEvents
 #tag Events lstTaskDialogIndirectShowButtons
 	#tag Event
-		Sub Open()
-		  me.DeleteAllRows
-		  me.AddRow("Buttons")
-		  me.AddRow("Buttons + RadioButtons")
-		  me.AddRow("Command Links")
-		  me.ListIndex = 2
+		Sub Opening()
+		  Me.RemoveAllRows
+		  Me.AddRow("Buttons")
+		  Me.AddRow("Buttons + RadioButtons")
+		  Me.AddRow("Command Links")
+		  Me.SelectedRowIndex = 2
 		  
 		End Sub
 	#tag EndEvent
 	#tag Event
-		Sub Change()
-		  select case me.Text
-		  case "Command Links"
-		    edtTaskDialogIndirectButtonExplanation1.Enabled = true
-		    edtTaskDialogIndirectButtonExplanation2.Enabled = true
-		    edtTaskDialogIndirectButtonExplanation3.Enabled = true
-		  else
-		    edtTaskDialogIndirectButtonExplanation1.Enabled = false
-		    edtTaskDialogIndirectButtonExplanation2.Enabled = false
-		    edtTaskDialogIndirectButtonExplanation3.Enabled = false
-		  end select
+		Sub SelectionChanged(item As DesktopMenuItem)
+		  #Pragma unused item
 		  
-		  select case me.Text
-		  case "Buttons + RadioButtons"
-		    labTaskDialogIndirectButtonHint.Visible = true
-		  else
-		    labTaskDialogIndirectButtonHint.Visible = false
-		  end select
+		  Select Case Me.SelectedRowText
+		  Case "Command Links"
+		    edtTaskDialogIndirectButtonExplanation1.Enabled = True
+		    edtTaskDialogIndirectButtonExplanation2.Enabled = True
+		    edtTaskDialogIndirectButtonExplanation3.Enabled = True
+		  Else
+		    edtTaskDialogIndirectButtonExplanation1.Enabled = False
+		    edtTaskDialogIndirectButtonExplanation2.Enabled = False
+		    edtTaskDialogIndirectButtonExplanation3.Enabled = False
+		  End Select
+		  
+		  Select Case Me.SelectedRowText
+		  Case "Buttons + RadioButtons"
+		    labTaskDialogIndirectButtonHint.Visible = True
+		  Else
+		    labTaskDialogIndirectButtonHint.Visible = False
+		  End Select
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events lstTaskDialogIndirectButtonID2
 	#tag Event
-		Sub Open()
-		  me.DeleteAllRows
-		  me.AddRow("yes")
-		  me.AddRow("no")
-		  me.AddRow("cancel")
-		  me.AddRow("ok")
-		  me.AddRow("retry")
-		  me.AddRow("abort")
-		  me.AddRow("close")
-		  me.AddRow("ignore")
+		Sub Opening()
+		  Me.RemoveAllRows
+		  Me.AddRow("yes")
+		  Me.AddRow("no")
+		  Me.AddRow("cancel")
+		  Me.AddRow("ok")
+		  Me.AddRow("retry")
+		  Me.AddRow("abort")
+		  Me.AddRow("close")
+		  Me.AddRow("ignore")
 		  
-		  me.ListIndex = 1
+		  Me.SelectedRowIndex = 1
 		  
-		  me.RowTag(0) = TaskDialogButtonID.IDYES
-		  me.RowTag(1) = TaskDialogButtonID.IDNO
-		  me.RowTag(2) = TaskDialogButtonID.IDCANCEL
-		  me.RowTag(3) = TaskDialogButtonID.IDOK
-		  me.RowTag(4) = TaskDialogButtonID.IDRETRY
-		  me.RowTag(5) = TaskDialogButtonID.IDABORT
-		  me.RowTag(6) = TaskDialogButtonID.IDCLOSE
-		  me.RowTag(7) = TaskDialogButtonID.IDIGNORE
+		  Me.RowTagAt(0) = TaskDialogButtonID.IDYES
+		  Me.RowTagAt(1) = TaskDialogButtonID.IDNO
+		  Me.RowTagAt(2) = TaskDialogButtonID.IDCANCEL
+		  Me.RowTagAt(3) = TaskDialogButtonID.IDOK
+		  Me.RowTagAt(4) = TaskDialogButtonID.IDRETRY
+		  Me.RowTagAt(5) = TaskDialogButtonID.IDABORT
+		  Me.RowTagAt(6) = TaskDialogButtonID.IDCLOSE
+		  Me.RowTagAt(7) = TaskDialogButtonID.IDIGNORE
 		  
 		  
 		End Sub
@@ -2035,27 +1960,27 @@ End
 #tag EndEvents
 #tag Events lstTaskDialogIndirectButtonID3
 	#tag Event
-		Sub Open()
-		  me.DeleteAllRows
-		  me.AddRow("yes")
-		  me.AddRow("no")
-		  me.AddRow("cancel")
-		  me.AddRow("ok")
-		  me.AddRow("retry")
-		  me.AddRow("abort")
-		  me.AddRow("close")
-		  me.AddRow("ignore")
+		Sub Opening()
+		  Me.RemoveAllRows
+		  Me.AddRow("yes")
+		  Me.AddRow("no")
+		  Me.AddRow("cancel")
+		  Me.AddRow("ok")
+		  Me.AddRow("retry")
+		  Me.AddRow("abort")
+		  Me.AddRow("close")
+		  Me.AddRow("ignore")
 		  
-		  me.ListIndex = 2
+		  Me.SelectedRowIndex = 2
 		  
-		  me.RowTag(0) = TaskDialogButtonID.IDYES
-		  me.RowTag(1) = TaskDialogButtonID.IDNO
-		  me.RowTag(2) = TaskDialogButtonID.IDCANCEL
-		  me.RowTag(3) = TaskDialogButtonID.IDOK
-		  me.RowTag(4) = TaskDialogButtonID.IDRETRY
-		  me.RowTag(5) = TaskDialogButtonID.IDABORT
-		  me.RowTag(6) = TaskDialogButtonID.IDCLOSE
-		  me.RowTag(7) = TaskDialogButtonID.IDIGNORE
+		  Me.RowTagAt(0) = TaskDialogButtonID.IDYES
+		  Me.RowTagAt(1) = TaskDialogButtonID.IDNO
+		  Me.RowTagAt(2) = TaskDialogButtonID.IDCANCEL
+		  Me.RowTagAt(3) = TaskDialogButtonID.IDOK
+		  Me.RowTagAt(4) = TaskDialogButtonID.IDRETRY
+		  Me.RowTagAt(5) = TaskDialogButtonID.IDABORT
+		  Me.RowTagAt(6) = TaskDialogButtonID.IDCLOSE
+		  Me.RowTagAt(7) = TaskDialogButtonID.IDIGNORE
 		  
 		  
 		End Sub
@@ -2063,43 +1988,43 @@ End
 #tag EndEvents
 #tag Events lstTaskDialogIndirectMainIcon
 	#tag Event
-		Sub Open()
-		  me.DeleteAllRows
-		  me.AddRow("Error")
-		  me.AddRow("Information")
-		  me.AddRow("Shield")
-		  me.AddRow("Warning")
-		  me.ListIndex = 1
+		Sub Opening()
+		  Me.RemoveAllRows
+		  Me.AddRow("Error")
+		  Me.AddRow("Information")
+		  Me.AddRow("Shield")
+		  Me.AddRow("Warning")
+		  Me.SelectedRowIndex = 1
 		  
-		  me.RowTag(0) = TaskDialogIcon.TD_ERROR_ICON
-		  me.RowTag(1) = TaskDialogIcon.TD_INFORMATION_ICON
-		  me.RowTag(2) = TaskDialogIcon.TD_SHIELD_ICON
-		  me.RowTag(3) = TaskDialogIcon.TD_WARNING_ICON
+		  Me.RowTagAt(0) = TaskDialogIcon.TD_ERROR_ICON
+		  Me.RowTagAt(1) = TaskDialogIcon.TD_INFORMATION_ICON
+		  Me.RowTagAt(2) = TaskDialogIcon.TD_SHIELD_ICON
+		  Me.RowTagAt(3) = TaskDialogIcon.TD_WARNING_ICON
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events lstTaskDialogIndirectFooterIcon
 	#tag Event
-		Sub Open()
-		  me.DeleteAllRows
-		  me.AddRow("Error")
-		  me.AddRow("Information")
-		  me.AddRow("Shield")
-		  me.AddRow("Warning")
-		  me.ListIndex = 2
+		Sub Opening()
+		  Me.RemoveAllRows
+		  Me.AddRow("Error")
+		  Me.AddRow("Information")
+		  Me.AddRow("Shield")
+		  Me.AddRow("Warning")
+		  Me.SelectedRowIndex = 2
 		  
-		  me.RowTag(0) = TaskDialogIcon.TD_ERROR_ICON
-		  me.RowTag(1) = TaskDialogIcon.TD_INFORMATION_ICON
-		  me.RowTag(2) = TaskDialogIcon.TD_SHIELD_ICON
-		  me.RowTag(3) = TaskDialogIcon.TD_WARNING_ICON
+		  Me.RowTagAt(0) = TaskDialogIcon.TD_ERROR_ICON
+		  Me.RowTagAt(1) = TaskDialogIcon.TD_INFORMATION_ICON
+		  Me.RowTagAt(2) = TaskDialogIcon.TD_SHIELD_ICON
+		  Me.RowTagAt(3) = TaskDialogIcon.TD_WARNING_ICON
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events btnTaskDialogIndirect
 	#tag Event
-		Sub Action()
+		Sub Pressed()
 		  '---------------------------------------------------------------------------------------------
 		  'This Example shows how to use the RSTaskDialogIndirect
 		  '
@@ -2109,13 +2034,13 @@ End
 		  '   (available only with items in bold)
 		  '---------------------------------------------------------------------------------------------
 		  
-		  self.Show_TaskDialogIndirect()
+		  Self.Show_TaskDialogIndirect()
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events btnMessageDialog
 	#tag Event
-		Sub Action()
+		Sub Pressed()
 		  '-----------------------------------------------------------------------------------------------------------
 		  'This Example shows how to use the RSTaskDialogIndirect as a substitution for MessageDialog
 		  '
@@ -2131,80 +2056,49 @@ End
 		  ' - Button2: AlternateActionButton
 		  ' - Button3: CancelButton
 		  
-		  self.Show_MessageDialog()
+		  Self.Show_MessageDialog()
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty
-		Name="Name"
-		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Interfaces"
-		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Super"
-		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Width"
-		Visible=true
-		Group="Size"
-		InitialValue="600"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Height"
-		Visible=true
-		Group="Size"
-		InitialValue="400"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MinWidth"
+		Name="MinimumWidth"
 		Visible=true
 		Group="Size"
 		InitialValue="64"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MinHeight"
+		Name="MinimumHeight"
 		Visible=true
 		Group="Size"
 		InitialValue="64"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MaxWidth"
+		Name="MaximumWidth"
 		Visible=true
 		Group="Size"
 		InitialValue="32000"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MaxHeight"
+		Name="MaximumHeight"
 		Visible=true
 		Group="Size"
 		InitialValue="32000"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Frame"
+		Name="Type"
 		Visible=true
 		Group="Frame"
 		InitialValue="0"
-		Type="Integer"
+		Type="Types"
 		EditorType="Enum"
 		#tag EnumValues
 			"0 - Document"
@@ -2216,83 +2110,47 @@ End
 			"6 - Rounded Window"
 			"7 - Global Floating Window"
 			"8 - Sheet Window"
-			"9 - Metal Window"
-			"11 - Modeless Dialog"
+			"9 - Modeless Dialog"
 		#tag EndEnumValues
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Title"
-		Visible=true
-		Group="Frame"
-		InitialValue="Untitled"
-		Type="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="CloseButton"
+		Name="HasCloseButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Resizeable"
+		Name="HasMaximizeButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MaximizeButton"
+		Name="HasMinimizeButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MinimizeButton"
-		Visible=true
-		Group="Frame"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="FullScreenButton"
+		Name="HasFullScreenButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="False"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Composite"
-		Group="OS X (Carbon)"
-		InitialValue="False"
-		Type="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MacProcID"
-		Group="OS X (Carbon)"
-		InitialValue="0"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="ImplicitInstance"
-		Visible=true
-		Group="Behavior"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Placement"
+		Name="DefaultLocation"
 		Visible=true
 		Group="Behavior"
 		InitialValue="0"
-		Type="Integer"
+		Type="Locations"
 		EditorType="Enum"
 		#tag EnumValues
 			"0 - Default"
@@ -2303,55 +2161,132 @@ End
 		#tag EndEnumValues
 	#tag EndViewProperty
 	#tag ViewProperty
+		Name="HasBackgroundColor"
+		Visible=true
+		Group="Background"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="BackgroundColor"
+		Visible=true
+		Group="Background"
+		InitialValue="&hFFFFFF"
+		Type="ColorGroup"
+		EditorType="ColorGroup"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Name"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Interfaces"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Super"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Width"
+		Visible=true
+		Group="Size"
+		InitialValue="600"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Height"
+		Visible=true
+		Group="Size"
+		InitialValue="400"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Title"
+		Visible=true
+		Group="Frame"
+		InitialValue="Untitled"
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Resizeable"
+		Visible=true
+		Group="Frame"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Composite"
+		Visible=false
+		Group="OS X (Carbon)"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MacProcID"
+		Visible=false
+		Group="OS X (Carbon)"
+		InitialValue="0"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="ImplicitInstance"
+		Visible=true
+		Group="Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
 		Name="Visible"
 		Visible=true
 		Group="Behavior"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="LiveResize"
-		Visible=true
-		Group="Behavior"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="FullScreen"
+		Visible=false
 		Group="Behavior"
 		InitialValue="False"
 		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="HasBackColor"
-		Visible=true
-		Group="Background"
-		InitialValue="False"
-		Type="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="BackColor"
-		Visible=true
-		Group="Background"
-		InitialValue="&hFFFFFF"
-		Type="Color"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Backdrop"
 		Visible=true
 		Group="Background"
+		InitialValue=""
 		Type="Picture"
-		EditorType="Picture"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="MenuBar"
 		Visible=true
 		Group="Menus"
-		Type="MenuBar"
-		EditorType="MenuBar"
+		InitialValue=""
+		Type="DesktopMenuBar"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="MenuBarVisible"
@@ -2359,6 +2294,6 @@ End
 		Group="Deprecated"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 #tag EndViewBehavior
